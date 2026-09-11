@@ -1,7 +1,24 @@
 from dataclasses import dataclass
 from math import exp, log
+import hashlib
 @dataclass(frozen=True)
 class Mode: id:str; priority:float; scope:float; mixability:float; abase:float
+
+def validate_fact_dag(nodes):
+ graph={n['id']:n.get('dependsOn',[]) for n in nodes}; seen=set(); active=set()
+ def visit(k):
+  if k in active: raise ValueError('FACT_DAG_CYCLE:'+k)
+  if k in seen:return
+  active.add(k)
+  for d in graph.get(k,[]):
+   if d not in graph: raise ValueError('FACT_DEP_MISSING:'+d)
+   visit(d)
+  active.remove(k); seen.add(k)
+ for k in graph: visit(k)
+ return True
+
+def environment_revision(facts, ema_initial):
+ payload=repr((facts,ema_initial)).encode(); return hashlib.sha256(payload).hexdigest()[:16]
 
 def power_normalize(modes,tau=2.0):
  if tau<=0: raise ValueError('TAU_INVALID')

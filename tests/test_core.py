@@ -8,3 +8,8 @@ def test_a_channels_align_with_presence():
 def test_zero_reasons():
  assert normalize_capacity({'a':0})[1]=='POSITION_ALL_ZERO'
  assert normalize_capacity({'a':0},missing=True)[1]=='MISSING_FACT'
+def test_fact_dag_and_revision():
+ assert validate_fact_dag([{'id':'raw'},{'id':'derived','dependsOn':['raw']}])
+ try: validate_fact_dag([{'id':'a','dependsOn':['b']},{'id':'b','dependsOn':['a']}]); assert False
+ except ValueError as e: assert str(e).startswith('FACT_DAG_CYCLE')
+ assert environment_revision({'x':1},{'ema':0})==environment_revision({'x':1},{'ema':0})

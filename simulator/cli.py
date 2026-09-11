@@ -2,7 +2,8 @@ import argparse,json
 from .core import *
 def main():
  ap=argparse.ArgumentParser(); ap.add_argument('fixture'); ap.add_argument('--html'); args=ap.parse_args(); d=json.load(open(args.fixture))
- validate_fact_dag(d.get('factNodes',[])); rev=environment_revision(d.get('factNodes',[]),d.get('emaInitial',{}))
+ validate_fact_dag(d.get('factNodes',[])); rev=environment_revision(
+  {'factNodes':d.get('factNodes',[]),'p':d['p'],'a':d['a'],'capacity':d['capacity']},d.get('emaInitial',{}))
  modes=[Mode(**m) for m in d['modes']]; shares,fb=power_normalize(modes,d.get('tau',2)); p=d['p']; a=d['a']; raw={t:d['capacity'][t]*sum(shares[m]*p[m].get(t,0) for m in shares) for t in d['capacity']}; dist,pfb=normalize_capacity(raw)
  channels={}
  for t in d['capacity']:

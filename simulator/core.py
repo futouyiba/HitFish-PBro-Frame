@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from math import exp, log
 import hashlib
+import json
+from math import isfinite
 @dataclass(frozen=True)
 class Mode: id:str; priority:float; scope:float; mixability:float; abase:float
 
@@ -18,7 +20,9 @@ def validate_fact_dag(nodes):
  return True
 
 def environment_revision(facts, ema_initial):
- payload=repr((facts,ema_initial)).encode(); return hashlib.sha256(payload).hexdigest()[:16]
+ payload=json.dumps({'facts':facts,'emaInitial':ema_initial},sort_keys=True,
+                    separators=(',', ':'),ensure_ascii=False,allow_nan=False).encode('utf-8')
+ return hashlib.sha256(payload).hexdigest()
 
 def power_normalize(modes,tau=2.0):
  if tau<=0: raise ValueError('TAU_INVALID')
@@ -46,6 +50,9 @@ def evaluate_a_channels(shares,p,a):
     return selection, (a.get(dominant,0.0) if dominant else 0.0), dominant
 
 def normalize_capacity(raw, missing=False):
- z=sum(max(0,v) for v in raw.values())
+ if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not isfinite(v) or v<0 for v in raw.values()):
+  raise ValueError('INVALID_POSITION_WEIGHT')
+ if missing: raise ValueError('MISSING_FACT')
+ z=sum(raw.values())
  if z: return {k:v/z for k,v in raw.items()},None
  return ({k:0.0 for k in raw},'MISSING_FACT' if missing else 'POSITION_ALL_ZERO')

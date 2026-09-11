@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>中鱼机制总图｜Typed Semantic Mechanism Overview</title>
+<style>
+  :root{
+    --bg:#f7f8fb;
+    --card:#ffffff;
+    --line:#d9deea;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --blue:#dbeafe;
+    --blue-b:#60a5fa;
+    --green:#dcfce7;
+    --green-b:#4ade80;
+    --orange:#ffedd5;
+    --orange-b:#fb923c;
+    --purple:#ede9fe;
+    --purple-b:#8b5cf6;
+    --pink:#fce7f3;
+    --pink-b:#ec4899;
+    --yellow:#fef3c7;
+    --yellow-b:#f59e0b;
+    --gray:#f3f4f6;
+    --gray-b:#9ca3af;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:1200px;
+    margin:0 auto;
+    padding:32px 20px 64px;
+  }
+  h1,h2,h3{ margin:0 0 12px; }
+  h1{ font-size:32px; }
+  h2{ font-size:24px; margin-top:36px; }
+  h3{ font-size:18px; margin-top:24px; }
+  p.lead{
+    color:var(--muted);
+    margin:0 0 24px;
+    font-size:16px;
+  }
+  .note{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:5px solid var(--blue-b);
+    border-radius:12px;
+    padding:14px 16px;
+    margin:16px 0 24px;
+  }
+  .grid{
+    display:grid;
+    gap:16px;
+  }
+  .grid-2{ grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+  .grid-3{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    box-shadow:0 4px 16px rgba(0,0,0,.04);
+  }
+  .layer{
+    border-radius:16px;
+    padding:16px 18px;
+    border:2px solid var(--line);
+    background:#fff;
+    margin-bottom:12px;
+  }
+  .l0{ background:var(--gray); border-color:var(--gray-b); }
+  .l1{ background:var(--blue); border-color:var(--blue-b); }
+  .l2{ background:var(--green); border-color:var(--green-b); }
+  .l3{ background:var(--orange); border-color:var(--orange-b); }
+  .l4{ background:var(--purple); border-color:var(--purple-b); }
+  .l5{ background:var(--pink); border-color:var(--pink-b); }
+  .tag{
+    display:inline-block;
+    font-size:12px;
+    padding:2px 8px;
+    border-radius:999px;
+    margin-right:6px;
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--muted);
+  }
+  .arrow{
+    text-align:center;
+    font-size:24px;
+    color:#9ca3af;
+    margin:4px 0 8px;
+  }
+  ul{ margin:8px 0 0 18px; }
+  .formula{
+    background:#111827;
+    color:#f9fafb;
+    border-radius:12px;
+    padding:12px 14px;
+    margin-top:10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    overflow:auto;
+  }
+  .mini{
+    color:var(--muted);
+    font-size:14px;
+  }
+  .diagram{
+    border:1px dashed var(--line);
+    border-radius:14px;
+    padding:14px;
+    background:#fcfcfd;
+  }
+  .footer{
+    margin-top:40px;
+    color:var(--muted);
+    font-size:14px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>中鱼机制总图｜Typed Semantic Mechanism Overview</h1>
+  <p class="lead">
+    这不是“一堆系数相乘”的系统，而是一套：
+    <strong>参数 → 语义解析 → Domain 输出 → 跨域组合 → 玩法修正 → 最终决议</strong>
+    的类型化机制架构。
+  </p>
+
+  <div class="note">
+    <strong>一句话总览：</strong>
+    各 Domain 内部可以复杂，但跨 Domain 边界必须很薄：
+    Spatial 输出 <strong>L（Native Supply）</strong>，
+    Interaction 输出 <strong>C（captureRetention）</strong>，
+    Opportunity 输出 <strong>μT / LogicalOpportunity</strong>，
+    Candidate 层只做 <strong>q = L × C</strong>，再按 <strong>μT</strong> 做 Reduce。
+  </div>
+
+  <h2>一、六层主链</h2>
+
+  <div class="layer l0">
+    <span class="tag">L0</span>
+    <strong>Authoring / Facts / Parameters</strong>
+    <div class="mini">鱼参数、世界事实、玩家输入、持久状态、内容元数据</div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="layer l1">
+    <span class="tag">L1</span>
+    <strong>Domain Semantic Resolvers</strong>
+    <div class="mini">把参数变成有语义的中间量：ThermalRelation / TargetRelation / TaskAffordance / BehavioralContext</div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="layer l2">
+    <span class="tag">L2</span>
+    <strong>Domain Products</strong>
+    <div class="mini">Spatial → L；Interaction → C；Opportunity → μT / LogicalOpportunity</div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="layer l3">
+    <span class="tag">L3</span>
+    <strong>Candidate Assembly</strong>
+    <div class="mini">same-support Join：q = L × C；然后按 μT 做 Reduce 得到 W</div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="layer l4">
+    <span class="tag">L4</span>
+    <strong>Gameplay Policy</strong>
+    <div class="mini">EligibilityTransform / MassTransform / Redistribution / ResolutionCondition</div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="layer l5">
+    <span class="tag">L5</span>
+    <strong>Resolution / Commit</strong>
+    <div class="mini">Normalize Late → authoritative selection / roll / commit</div>
+  </div>
+
+  <h2>二、三大核心 Domain 输出</h2>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Spatial</h3>
+      <div class="diagram">
+        B + P + EnvironmentResolver → <strong>L</strong>
+      </div>
+      <ul>
+        <li>B：Reference Species Intensity</li>
+        <li>P：optional World Supply</li>
+        <li>L：Local Native Supply</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Interaction</h3>
+      <div class="diagram">
+        Presentation + Resolver → <strong>C</strong>
+      </div>
+      <ul>
+        <li>先做 Perception / Interpretation</li>
+        <li>再结合 Value / Affordance</li>
+        <li>C：captureRetention</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Opportunity</h3>
+      <div class="diagram">
+        Formation → LogicalOpportunity + <strong>μT</strong>
+      </div>
+      <ul>
+        <li>WHEN 和 WHO 分离</li>
+        <li>μT 是 evaluation measure</li>
+        <li>不是 fish weight</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>三、Candidate Assembly 的唯一主干</h2>
+
+  <div class="card">
+    <div class="formula">
+      q = L × C
+      <br/>
+      W = Reduce(q, μT)
+    </div>
+    <ul>
+      <li><strong>L</strong>：Native Supply</li>
+      <li><strong>C</strong>：captureRetention</li>
+      <li><strong>μT</strong>：Opportunity Evaluation Measure</li>
+      <li><strong>W</strong>：Native Candidate Mass</li>
+    </ul>
+    <p class="mini">Candidate 层不再重读 Temperature / Structure / Bait / Activity 等 raw cause。</p>
+  </div>
+
+  <h2>四、五个关键机制</h2>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>1. 温度（Temperature）</h3>
+      <ul>
+        <li>输入：preferredMin / preferredMax / toleranceMin / toleranceMax</li>
+        <li>先形成 ThermalRelation</li>
+        <li>再分别进入 Spatial / Functional / Readiness</li>
+      </ul>
+      <div class="mini">不是 TemperatureCoeff，而是“一套共享 biological trait，多处 role-specific interpretation”。</div>
+    </div>
+
+    <div class="card">
+      <h3>2. 结构体（Structure）</h3>
+      <ul>
+        <li>默认 author：Optimal / Secondary / Marginal / Unsuitable</li>
+        <li>允许少量 Context Override（如 strong flow）</li>
+        <li>输出：Resolved Structure Relation → Environment Response</li>
+      </ul>
+      <div class="mini">不是 StructureCoeff × FlowCoeff。</div>
+    </div>
+
+    <div class="card">
+      <h3>3. 功能能力（Functional）</h3>
+      <ul>
+        <li>鱼侧：Capacity</li>
+        <li>玩法侧：TaskDemand</li>
+        <li>Compare：Capacity vs Demand → TaskAffordance</li>
+      </ul>
+      <div class="mini">表达“想吃但追不上”，而不是一排能力系数相乘。</div>
+    </div>
+
+    <div class="card">
+      <h3>4. 饵 / Presentation</h3>
+      <ul>
+        <li>Source → Propagation → Receiver Signal</li>
+        <li>Perceptual Evidence → Target Interpretation</li>
+        <li>Value + Risk + Affordance → captureRetention</li>
+      </ul>
+      <div class="mini">不是 BaitCoeff / MotionCoeff / PoseCoeff 的平铺结构。</div>
+    </div>
+
+    <div class="card">
+      <h3>5. Groundbait / 打窝</h3>
+      <ul>
+        <li>Immediate Cue → 当前 C</li>
+        <li>Aggregation State → 未来 L</li>
+        <li>Consumption / Satiation → 未来 Readiness</li>
+        <li>Learning / Association → 未来 Interpretation</li>
+      </ul>
+      <div class="mini">必须拆成多条因果路径，不能用一个 GroundbaitCoeff 代表。</div>
+    </div>
+
+    <div class="card">
+      <h3>6. Gameplay Policy</h3>
+      <ul>
+        <li>活动、教程、保底、推荐、限制</li>
+        <li>都放在 Native Candidate 之后</li>
+        <li>显式声明是玩法 shaping，不伪装成自然规律</li>
+      </ul>
+      <div class="mini">Policy 不改写 Native truth。</div>
+    </div>
+  </div>
+
+  <h2>五、最重要的几条纪律</h2>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>不要再做的事</h3>
+      <ul>
+        <li>不要继续发明平级 XxxCoeff</li>
+        <li>不要把多个 Cause 压成一个匿名 FinalCoeff</li>
+        <li>不要在 Candidate 层重算上游因果</li>
+        <li>不要把 Unknown 当 0</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>应该坚持的事</h3>
+      <ul>
+        <li>先定 causal topology，再定数学</li>
+        <li>Domain 内可以复杂，跨 Domain 边界要薄</li>
+        <li>Normalize Late</li>
+        <li>Shared Trait → role-specific interpretation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    建议作为“机制速览页”插入 Notion 顶部，先给人一眼看懂全局，再往下钻 Concrete Spec。
+  </div>
+
+</div>
+</body>
+</html>

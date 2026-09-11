@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>固定鱼习性模型｜系统架构与核心流转图</title>
+  <style>
+    :root {
+      --ink:#172235; --muted:#64748b; --line:#dbe4ee; --paper:#fff;
+      --blue:#2563eb; --blue-soft:#eff6ff; --cyan:#0891b2; --cyan-soft:#ecfeff;
+      --green:#059669; --green-soft:#ecfdf5; --amber:#d97706; --amber-soft:#fffbeb;
+      --red:#dc2626; --red-soft:#fef2f2; --violet:#7c3aed; --violet-soft:#f5f3ff;
+      --shadow:0 14px 38px rgba(20,43,78,.08); --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f3f6fa;color:var(--ink);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .shell{display:grid;grid-template-columns:260px minmax(0,980px);gap:30px;max-width:1300px;margin:0 auto;padding:32px 24px 80px}
+    aside{position:sticky;top:24px;align-self:start;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .brand{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);margin-bottom:12px}
+    nav a{display:block;padding:7px 10px;border-radius:9px;color:#526176;font-size:13px}
+    nav a:hover{color:var(--blue);background:var(--blue-soft)}
+    main{min-width:0}
+    .hero{border-radius:24px;padding:46px 46px 42px;color:#fff;background:linear-gradient(135deg,#172554 0%,#1d4ed8 55%,#0891b2 100%);box-shadow:0 24px 55px rgba(30,64,175,.22);margin-bottom:24px}
+    .eyebrow{font-size:12px;letter-spacing:.18em;font-weight:800;opacity:.8}
+    h1{font-size:38px;line-height:1.25;margin:12px 0 16px;letter-spacing:-.03em}
+    .hero p{max-width:760px;font-size:17px;opacity:.92;margin:0}
+    .hero .thesis{margin-top:26px;padding:16px 18px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);border-radius:14px;font-weight:650}
+    section{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:34px 36px;margin:20px 0;box-shadow:var(--shadow);scroll-margin-top:22px}
+    h2{font-size:24px;line-height:1.35;margin:0 0 10px;letter-spacing:-.02em}
+    h3{font-size:17px;margin:28px 0 10px}
+    p{margin:8px 0 14px}.lead{color:#526176;margin-bottom:24px}.small{font-size:13px;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:4px 10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:800;margin-bottom:10px}
+    .diagram{overflow-x:auto;background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:24px;margin:20px 0}
+    .flow{display:flex;align-items:stretch;justify-content:center;gap:10px;min-width:760px}
+    .flow.vertical{min-width:0;flex-direction:column;align-items:center}
+    .node{display:flex;flex-direction:column;justify-content:center;text-align:center;min-width:132px;min-height:70px;padding:12px 14px;background:#fff;border:1.5px solid #b9c7d8;border-radius:13px;font-weight:750;line-height:1.45;box-shadow:0 5px 13px rgba(15,23,42,.05)}
+    .node span{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:4px}
+    .node.blue{border-color:#93b4fa;background:var(--blue-soft);color:#1d4ed8}.node.green{border-color:#86d5ba;background:var(--green-soft);color:#047857}
+    .node.amber{border-color:#f3c26a;background:var(--amber-soft);color:#b45309}.node.red{border-color:#f4aaaa;background:var(--red-soft);color:#b91c1c}
+    .node.violet{border-color:#c4b5fd;background:var(--violet-soft);color:#6d28d9}.node.cyan{border-color:#8ed7e4;background:var(--cyan-soft);color:#0e7490}
+    .arrow{display:flex;align-items:center;justify-content:center;color:#8ca0b8;font-size:22px;font-weight:900;min-width:20px}.arrow.down{transform:rotate(90deg);height:22px}
+    .group{border:1px dashed #aabbd0;border-radius:14px;padding:12px;background:rgba(255,255,255,.6);min-width:170px}
+    .group-label{text-align:center;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-size:11px;font-weight:800;margin-bottom:8px}
+    .stack{display:grid;gap:8px}.stack .node{min-height:48px;min-width:145px;padding:9px}
+    .grid2,.grid3,.grid4{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(4,1fr)}
+    .card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}.card strong{display:block;margin-bottom:4px}.card p{margin:0;color:var(--muted);font-size:13px}
+    .formula{margin:18px 0;padding:18px 20px;border-left:4px solid var(--blue);border-radius:0 12px 12px 0;background:var(--blue-soft);font:600 16px/1.7 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;overflow-x:auto}
+    .callout{padding:17px 20px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);margin:18px 0}.callout b{color:var(--blue)}
+    table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line)}th{background:#f8fafc;color:#41516a}tr:last-child td{border-bottom:0}
+    .priority{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}.priority div{padding:13px 8px;text-align:center;border-radius:10px;background:#eef2f7;font-weight:750}.priority div:first-child{background:var(--red-soft);color:var(--red)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.legend span{font-size:12px;border:1px solid var(--line);padding:4px 9px;border-radius:999px;background:#fff}
+    .decision{border-radius:50%;min-width:116px;min-height:116px}
+    .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
+    @media(max-width:980px){.shell{display:block;padding:16px}.shell aside{display:none}.hero{padding:34px 26px}h1{font-size:30px}section{padding:26px 22px}.grid4,.grid3{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.priority{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.grid2,.grid3,.grid4{grid-template-columns:1fr}.hero{padding:28px 21px}h1{font-size:27px}section{padding:24px 18px}.priority{grid-template-columns:1fr}}
+    @media print{body{background:#fff}.shell{display:block;max-width:none;padding:0}.shell aside{display:none}.hero,section{box-shadow:none;break-inside:avoid}.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}.diagram{overflow:visible}.flow{transform:scale(.86);transform-origin:left center;width:116%}.footer{display:none}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand">FISH HABIT MODEL</div>
+    <nav>
+      <a href="#overview">01 系统总体架构</a>
+      <a href="#config">02 鱼种配置生成</a>
+      <a href="#habit">03 习性模式结构</a>
+      <a href="#process">04 单鱼完整计算</a>
+      <a href="#space">05 空间适宜度 P</a>
+      <a href="#feeding">06 摄食激活度 A</a>
+      <a href="#switch">07 模式切换</a>
+      <a href="#state">08 四档状态</a>
+      <a href="#position">09 位置权重</a>
+      <a href="#bite">10 实时中鱼</a>
+      <a href="#summary">11 最终汇总</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">中鱼系统 V2 · 架构速览</div>
+      <h1>固定鱼习性模型<br>系统架构与核心流转图</h1>
+      <p>用统一、可解释的固定计算流程，把鱼种配置、场景环境与玩家钓法连接起来，稳定生成“鱼在哪里、采用什么习性、愿不愿意吃、应该怎样钓”的游戏数据。</p>
+      <div class="thesis">模板定义鱼如何生活；环境决定哪个习性成立；P 决定鱼在哪里；A 决定鱼愿不愿意吃；摄食模板决定玩家应该怎样钓；独立保底系统负责最终游戏节奏。</div>
+    </header>
+
+    <section id="overview">
+      <div class="pill">01 · 总架构</div><h2>系统总体架构图</h2>
+      <p class="lead">场景和环境提供现实条件，鱼种配置提供鱼如何响应，固定计算器负责统一计算，最终生成位置、状态与咬口数据。</p>
+      <div class="diagram"><div class="flow">
+        <div class="group"><div class="group-label">输入数据</div><div class="stack"><div class="node">场景位置数据</div><div class="node">环境与时段数据</div><div class="node">食物与周期事件</div></div></div>
+        <div class="arrow">→</div>
+        <div class="group"><div class="group-label">鱼习性配置</div><div class="stack"><div class="node blue">空间模板库</div><div class="node blue">摄食模板库</div><div class="node blue">条件模板库</div><div class="node violet">鱼种配置</div></div></div>
+        <div class="arrow">→</div><div class="node cyan">固定鱼习性<br>计算器</div><div class="arrow">→</div>
+        <div class="group"><div class="group-label">结果与消费</div><div class="stack"><div class="node amber">习性模式选择</div><div class="node green">状态与位置生成</div><div class="node">中鱼 / APP / 验证</div></div></div>
+      </div></div>
+      <div class="grid3"><div class="card"><strong>现实条件</strong><p>场景、环境、食物与周期事件。</p></div><div class="card"><strong>响应规则</strong><p>鱼种的空间、摄食和条件模板。</p></div><div class="card"><strong>统一结果</strong><p>位置分布、摄食状态、咬口属性。</p></div></div>
+    </section>
+
+    <section id="config">
+      <div class="pill">02 · 配置生产</div><h2>鱼种配置生成图</h2>
+      <p class="lead">采用三级继承降低单鱼配置量，地图投放只处理该场景的数量、可用区域与特殊修正。</p>
+      <div class="diagram"><div class="flow">
+        <div class="group"><div class="group-label">基础模板</div><div class="stack"><div class="node blue">空间模板</div><div class="node blue">摄食模板</div><div class="node blue">条件模板</div></div></div>
+        <div class="arrow">→</div><div class="node">核心原型模板<span>通用行为骨架</span></div><div class="arrow">→</div><div class="node cyan">鱼类家族模板<span>典型环境与组合</span></div><div class="arrow">→</div><div class="node violet">具体鱼种配置<span>覆盖少量差异</span></div><div class="arrow">→</div><div class="node green">地图投放配置<span>数量与区域</span></div>
+      </div></div>
+      <div class="callout"><b>一条鱼最终由：</b>鱼种基础属性 ＋ 一个主习性 ＋ 有限副习性 ＋ 一个避险习性。</div>
+      <table><thead><tr><th>层级</th><th>负责内容</th></tr></thead><tbody><tr><td>核心原型</td><td>定义空间、摄食和状态的通用逻辑</td></tr><tr><td>鱼类家族</td><td>定义典型环境、感知与习性组合</td></tr><tr><td>具体鱼种</td><td>覆盖少量范围、偏好和强度差异</td></tr><tr><td>地图投放</td><td>确定本场景基础数量、可用区域与修正</td></tr></tbody></table>
+    </section>
+
+    <section id="habit">
+      <div class="pill">03 · 习性模式</div><h2>习性模式的内部结构</h2>
+      <p class="lead">每条习性由“空间＋摄食＋条件”组成，并统一产出空间适宜度 P 与摄食激活度 A。</p>
+      <div class="diagram"><div class="flow">
+        <div class="group"><div class="group-label">空间模板 · 在哪里</div><div class="stack"><div class="node blue">区域与水层</div><div class="node blue">结构与流态</div><div class="node blue">站位与移动</div></div></div>
+        <div class="group"><div class="group-label">摄食模板 · 怎么吃</div><div class="stack"><div class="node green">目标食物</div><div class="node green">发现与接近</div><div class="node green">攻击与吞食</div></div></div>
+        <div class="group"><div class="group-label">条件模板 · 何时成立</div><div class="stack"><div class="node amber">基础适宜</div><div class="node amber">积极 / 消极响应</div><div class="node amber">退出条件</div></div></div>
+        <div class="arrow">→</div><div class="group"><div class="group-label">统一输出</div><div class="stack"><div class="node violet">空间适宜度 P</div><div class="node violet">摄食激活度 A</div></div></div>
+      </div></div>
+      <div class="grid4"><div class="card"><strong>空间模板</strong><p>这条鱼在哪里，以及怎样使用空间。</p></div><div class="card"><strong>摄食模板</strong><p>这条鱼怎样发现、接近与获取食物。</p></div><div class="card"><strong>条件模板</strong><p>习性在什么环境下成立、增强或退出。</p></div><div class="card"><strong>状态响应</strong><p>习性成立后，以什么强度表现。</p></div></div>
+    </section>
+
+    <section id="process">
+      <div class="pill">04 · 核心流程</div><h2>单条鱼的完整计算流转</h2>
+      <p class="lead">对“鱼种 × 时间片 × Target”执行同一套固定阶段，不允许策划自由改变执行顺序。</p>
+      <div class="diagram"><div class="flow vertical">
+        <div class="node blue">读取鱼种、Target 与时间片</div><div class="arrow down">→</div>
+        <div class="node">检查生存与空间硬门槛</div><div class="arrow down">→</div>
+        <div class="node amber decision">存在严重<br>生存压力？</div>
+        <div class="grid2" style="width:min(620px,100%)"><div class="card"><strong style="color:var(--red)">是 → 避险习性</strong><p>高温、低氧、强流、结构失效、空间不可达。</p></div><div class="card"><strong style="color:var(--green)">否 → 计算全部候选模式</strong><p>分别计算每个模式的 P、A 与触发适配度。</p></div></div>
+        <div class="arrow down">→</div><div class="node violet">模式选择<span>生命周期 ＞ 副习性 ＞ 主习性</span></div><div class="arrow down">→</div>
+        <div class="node green">A 映射四档摄食状态</div><div class="arrow down">→</div><div class="node cyan">生成 Target 原始位置权重</div><div class="arrow down">→</div><div class="node blue">场景内重新分配鱼量</div><div class="arrow down">→</div><div class="node green">输出鱼情烘焙结果</div>
+      </div></div>
+      <div class="priority"><div>① 避险</div><div>② 强制生命周期</div><div>③ 条件性副习性</div><div>④ 主习性</div></div>
+    </section>
+
+    <section id="space">
+      <div class="pill">05 · 空间计算</div><h2>空间适宜度 P</h2>
+      <p class="lead">P 回答：在不考虑鱼当前是否想吃的情况下，这条鱼在当前习性下是否会使用这个位置？</p>
+      <div class="diagram"><div class="flow">
+        <div class="node blue">当前 Target</div><div class="arrow">→</div><div class="node amber">生存与可达<br>硬门槛</div><div class="arrow">→</div><div class="node decision">Gate<br>通过？</div><div class="arrow">→</div>
+        <div class="group"><div class="group-label">软匹配项</div><div class="stack"><div class="node">结构</div><div class="node">水层 / 水深</div><div class="node">流态 / 底质</div><div class="node">遮蔽 / 站位</div></div></div>
+        <div class="arrow">→</div><div class="node violet">加权合成<br>空间适宜度 P</div>
+      </div></div>
+      <div class="formula">Pₘ = Gateₘ × Σ(wᵢ × Sᵢ) ÷ Σwᵢ</div>
+      <div class="grid3"><div class="card"><strong>Gate</strong><p>生存与空间可达门槛，仅取 0 或 1。</p></div><div class="card"><strong>Sᵢ</strong><p>单项空间匹配值，范围 0～1。</p></div><div class="card"><strong>wᵢ</strong><p>该习性对该空间因素的重视程度。</p></div></div>
+      <p class="small">原则：“无法生存或无法到达”进入硬门槛；“不太喜欢”进入软适宜度。</p>
+    </section>
+
+    <section id="feeding">
+      <div class="pill">06 · 摄食计算</div><h2>摄食激活度 A</h2>
+      <p class="lead">A 回答：鱼到了这个位置以后，现在有多愿意、也有多大能力获取食物？</p>
+      <div class="diagram"><div class="flow">
+        <div class="node blue">基础活跃度</div><div class="arrow">＋</div>
+        <div class="group"><div class="group-label">正负响应</div><div class="stack"><div class="node green">温度 / 光照</div><div class="node green">食物 / 时段</div><div class="node amber">风险 / 能耗</div><div class="node amber">缺氧 / 强流</div></div></div>
+        <div class="arrow">→</div><div class="node violet">合成并限制<br>0～1</div><div class="arrow">→</div><div class="node green">摄食激活度 A</div>
+      </div></div>
+      <div class="formula">Aₘ = Clamp(A_base + Σ(wⱼ × Rⱼ), 0, 1)</div>
+      <table><thead><tr><th>A 范围示例</th><th>摄食状态</th><th>统一含义</th></tr></thead><tbody><tr><td>0～0.25</td><td>抑制</td><td>基本停止主动摄食</td></tr><tr><td>0.25～0.45</td><td>机会摄食</td><td>只响应低成本、高匹配目标</td></tr><tr><td>0.45～0.75</td><td>正常摄食</td><td>按摄食原型正常搜索与攻击</td></tr><tr><td>0.75～1.00</td><td>积极摄食</td><td>扩大活动、追击与复攻投入</td></tr></tbody></table>
+      <p class="small">阈值是初始结构，需要通过模拟数据与目标体验校准。</p>
+    </section>
+
+    <section id="switch">
+      <div class="pill">07 · 模式决策</div><h2>主、副、避险习性切换</h2>
+      <p class="lead">条件既用于判断某条习性在当前环境下是否成立，也用于决定是否切换到另一种习性模式。</p>
+      <div class="diagram"><div class="grid3">
+        <div class="node blue">主习性<span>正常生活与摄食方式</span></div><div class="node green">副习性<span>特殊机会触发的方式</span></div><div class="node red">避险习性<span>环境失效后的生存方式</span></div>
+        <div class="card"><strong>主 → 副</strong><p>特殊机会达到阈值，且超过主习性惯性。</p></div><div class="card"><strong>副 → 主</strong><p>机会消失、收益下降或退出条件成立。</p></div><div class="card"><strong>任意 → 避险</strong><p>生存压力超过阈值；解除后再重新判断。</p></div>
+      </div></div>
+      <div class="formula">SwitchScoreₘ = Pₘ × TriggerFitₘ × Priorityₘ</div>
+      <div class="callout"><b>切换条件：</b>副习性切换分 ＞ 进入阈值 ＋ 主习性惯性。主习性惯性用于避免环境轻微波动导致模式频繁跳变。</div>
+    </section>
+
+    <section id="state">
+      <div class="pill">08 · 状态表现</div><h2>四档状态如何作用于摄食模板</h2>
+      <p class="lead">状态是全鱼种统一语言，但经由不同摄食模板解释后，会产生不同的实际行为与咬口表现。</p>
+      <div class="diagram"><div class="flow">
+        <div class="node violet">摄食激活度 A</div><div class="arrow">→</div>
+        <div class="group"><div class="group-label">四档状态</div><div class="stack"><div class="node red">抑制</div><div class="node amber">机会摄食</div><div class="node blue">正常摄食</div><div class="node green">积极摄食</div></div></div>
+        <div class="arrow">→</div><div class="node cyan">摄食模板解释</div><div class="arrow">→</div>
+        <div class="group"><div class="group-label">行为输出</div><div class="stack"><div class="node">攻击距离</div><div class="node">追击距离</div><div class="node">离开结构距离</div><div class="node">复攻与吞食倾向</div></div></div>
+      </div></div>
+      <div class="grid2"><div class="card"><strong>伏击 ＋ 积极</strong><p>扩大伏击半径和离开结构距离，提高复攻。</p></div><div class="card"><strong>追逐 ＋ 积极</strong><p>扩大巡游范围、追击距离与攻击频率。</p></div><div class="card"><strong>截食 ＋ 积极</strong><p>更靠近食物输送带，提高截取投入。</p></div><div class="card"><strong>翻找 ＋ 积极</strong><p>扩大底部搜索范围与移动频率。</p></div></div>
+    </section>
+
+    <section id="position">
+      <div class="pill">09 · 空间分布</div><h2>位置权重生成</h2>
+      <p class="lead">环境变化首先体现为鱼在场景内重新分布，而不是让所有点位的鱼同时增加。</p>
+      <div class="diagram"><div class="flow"><div class="node blue">当前习性模式</div><div class="arrow">→</div><div class="node">各 Target 的 P</div><div class="arrow">×</div><div class="node">基础投放权重</div><div class="arrow">×</div><div class="node">状态位置修正</div><div class="arrow">→</div><div class="node violet">原始位置权重</div><div class="arrow">→</div><div class="node green">场景内归一化</div></div></div>
+      <div class="formula">RawWeightₓ = BaseWeightₓ × Pₓ × StatePositionModifier</div>
+      <div class="formula">PositionWeightₓ = TotalPopulation × RawWeightₓ ÷ ΣRawWeight</div>
+      <div class="split"><div class="callout"><b>正确结果：</b>环境改变 → A 点减少、B 点集中 → 场景内鱼量重新分配。</div><div class="callout"><b>异常兜底：</b>全部常规位置失效 → 进入避险位置池，而不是留在无效点位。</div></div>
+    </section>
+
+    <section id="bite">
+      <div class="pill">10 · 实时阶段</div><h2>烘焙结果到实时中鱼</h2>
+      <p class="lead">烘焙负责“鱼情事实”，实时阶段再将这些事实与玩家的饵、路线、速度、动作和距离进行匹配。</p>
+      <div class="diagram"><div class="flow">
+        <div class="group"><div class="group-label">烘焙结果</div><div class="stack"><div class="node blue">位置权重</div><div class="node blue">摄食状态</div><div class="node blue">摄食模板</div></div></div>
+        <div class="group"><div class="group-label">玩家输入</div><div class="stack"><div class="node green">饵型匹配</div><div class="node green">水层与路线</div><div class="node green">速度与动作</div><div class="node green">感知与距离</div></div></div>
+        <div class="arrow">→</div><div class="node violet">实时咬口计算</div><div class="arrow">→</div><div class="node cyan">真实中鱼结果</div><div class="arrow">＋</div><div class="node amber">独立保底与<br>节奏补偿</div><div class="arrow">→</div><div class="node green">最终中鱼结果</div>
+      </div></div>
+      <div class="formula">BiteScore = PositionWeight × ActivityModifier × BaitMatch × PresentationMatch × DistanceMatch</div>
+      <div class="grid3"><div class="card"><strong>位置权重</strong><p>这里有没有这条鱼。</p></div><div class="card"><strong>摄食状态</strong><p>这条鱼现在愿不愿意吃。</p></div><div class="card"><strong>钓法匹配</strong><p>玩家的方法能不能激活它。</p></div></div>
+      <div class="callout"><b>影响关系：</b>除位置完全失效外，摄食状态与钓法匹配对最终中鱼的影响，应高于普通位置权重的小幅变化。真实习性模型与游戏节奏保底必须保持独立。</div>
+    </section>
+
+    <section id="summary">
+      <div class="pill">11 · 一图汇总</div><h2>最终系统骨架</h2>
+      <div class="diagram"><div class="flow vertical">
+        <div class="node blue">有限模板库</div><div class="arrow down">→</div><div class="node violet">配置主 / 副 / 避险习性</div><div class="arrow down">→</div><div class="node">匹配场景、环境与食物</div>
+        <div class="arrow down">→</div><div class="grid2" style="width:min(620px,100%)"><div class="node cyan">空间适宜度 P<span>鱼在哪里</span></div><div class="node green">摄食激活度 A<span>鱼愿不愿意吃</span></div></div>
+        <div class="arrow down">→</div><div class="node amber">选择当前习性模式</div><div class="arrow down">→</div><div class="node green">确定四档摄食状态</div>
+        <div class="arrow down">→</div><div class="grid2" style="width:min(620px,100%)"><div class="node blue">生成位置分布</div><div class="node blue">生成咬口属性</div></div>
+        <div class="arrow down">→</div><div class="node violet">鱼情烘焙数据</div><div class="arrow down">→</div><div class="node cyan">实时匹配玩家钓法</div><div class="arrow down">→</div><div class="node green">真实中鱼结果</div><div class="arrow down">→</div><div class="node amber">独立保底与节奏控制</div>
+      </div></div>
+      <div class="callout"><b>最终原则：</b>固定模型负责运算，模板负责复用，参数负责差异，有限规则负责例外。模型优先，模板驱动，规则补充，DSL 只作为未来极少数特殊案例的受限兜底。</div>
+      <div class="legend"><span>输入层</span><span>配置层</span><span>固定计算层</span><span>烘焙结果层</span><span>实时中鱼层</span><span>独立节奏层</span></div>
+    </section>
+
+    <div class="footer">固定鱼习性模型 · 系统架构与核心流转图</div>
+  </main>
+</div>
+</body>
+</html>

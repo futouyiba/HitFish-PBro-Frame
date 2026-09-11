@@ -157,7 +157,7 @@ SelectionWeight_{s,q,t} = EnvWeight_{s,q,t}          ← 烘焙：分布+总量
 
 ## 四、最终计算公式（生产形态汇总）
 
-### Reviewer R1 阻断项（待关闭）
+### Reviewer R1 阻断项（已落地，待最终复核）
 
 - Scope 全零必须使用显式兜底模式；每个鱼种编译期强制声明且仅声明一个 fallback。
 - PositionRaw 全零与数据缺失 fallback 分离；真实无适宜位置不得伪造分布。

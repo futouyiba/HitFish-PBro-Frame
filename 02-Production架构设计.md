@@ -157,6 +157,15 @@ SelectionWeight_{s,q,t} = EnvWeight_{s,q,t}          ← 烘焙：分布+总量
 
 ## 四、最终计算公式（生产形态汇总）
 
+### Reviewer R1 阻断项（待关闭）
+
+- Scope 全零必须使用显式兜底模式；每个鱼种编译期强制声明且仅声明一个 fallback。
+- PositionRaw 全零与数据缺失 fallback 分离；真实无适宜位置不得伪造分布。
+- priority、mixability、τ 和 QualityShare 的非负、范围及归一性列为编译期不变量。
+- 区分 `A_selection`（存在度加权）与 `A_dominant`（主导模式展示/攻击属性）。
+- EMA 初始状态写入 EnvironmentRevision；环境事实图编译期拓扑排序，禁止循环。
+- 回退开关、触发阈值、冷却和 BakeRevision 关系必须显式化。
+
 ```text
 【烘焙 · 每场景×每周×35切片，按时间顺序】
 

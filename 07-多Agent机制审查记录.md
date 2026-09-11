@@ -65,3 +65,7 @@
 ## 已采取的候选修正
 
 计算内核的 A 汇总已改为按 `Share × P` 归一的存在度加权；P 为零时 A 明确为零。该修正仍处于候选状态，需经场景推演和反例验证后再冻结。
+
+## 顶层 Reviewer R1（持续上下文）
+
+Reviewer 指出 8 项阻断：显式 fallback 模式、PositionRaw 全零策略、份额参数边界、A_selection/A_dominant 分叉、QualityShare 归一性、EMA 初始状态回放、事实图 DAG、旧内核回退控制。已把这些问题加入 02 顶层架构文档的待关闭清单；在全部通过前不标记顶层冻结。

@@ -73,7 +73,7 @@ PositionRaw_t = Capacity_t × Σ_m Share_m × P_m,t        （逐位置，多模
 ```
 - 避险模式：Scope = 生存压力 × 避难可得性，压力趋近 1 时份额自然趋近 1（配合生存 Gate 硬清零，实现"近硬"行为）；无压力时 Scope=0 → 份额恰为 0（幂归一保证，softmax 做不到这一点）；
 - 生命周期模式：允许 `FORCE_SHARE` 行直接钉份额下限（产卵季 25%）；
-- SCOPE 全零兜底：排除零权重模式后归一；仍全零 → MAIN=1 并打 `fallback=SCOPE_ALL_ZERO`；
+- SCOPE 全零兜底：排除零权重模式后归一；仍全零 → FALLBACK=1 并打 `fallback=SCOPE_ALL_ZERO`；
 - 幂归一对 weight 量纲敏感：priority 建议域 **0.5–2.0**，进编译期校验（F1 配套）；
 - **原 P2 的 FishGroup 轴被份额机制吸收**：行为学并存群体 = 带基线份额的副模式/生命周期模式。FishGroup 作为独立配置轴取消（需与策划确认，见 05 待确认清单）。
 
@@ -173,7 +173,7 @@ facts        = EnvPipeline(slice)                     # 含派生与平滑（F4�
 Supply_s     = clamp( BasePop_s × Π SUPPLY行 , Min, Max )
 Weight_m     = Priority_m × Scope_m × Mixability_m    # Scope_m = Π SCOPE行
 Share_m      = Weight_m^τ / Σ_m Weight_m^τ            # F1 幂归一；FORCE_SHARE/GATE 钉扎后重归一；
-                                                       # SCOPE 全零 → MAIN=1 兜底+fallback 标记
+                                                       # SCOPE 全零 → FALLBACK=1 兜底+fallback 标记
 P_m,t        = Gate_m,t × GeoMean_w(core_s) × clamp(1+Σcomfort_c, 0.7, 1.3)
 A_m,t        = min( clamp01(A_base_m + Σ AFIT_delta), Π AFIT_cap )   # F2 veto 包络
 PositionRaw_t= Capacity_t × Σ_m Share_m × P_m,t

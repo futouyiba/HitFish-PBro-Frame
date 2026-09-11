@@ -260,3 +260,10 @@ EvaluateCast(session, sceneId, slice, baitPosM, layerGuessM, baitDesc, presentat
 - `qualities[].share >= 0` 且总和为 1；`mixability >= 0`；`tau > 0`。
 - Bake 产物同时保存 `a_selection`、`a_dominant` 和 `dominantModeId`。
 - `EnvironmentRevision` 必须包含事实 DAG 版本和 EMA 初始状态哈希。
+
+### R1 数值与版本硬校验
+
+- `mixability >= 0`；`tau > 0`（建议 `0.5 <= tau <= 3`，超出需显式豁免）。
+- `qualities[].share >= 0` 且总和为 1（允许误差 1e-6）。
+- `modes` 恰好一个 `id=FALLBACK`。
+- `EnvironmentRevision` 含事实 DAG/hash 与 EMA 初始状态 hash。

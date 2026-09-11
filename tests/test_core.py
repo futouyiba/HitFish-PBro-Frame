@@ -23,3 +23,15 @@ def test_revision_independent_of_mapping_insertion_order():
 @pytest.mark.parametrize('bad',[-1,float('nan'),float('inf'),True])
 def test_position_weights_reject_invalid_inputs(bad):
  with pytest.raises(ValueError,match='INVALID_POSITION_WEIGHT'): normalize_capacity({'a':bad,'b':2})
+
+def test_mode_response_preserves_joint_a_match():
+ s={'m1':.5,'m2':.5}; response,c=evaluate_mode_response(s,{'m1':1,'m2':1},{'m1':1,'m2':0},{'m1':0,'m2':1})
+ assert response==0 and c['m1']==0 and c['m2']==0
+
+def test_mode_response_uses_per_mode_nonlinearity():
+ s={'m1':.5,'m2':.5}; response,_=evaluate_mode_response(s,{'m1':1,'m2':1},{'m1':1,'m2':.25},{'m1':1,'m2':1},gamma=2)
+ assert response==pytest.approx(.53125)
+
+def test_p_a_signal_domain():
+ with pytest.raises(ValueError,match='INVALID_P'): validate_signal_map({'m':{'t':True}},'p')
+ with pytest.raises(ValueError,match='INVALID_A'): validate_signal_map({'m':{'t':-0.2}},'a')

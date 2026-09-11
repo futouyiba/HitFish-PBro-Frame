@@ -49,6 +49,22 @@ def evaluate_a_channels(shares,p,a):
     dominant=max(present,key=present.get) if present and max(present.values())>0 else None
     return selection, (a.get(dominant,0.0) if dominant else 0.0), dominant
 
+def evaluate_mode_response(shares, p, a, matches, gamma=1.0):
+    """Mode-preserving response: sum(pi_m,t * A_m,t^gamma * Match_m,t)."""
+    presence={k:max(0.0,shares.get(k,0.0)*p.get(k,0.0)) for k in shares}
+    z=sum(presence.values())
+    if z<=0: return 0.0, {}
+    pi={k:v/z for k,v in presence.items()}
+    contributions={k:pi[k]*(max(0.0,min(1.0,a.get(k,0.0)))**gamma)*max(0.0,min(1.0,matches.get(k,0.0))) for k in pi}
+    return sum(contributions.values()), contributions
+
+def validate_signal_map(signal_map, name):
+    for mode, values in signal_map.items():
+        for target, value in values.items():
+            if isinstance(value,bool) or not isinstance(value,(int,float)) or not isfinite(value) or value<0 or value>1:
+                raise ValueError(f'INVALID_{name.upper()}:{mode}:{target}')
+    return True
+
 def normalize_capacity(raw, missing=False):
  if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not isfinite(v) or v<0 for v in raw.values()):
   raise ValueError('INVALID_POSITION_WEIGHT')

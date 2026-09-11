@@ -32,6 +32,10 @@ def test_mode_response_uses_per_mode_nonlinearity():
  s={'m1':.5,'m2':.5}; response,_=evaluate_mode_response(s,{'m1':1,'m2':1},{'m1':1,'m2':.25},{'m1':1,'m2':1},gamma=2)
  assert response==pytest.approx(.53125)
 
+def test_match_requires_complete_valid_modes():
+ with pytest.raises(ValueError,match='INVALID_MATCH'): evaluate_mode_response({'m':1},{'m':1},{'m':1},{'m':True})
+ with pytest.raises(ValueError,match='MISSING_MATCH_MODE'): evaluate_mode_response({'m':1,'n':0},{'m':1,'n':1},{'m':1,'n':1},{'m':1})
+
 def test_p_a_signal_domain():
  with pytest.raises(ValueError,match='INVALID_P'): validate_signal_map({'m':{'t':True}},'p')
  with pytest.raises(ValueError,match='INVALID_A'): validate_signal_map({'m':{'t':-0.2}},'a')

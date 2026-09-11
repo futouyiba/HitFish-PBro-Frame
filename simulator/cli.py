@@ -12,6 +12,7 @@ def main():
  supply=d.get('supply',1.0); quality_share=d.get('qualityShare',1.0)
  env_weight={t:supply*quality_share*dist[t] for t in dist}
  if 'match' not in d: raise ValueError('MISSING_MATCH')
+ if set(d['match']) != set(d['capacity']): raise ValueError('MISSING_MATCH_TARGET')
  response={t:evaluate_mode_response(shares,{m:p.get(m,{}).get(t,0) for m in shares},{m:a.get(m,{}).get(t,0) for m in shares},d['match'].get(t,{})) for t in d['capacity']}
  out={'revisions':{'config':d.get('configRevision','CFG-DEMO'),'rule':d.get('ruleRevision','RULE-DEMO'),'environment':rev,'bake':d.get('bakeRevision','BAKE-DEMO')},'supply':supply,'qualityShare':quality_share,'shares':shares,'fallback':fb,'distribution':dist,'envWeight':env_weight,'conservation':sum(env_weight.values()),'pFallback':pfb,'channels':channels,'modeResponse':{t:v[0] for t,v in response.items()},'modeContributions':{t:v[1] for t,v in response.items()},'trace':{'fallbackReason':pfb or fb,'targetCount':len(dist)}}
  if args.html:

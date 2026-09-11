@@ -51,6 +51,10 @@ def evaluate_a_channels(shares,p,a):
 
 def evaluate_mode_response(shares, p, a, matches, gamma=1.0):
     """Mode-preserving response: sum(pi_m,t * A_m,t^gamma * Match_m,t)."""
+    for mode,value in matches.items():
+        if isinstance(value,bool) or not isinstance(value,(int,float)) or not isfinite(value) or value<0 or value>1:
+            raise ValueError(f'INVALID_MATCH:{mode}')
+    if set(matches) != set(shares): raise ValueError('MISSING_MATCH_MODE')
     presence={k:max(0.0,shares.get(k,0.0)*p.get(k,0.0)) for k in shares}
     z=sum(presence.values())
     if z<=0: return 0.0, {}

@@ -210,7 +210,7 @@ FishProfile(authoring, 带宏标记) → Resolve(展开+溯源) → ResolvedProf
       "slice": "2026W37-D3-T2", "fishId": "largemouth_bass", "q": "MEDIUM",
       "targetId": "L1-GRASS-EAST-03-M",
       "envWeight": 3.42,                  // 圆桌直接消费
-      "a": 0.71, "dominant": "MAIN",
+      "a_selection": 0.71, "a_dominant": 0.68, "dominantModeId": "MAIN",
       "shares": { "MAIN": 0.58, "open_chase": 0.17, "spawn_guard": 0.25, "AVOID": 0.0 },
       "trace": { "topReasons": ["DUSK_WINDOW+0.15","OXYGEN_LOW-0.05"],
                  "supply": 0.9, "fallback": null }
@@ -225,7 +225,7 @@ FishProfile(authoring, 带宏标记) → Resolve(展开+溯源) → ResolvedProf
 
 不变量（进版前强制校验）：
 1. `Σ_target envWeight(fish,q,·,slice) == Supply × QualityShare`（容差 1e-4，守恒）；
-2. `Σ_m shares == 1`；`a ∈ [0,1]`；`envWeight ≥ 0`；
+2. `Σ_m shares == 1`；`a_selection ∈ [0,1]`；`a_dominant ∈ [0,1]`；`dominantModeId` 必须存在；`envWeight ≥ 0`；
 3. 无 NaN/Inf；无 `fallback != null` 超过阈值（默认 0.5% 记录）的批次否则 Bake 失败；
 4. `records` 的 revision 四元组一致。
 

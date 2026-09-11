@@ -2,3 +2,4 @@
 <h2>Reviewer R1 阻断项</h2><ul><li>显式 fallback 模式与编译约束</li><li>全零分布与数据缺失分离</li><li>份额参数、τ、QualityShare 边界</li><li>A_selection 与 A_dominant 分叉</li><li>EMA 回放初始状态</li><li>环境事实 DAG 校验</li><li>旧内核回退控制</li></ul>
 <h2>R1 已落地修正</h2><ul><li>模拟器输出 A_selection/A_dominant 语义通道。</li><li>FALLBACK 必须显式且唯一。</li><li>全零分布区分真实无适宜位置与事实缺失。</li><li>回退规约已写入验证路线。</li></ul>
 <h2>R1 文档闭环</h2><p>已统一 FALLBACK 口径；Bake 产物明确 a_selection、a_dominant、dominantModeId；τ、mixability、QualityShare 和 EnvironmentRevision 进入硬校验。</p>
+<h2>R1 最终口径修复</h2><p>已移除计算伪代码中的 MAIN 兜底，运行时统一读取 a_selection，并使用 dominantModeId 定位模板；a_dominant 在 dominant 确定后计算。</p>

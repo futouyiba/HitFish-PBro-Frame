@@ -4,10 +4,12 @@ from math import exp, log
 class Mode: id:str; priority:float; scope:float; mixability:float; abase:float
 
 def power_normalize(modes,tau=2.0):
+ if tau<=0: raise ValueError('TAU_INVALID')
+ fallbacks=[m for m in modes if m.id=='FALLBACK']
+ if len(fallbacks)!=1: raise ValueError('FALLBACK_MODE_REQUIRED')
  w={m.id:(max(0,m.priority*m.scope*m.mixability))**tau for m in modes}; z=sum(w.values())
  if z==0:
-  main=next((m.id for m in modes if m.id=='MAIN'),modes[0].id if modes else None)
-  return {m.id:float(m.id==main) for m in modes},'SCOPE_ALL_ZERO'
+  return {m.id:float(m.id=='FALLBACK') for m in modes},'SCOPE_ALL_ZERO'
  return {k:v/z for k,v in w.items()},None
 
 def geometric(values,weights=None):
@@ -20,6 +22,7 @@ def evaluate_a(shares,p,a):
  den=sum(shares.get(k,0)*p.get(k,0) for k in shares)
  return sum(shares.get(k,0)*p.get(k,0)*a.get(k,0) for k in shares)/den if den else 0.0
 
-def normalize_capacity(raw):
+def normalize_capacity(raw, missing=False):
  z=sum(max(0,v) for v in raw.values())
- return ({k:v/z for k,v in raw.items()},'P_ALL_ZERO') if z else ({k:0.0 for k in raw},'P_ALL_ZERO')
+ if z: return {k:v/z for k,v in raw.items()},None
+ return ({k:0.0 for k in raw},'MISSING_FACT' if missing else 'POSITION_ALL_ZERO')

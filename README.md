@@ -45,3 +45,5 @@
 - **F4（已决策）**：平滑移至**环境事实侧，内核无状态**（可并行/局部重烘/单切片回放；份额侧 EMA 存档否决）
 6. **删除 StatePositionModifier**（避免 A 双重生效）
 7. **恢复 QualityShare（体型轴）与 Supply（总量）通道**（补回压缩时丢失的两个必要轴）
+
+- [assets/editor-prototype.html](assets/editor-prototype.html) —— 可独立打开的策划编辑器交互原型，展示模式树、参数、P/A、Target 与 Trace。

@@ -22,6 +22,12 @@ def evaluate_a(shares,p,a):
  den=sum(shares.get(k,0)*p.get(k,0) for k in shares)
  return sum(shares.get(k,0)*p.get(k,0)*a.get(k,0) for k in shares)/den if den else 0.0
 
+def evaluate_a_channels(shares,p,a):
+    selection=evaluate_a(shares,p,a)
+    present={k:shares.get(k,0)*p.get(k,0) for k in shares}
+    dominant=max(present,key=present.get) if present and max(present.values())>0 else None
+    return selection, (a.get(dominant,0.0) if dominant else 0.0), dominant
+
 def normalize_capacity(raw, missing=False):
  z=sum(max(0,v) for v in raw.values())
  if z: return {k:v/z for k,v in raw.items()},None

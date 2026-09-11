@@ -254,3 +254,9 @@ EvaluateCast(session, sceneId, slice, baitPosM, layerGuessM, baitDesc, presentat
 | 投影 | stateThresholds 单调递增 |
 | MissingDataPolicy | 每行显式；涉及 Gate 的事实只允许 ERROR |
 | Veto（F2） | 凡生存 Gate 含溶氧/温度/流速的鱼种，AFIT 必须存在对应 `AFIT_CAP` 行；标准 veto 包随宏复制默认带入 |
+## Reviewer R1 强制契约补充
+
+- `modes` 必须恰好包含一个 `id=FALLBACK`；Scope 全零只指向该模式。
+- `qualities[].share >= 0` 且总和为 1；`mixability >= 0`；`tau > 0`。
+- Bake 产物同时保存 `a_selection`、`a_dominant` 和 `dominantModeId`。
+- `EnvironmentRevision` 必须包含事实 DAG 版本和 EMA 初始状态哈希。

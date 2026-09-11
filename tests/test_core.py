@@ -19,6 +19,8 @@ def test_revision_independent_of_mapping_insertion_order():
  assert environment_revision({'a':1,'b':2},{'x':0})==environment_revision({'b':2,'a':1},{'x':0})
  assert environment_revision({'a':1},{'x':0})!=environment_revision({'a':2},{'x':0})
  assert environment_revision({'a':1},{'x':0})!=environment_revision({'a':1},{'x':1})
+ assert replay_hash({'seed':7},{'weight':1})==replay_hash({'seed':7},{'weight':1})
+ assert replay_hash({'seed':7},{'weight':1})!=replay_hash({'seed':8},{'weight':1})
 
 @pytest.mark.parametrize('bad',[-1,float('nan'),float('inf'),True])
 def test_position_weights_reject_invalid_inputs(bad):

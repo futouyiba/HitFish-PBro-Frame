@@ -24,6 +24,10 @@ def environment_revision(facts, ema_initial):
                     separators=(',', ':'),ensure_ascii=False,allow_nan=False).encode('utf-8')
  return hashlib.sha256(payload).hexdigest()
 
+def replay_hash(request, result):
+    payload=json.dumps({'request':request,'result':result},sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()
+    return hashlib.sha256(payload).hexdigest()
+
 def power_normalize(modes,tau=2.0):
  if tau<=0: raise ValueError('TAU_INVALID')
  fallbacks=[m for m in modes if m.id=='FALLBACK']

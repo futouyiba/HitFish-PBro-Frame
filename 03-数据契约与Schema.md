@@ -250,7 +250,7 @@ EvaluateCast(session, sceneId, slice, baitPosM, layerGuessM, baitDesc, presentat
 | 通道纪律 | 同 (fish, 事实, 通道, 目标字段) 只有一行生效（conflictWith 覆盖或 priority 唯一）；天气事实直接引用→拒绝 |
 | Gate | 生存 Gate 与空间 Gate 不重复登记同一事实；Gate 不进 comfort 层 |
 | 守恒 | qualities.share 总和=1；每 Target capacity>0 |
-| 模式 | 恰好 1 MAIN + 1 AVOID；LIFECYCLE 的 FORCE_SHARE 总和 ≤ 0.6（避免钉扎互相挤压失义） |
+| 模式 | 必须且仅有一个 `FALLBACK`；其余行为模式（含 MAIN/AVOID/LIFECYCLE）可选；LIFECYCLE 的 FORCE_SHARE 总和 ≤ 0.6 |
 | 投影 | stateThresholds 单调递增 |
 | MissingDataPolicy | 每行显式；涉及 Gate 的事实只允许 ERROR |
 | Veto（F2） | 凡生存 Gate 含溶氧/温度/流速的鱼种，AFIT 必须存在对应 `AFIT_CAP` 行；标准 veto 包随宏复制默认带入 |

@@ -9,12 +9,13 @@ def main():
  for t in d['capacity']:
   ps={m:p.get(m,{}).get(t,0) for m in shares}; aa={m:a.get(m,{}).get(t,0) for m in shares}
   sel,dom,mode=evaluate_a_channels(shares,ps,aa); channels[t]={'a_selection':sel,'a_dominant':dom,'dominantModeId':mode}
- supply=d.get('supply',1.0); quality_share=d.get('qualityShare',1.0)
- env_weight={t:supply*quality_share*dist[t] for t in dist}
+ supply=d.get('supply',1.0); qualities=d.get('qualities',[{'id':'DEFAULT','share':1.0}])
+ if any(q['share']<0 for q in qualities) or abs(sum(q['share'] for q in qualities)-1)>1e-6: raise ValueError('INVALID_QUALITY_SHARE')
+ env_weight={q['id']:{t:supply*q['share']*dist[t] for t in dist} for q in qualities}
  if 'match' not in d: raise ValueError('MISSING_MATCH')
  if set(d['match']) != set(d['capacity']): raise ValueError('MISSING_MATCH_TARGET')
  response={t:evaluate_mode_response(shares,{m:p.get(m,{}).get(t,0) for m in shares},{m:a.get(m,{}).get(t,0) for m in shares},d['match'].get(t,{})) for t in d['capacity']}
- out={'revisions':{'config':d.get('configRevision','CFG-DEMO'),'rule':d.get('ruleRevision','RULE-DEMO'),'environment':rev,'bake':d.get('bakeRevision','BAKE-DEMO')},'supply':supply,'qualityShare':quality_share,'shares':shares,'fallback':fb,'distribution':dist,'envWeight':env_weight,'conservation':sum(env_weight.values()),'pFallback':pfb,'channels':channels,'modeResponse':{t:v[0] for t,v in response.items()},'modeContributions':{t:v[1] for t,v in response.items()},'trace':{'fallbackReason':pfb or fb,'targetCount':len(dist)}}
+ out={'revisions':{'config':d.get('configRevision','CFG-DEMO'),'rule':d.get('ruleRevision','RULE-DEMO'),'environment':rev,'bake':d.get('bakeRevision','BAKE-DEMO')},'qualities':qualities,'supply':supply,'shares':shares,'fallback':fb,'distribution':dist,'envWeight':env_weight,'conservation':sum(sum(v.values()) for v in env_weight.values()),'pFallback':pfb,'channels':channels,'modeResponse':{t:v[0] for t,v in response.items()},'modeContributions':{t:v[1] for t,v in response.items()},'trace':{'fallbackReason':pfb or fb,'targetCount':len(dist),'topReasons':['P_COMPUTED','A_MODE_JOINT']}}
  out['trace']['traceId']=replay_hash(d,out)
  if args.trace_out: json.dump({'request':d,'result':out},open(args.trace_out,'w'),ensure_ascii=False,indent=2)
  if args.verify_trace:
@@ -22,7 +23,7 @@ def main():
   if expected!=actual: raise SystemExit('REPLAY_MISMATCH')
   print('REPLAY_OK '+actual)
  if args.html:
-  rows=''.join(f'<tr><td>{t}</td><td>{dist[t]:.4f}</td><td>{env_weight[t]:.4f}</td><td>{channels[t]["a_selection"]:.4f}</td><td>{channels[t]["a_dominant"]:.4f}</td><td>{channels[t]["dominantModeId"]}</td></tr>' for t in dist)
-  open(args.html,'w').write('<!doctype html><meta charset="utf-8"><title>PBro 模拟报告</title><style>body{font:16px system-ui;max-width:1000px;margin:32px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px}</style><h1>PBro 模拟器报告</h1><p>EnvWeight 守恒：'+str(sum(env_weight.values()))+'；Fallback：'+str(pfb or fb)+'</p><table><tr><th>Target</th><th>分布</th><th>EnvWeight</th><th>A selection</th><th>A dominant</th><th>模式</th></tr>'+rows+'</table>')
+  rows=''.join(f'<tr><td>{t}</td><td>{dist[t]:.4f}</td><td>{sum(q[t] for q in env_weight.values()):.4f}</td><td>{channels[t]["a_selection"]:.4f}</td><td>{channels[t]["a_dominant"]:.4f}</td><td>{channels[t]["dominantModeId"]}</td></tr>' for t in dist)
+  open(args.html,'w').write('<!doctype html><meta charset="utf-8"><title>PBro 模拟报告</title><style>body{font:16px system-ui;max-width:1000px;margin:32px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px}</style><h1>PBro 模拟器报告</h1><p>EnvWeight 守恒：'+str(sum(sum(q.values()) for q in env_weight.values()))+'；Fallback：'+str(pfb or fb)+'</p><table><tr><th>Target</th><th>分布</th><th>EnvWeight</th><th>A selection</th><th>A dominant</th><th>模式</th></tr>'+rows+'</table>')
  print(json.dumps(out,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

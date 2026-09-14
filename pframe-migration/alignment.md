@@ -89,25 +89,31 @@ B. 一个或多个 Surface 的 Program / Program binding 真正变化
 必须保留两个层次，但不要让 P图同时承担两个词：
 
 ```text
-Logic Template / Program Family
-= 一类可复用的程序结构 / 控制流骨架
+LogicTemplate / Program Family
+= 一类可复用的程序结构 / 控制流骨架（结构等价族，Census / Authoring 层）
 
-Surface Program
+Surface Program｜中鱼执行面逻辑程序
 = 某个 Surface 上实际可被 Mode 绑定、版本化、编译和执行的逻辑资产
 ```
 
-最简单的关系：
+关系方向是**从 Program 反推 Template**，不是从 Template 实例化 Program：
 
 ```text
-Response Logic Template R-T2
-        ↓ 可实例化 / 约束
-Bass_Normal_Response_Program
-Pike_Ambush_Response_Program
+Surface Program A ─┐
+Surface Program B ─┼→ 去实例化 / 结构比对（de-instantiation）
+Surface Program C ─┘        ↓
+              LogicTemplate / Program Family
 ```
 
-两个 Program 去掉鱼名、参数值、合法 Fact Binding 后，如果 Operator、Gate / Branch、依赖关系、Aggregate 与 Return topology 相同，就可能属于同一个 Logic Template / Program Family。
+多个 Program 去掉鱼名、参数值、合法 Fact Binding 后，如果 Operator、Gate / Branch、依赖关系、Aggregate 与 Return topology 相同，就归入同一个 LogicTemplate / Program Family。
 
-但还有一个更简单的情况：
+也就是说：
+
+- **LogicTemplate / Program Family 是 Census / Authoring 层的结构等价族**，不是 Runtime 对象；
+- **Runtime（Engagement Mode）绑定的是 `ProgramRef`**；
+- **Template 不是 Runtime Binding Identity**。
+
+另有一种更简单的情况——多个 Mode 直接共享同一份通用 Program：
 
 ```text
 Engagement Mode A ─┐
@@ -119,9 +125,9 @@ Engagement Mode C ─┘
 
 因此：
 
-- **P哥图上的“习性响应判断机制” → `Response Program` 更准确；**
-- `Logic Template` 留在 Authoring / Census / Reuse 层，回答“不同 Program 是否其实属于同一种程序结构”；
-- Engagement Mode **绑定 Program**，不要求 Runtime 去绑定一个抽象 Template；
+- **P哥图上的“习性响应判断机制” → `Response Program`｜响应逻辑程序；**
+- `LogicTemplate / Program Family` 留在 Census / Authoring 层，由 Program 反推，而不是正向下发；
+- Engagement Mode **绑定 `ProgramRef`**，不要求 Runtime 去绑定一个抽象 Template；
 - Program 的实现方式保持中立：工程手写、DSL 编译、Hybrid 都可以。
 
 ---
@@ -196,18 +202,34 @@ EngagementMode[]
 - **Status：**专项处理中。
 - **本轮规则：**不自行闭合，不用术语桥把它伪装成 A/B；等待 Base Opportunity × Total Supply 专项结果回流。
 
+**D01 不简化成只属于 `P_BASE_051`。** 三个引用面必须分开写：
+
+| 面 | 指向 | 说明 |
+| --- | --- | --- |
+| **Semantic Evidence** | `P_BASE_009` | D01 的语义证据来自左上长文本（场景归一 / 总量再分配 vs Base Opportunity / Total Supply）。 |
+| **Visual Scope** | `P_BASE_051` → `P_BASE_034` / `P_BASE_030` → `P_BASE_021` | Delta 在图上覆盖的整条底部权重链：投鱼初始权重 × 鱼位置权重 × 鱼诱鱼响应权重 → 中鱼总权重。（此处按 P-tag 语义身份书写；注意链上「鱼位置权重」节点的 stableId 实为 `P_BASE_010`，而 `P_BASE_034` 是 P06 所锚的同名重复对象、位于上方分组内、不在链上。） |
+| **Overlay implementation anchor** | `P_BASE_051` | 仅作为 bracket 的坐标起点；**不代表 semantic ownership 属于「投鱼初始权重」**。 |
+
+即：图上 anchor 落在链首只是实现便利；D01 的语义归属是**整条链之上的 Contract 差异**，不是某一个节点。
+
 其它 C01 / C02 / C03 已在本轮收敛为 Terminology / Production-layer mapping，不再需要正式 Delta Card。
 
 ---
 
-## 4. Overlay R0
+## 4. Overlay R1（当前）
 
-第一版 Overlay **只放 P01–P08 numberTag**：
+当前 Overlay 与 `overlay-spec.json` v4 一致：
 
-- 不放 A/B 一致性徽标；
-- 不放 C/D 长气泡；
-- 不修改 Base 文本；
-- 图上只保存“编号 → stableId → semanticRef”；
-- 详细定义只保存在本页。
+| 标记 | 类型 | 说明 |
+| --- | --- | --- |
+| P01–P08 | `semanticTag` | 小型蓝色编号标签 + 紧邻轻量语义卡片（EN Contract 名 + 中文一行）。其中 P01/P02 的卡片移到大虚线框 `o1:41` **外侧**，各带一条蓝色短 leader 指回原节点。 |
+| D01 | `deltaSpan` | amber 下沿 bracket **横跨整条底部权重链**，不是单节点备注。 |
 
-视觉目标：熟悉 P哥原图的人仍按原阅读路径看图，只在关键对象旁看到少量蓝色 Pxx；需要时再回到本表查共同语言。
+- **Base 不改**：`pframe-base.excalidraw` 的 239 个元素保持锁定；Overlay 只在其上叠加 `OVR_*`。
+- 不放 A/B 一致性徽标，不放 C/D 长气泡，不修改 Base 文本。
+- 图上只保存“编号 → stableId → semanticRef”；详细定义只保存在本页。
+- **第一张图不承担第二套架构**：它只做 Terminology / Delta 的桥接标注，不是新的机制图。
+
+视觉目标：熟悉 P哥原图的人仍按原阅读路径看图，只在关键对象旁看到少量蓝色 Pxx 与一张 amber D01 卡片；需要时再回到本表查共同语言。
+
+（历史：R0 只放 P01–P08 `numberTag`、无卡片，已被 R1 取代。）

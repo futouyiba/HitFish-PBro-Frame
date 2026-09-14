@@ -16,7 +16,7 @@
 6. PBro Frame 当前 Data Contract / Bake Pipeline，仅作 **Reference / Comparison**，不取得 Simplified V0 Authority；
 7. 《Base Opportunity × Total Supply Closure Plan R0》继续独立处理 D01。
 
-关键状态边界：0.3.4 主文档仍保留 `FishGroup + FishMode` 历史工作表述；本 Alignment 根据本轮进一步语义澄清，先建立一个更低歧义的共同语言候选，不把 Terminology Bridge 自动解释成 Promotion。
+关键状态边界：0.3.4 主文档仍保留旧鱼组 / 旧鱼模式（`FishGroup + FishMode`）历史工作表述；本 Alignment 根据本轮进一步语义澄清，先建立一个更低歧义的共同语言候选，不把 Terminology Bridge 自动解释成 Promotion。
 
 ---
 
@@ -26,18 +26,18 @@
 
 | 编号 | P哥原词 | Stable ID | Candidate 术语 | 中文一句话定义 | 为什么更好 | 与当前 FCF 的关系 |
 | --- | --- | --- | --- | --- | --- | --- |
-| P01 | 基础品质配置 | `P_BASE_039` | **FishQuality 基础定义 / Base Quality Config** | 定义鱼的品质 / 体型桶及其基础生成范围、基础倾向。 | 保留“品质是独立轴”，避免把体型差异混进模式身份。 | **B**：与当前 `FishQuality` 基本一致，但当前另有独立 Quality Selection Surface。 |
-| P02 | 基础环境亲和配置 | `P_BASE_001` | **空间机会画像（Spatial Opportunity Profile）** | 描述某 Species 在不同空间条件下，相对自身基准机会的空间形状 / 系数。 | 把“总体机会基准”和“更喜欢哪里”拆开。 | **B**：对应当前 `SpatialOpportunityProfile`；与 Base / Total Supply 的精确关系仍由 D01 专项闭合。 |
-| P03 | 鱼习性配置 | `P_BASE_087` | **中鱼习性模式（Engagement Mode）** | 同一鱼种在特定条件下可被激活 / 分配份额的一套中鱼逻辑配置身份；可以只改变参数，也可以切换一个或多个 Surface Program。 | `习性` 太宽，`Group` 更像在描述一群鱼本身；`Mode` 更准确表达“可切换的逻辑 / 配置形态”，又通过 `Engagement` 把范围限制在中鱼机制。 | **B**：吸收原 FishGroup 的业务身份与原 FishMode 的有效逻辑绑定职责；以后共同语言不再需要同时保留 `FishGroup + FishMode` 两层。 |
-| P04 | 习性响应判断机制 | `P_BASE_042` | **响应程序（Response Program）** | Response Surface 上实际被 Engagement Mode 绑定、版本化并执行的一份逻辑资产；实现可以是手写程序、DSL 编译结果或 Hybrid。 | P图这里描述的是“实际做判定的机制”，Program 比 Template 更贴近 Runtime / Production 身份，也不预设底层 Representation。 | **B**：多个 Engagement Mode 可以直接共享同一个 Response Program；多个不同 Program 还可以进一步归属于同一个 Logic Template / Program Family。 |
-| P05 | 诱鱼呈现库 | `P_BASE_026` | **诱鱼呈现（Presentation Definition → Presentation Signals）** | Authoring 侧定义饵与操作会形成什么呈现；Runtime 侧解析成鱼侧逻辑可读取的 typed Presentation Signals。 | 避免“库”同时指配置资产和运行时输入。 | **B/C**：高层一致；`Bait / Technique / Player Motion → Canonical Presentation Facts` 的完整上游合同仍是 Open。 |
-| P06 | 鱼位置权重 | `P_BASE_034` | **环境权重（EnvironmentWeight） / 局部机会强度（LocalOpportunityIntensity）** | Bake 在某条件组 / 空间索引下，为某 Species × Engagement Mode 给出的局部环境机会强度。 | 两个词在这里表达同一个量：它是烘焙结果，不是最终中鱼概率。 | **A/B**：本 Alignment 将二者视作同义语义；不再把 Runtime Exposure 接入后的结果另称 EnvironmentWeight。 |
-| P07 | 鱼诱鱼响应权重 | `P_BASE_030` | **响应权重（Response Weight）** | 在当前 Presentation 下，该 Engagement Mode 对本次呈现产生的响应强度 / 适配结果。 | 明确回答“当前呈现对这类鱼有多有效”。 | **B**：与当前 `Response / ResponseWeight` 高层一致。 |
-| P08 | 中鱼总权重 | `P_BASE_021` | **候选选择权重（SelectionWeight）** | 进入 Round Table / Selection Pool 的最终候选权重。 | 直接对应 Runtime Consumer，避免“总权重”与场景总量 / Total Supply 混淆。 | **A**：高层角色与当前 `SelectionWeight` 基本一致；场景归一化 / Total Supply 仍是独立 D01。 |
+| P01 | 基础品质配置 | `P_BASE_039` | **鱼品质基础定义（Fish Quality Base Definition）** | 定义鱼的品质 / 体型桶及其基础生成范围、基础倾向。 | 保留“品质是独立轴”，避免把体型差异混进模式身份。 | **B**：与当前 `FishQuality` 基本一致，但当前另有独立 Quality Selection Surface。 |
+| P02 | 基础环境亲和配置 | `P_BASE_001` | **空间机会分布画像（Spatial Opportunity Profile）** | 描述某 Species 在不同空间条件下，相对自身基准机会的空间形状 / 系数。 | 把“总体机会基准”和“更喜欢哪里”拆开。 | **B**：对应当前 `SpatialOpportunityProfile`；与 Base / Total Supply 的精确关系仍由 D01 专项闭合。 |
+| P03 | 鱼习性配置 | `P_BASE_087` | **中鱼习性模式（Engagement Mode）** | 同一鱼种在特定条件下可被激活 / 分配份额的一套中鱼逻辑配置身份；可以只改变参数，也可以切换一个或多个中鱼执行面逻辑程序（Surface Program）。 | `习性` 太宽，`Group` 更像在描述一群鱼本身；`Mode` 更准确表达“可切换的逻辑 / 配置形态”，又通过 `Engagement` 把范围限制在中鱼机制。 | **B**：吸收原鱼组（FishGroup）的业务身份与原鱼模式（FishMode）的有效逻辑绑定职责；以后共同语言不再需要同时保留旧鱼组与旧鱼模式（`FishGroup + FishMode`）两层。 |
+| P04 | 习性响应判断机制 | `P_BASE_042` | **响应逻辑程序（Response Program）** | 响应面（Response Surface）上实际被中鱼习性模式（Engagement Mode）绑定、版本化并执行的一份逻辑资产；实现可以是手写程序、DSL 编译结果或 Hybrid。 | P图这里描述的是“实际做判定的机制”，Program 比 Template 更贴近 Runtime / Production 身份，也不预设底层 Representation。 | **B**：多个中鱼习性模式（Engagement Mode）可以直接共享同一个响应逻辑程序（Response Program）；多个不同程序（Program）还可以进一步归属于同一个逻辑模板 / 程序族（Logic Template / Program Family）。 |
+| P05 | 诱鱼呈现库 | `P_BASE_026` | **呈现定义 → 呈现信号（Presentation Definition → Presentation Signals）** | 编辑侧（Authoring）定义饵与操作会形成什么呈现；运行时（Runtime）侧解析成鱼侧逻辑可读取的类型化呈现信号（typed Presentation Signals）。 | 避免“库”同时指配置资产和运行时输入。 | **B/C**：高层一致；`Bait / Technique / Player Motion → Canonical Presentation Facts` 的完整上游合同仍是 Open。 |
+| P06 | 鱼位置权重 | `P_BASE_034` | **环境权重（EnvironmentWeight）≡ 局地机会强度（LocalOpportunityIntensity）** | 烘焙（Bake）在某条件组 / 空间索引下，为某鱼种（Species）× 中鱼习性模式（Engagement Mode）给出的局地机会强度（LocalOpportunityIntensity）。 | 两个词在这里表达同一个量：它是烘焙结果，不是最终中鱼概率。 | **A/B**：本 Alignment 将二者视作同义语义；不再把运行时暴露（Runtime Exposure）接入后的结果另称环境权重（EnvironmentWeight）。 |
+| P07 | 鱼诱鱼响应权重 | `P_BASE_030` | **响应权重（ResponseWeight）** | 在当前呈现（Presentation）下，该中鱼习性模式（Engagement Mode）对本次呈现产生的响应强度 / 适配结果。 | 明确回答“当前呈现对这类鱼有多有效”。 | **B**：与当前 `Response / ResponseWeight` 高层一致。 |
+| P08 | 中鱼总权重 | `P_BASE_021` | **选择权重（SelectionWeight）** | 进入圆桌 / 选择池（Round Table / Selection Pool）的最终候选权重。 | 直接对应 Runtime Consumer，避免“总权重”与场景总量 / Total Supply 混淆。 | **A**：高层角色与当前 `SelectionWeight` 基本一致；场景归一化 / 总量供给（Total Supply）仍是独立 D01。 |
 
 ---
 
-## 1.1 P03 术语裁决｜Engagement Mode > Engagement Group
+## 1.1 P03 术语裁决｜中鱼习性模式（Engagement Mode）> 组（Engagement Group）
 
 当前推荐正式共同语言：
 
@@ -69,18 +69,18 @@ Engagement Mode
   └─ 其它该 Mode 真正拥有的薄配置
 ```
 
-创建新的 Engagement Mode 的准入可以有两种：
+创建新的中鱼习性模式（Engagement Mode）的准入可以有两种：
 
 ```text
 A. 逻辑不变，但一组参数形成稳定、可辨识的中鱼形态
 B. 一个或多个 Surface 的 Program / Program binding 真正变化
 ```
 
-因此 **Program 是否变化不是 Mode 的必要条件**；只改参数也可以形成 Mode。反过来，一个天气 / 光照等动态事实如果只连续修改当前 Mode 的参数，而没有形成值得独立命名、分配 share、调试和 Authoring 的离散形态，也不应该自动升成 Mode。
+因此 **是否更换程序（Program）不是中鱼习性模式（Engagement Mode）的必要条件**；只改参数也可以形成中鱼习性模式（Engagement Mode）。反过来，一个天气 / 光照等动态事实如果只连续修改当前 Mode 的参数，而没有形成值得独立命名、分配 share、调试和 Authoring 的离散形态，也不应该自动升成中鱼习性模式（Engagement Mode）。
 
-`ModeShare` 只表示在当前 Condition Group / Scope 下，各 Engagement Mode 的相对份额；有 share 不等于这个对象必须叫 Group。
+`ModeShare` 只表示在当前条件组 / 范围（Condition Group / Scope）下，各中鱼习性模式（Engagement Mode）的相对份额；有份额（share）不等于这个对象必须叫组（Group）。
 
-这也解释为什么 `Mode` 比 `Group` 更稳：Normal Feeding、Guarding、Cold-Slow、Forage-Coupled Feeding 等对象，语义中心都是“中鱼逻辑处于哪种形态”，而不是稳定 population cohort。此前 Bass 研究也反复出现“现实 Story 很多，但只有部分值得升成 Mode”的准入问题。
+这也解释为什么 `Mode` 比 `Group` 更稳：Normal Feeding、Guarding、Cold-Slow、Forage-Coupled Feeding 等对象，语义中心都是“中鱼逻辑处于哪种形态”，而不是稳定 population cohort。此前鲈鱼（Bass）研究也反复出现“现实故事很多，但只有部分值得升成中鱼习性模式（Engagement Mode）”的准入问题。
 
 ---
 
@@ -105,13 +105,13 @@ Surface Program C ─┘        ↓
               LogicTemplate / Program Family
 ```
 
-多个 Program 去掉鱼名、参数值、合法 Fact Binding 后，如果 Operator、Gate / Branch、依赖关系、Aggregate 与 Return topology 相同，就归入同一个 LogicTemplate / Program Family。
+多个 Program 去掉鱼名、参数值、合法 Fact Binding 后，如果 Operator、Gate / Branch、依赖关系、Aggregate 与 Return topology 相同，就归入同一个逻辑模板 / 程序族（LogicTemplate / Program Family）。
 
 也就是说：
 
-- **LogicTemplate / Program Family 是 Census / Authoring 层的结构等价族**，不是 Runtime 对象；
-- **Runtime（Engagement Mode）绑定的是 `ProgramRef`**；
-- **Template 不是 Runtime Binding Identity**。
+- **逻辑模板 / 程序族（LogicTemplate / Program Family）是普查 / 编辑层（Census / Authoring）的结构等价族**，不是运行时（Runtime）对象；
+- **运行时（Runtime）绑定的是程序引用（`ProgramRef`）**，绑定主体是中鱼习性模式（Engagement Mode）；
+- **逻辑模板（LogicTemplate）不是运行时绑定身份（Runtime Binding Identity）**。
 
 另有一种更简单的情况——多个 Mode 直接共享同一份通用 Program：
 
@@ -121,14 +121,14 @@ Engagement Mode B ─┼→ 同一个 ResponseProgramRef
 Engagement Mode C ─┘
 ```
 
-如果所有差异都能通过外部参数输入，那么根本不需要三个 Program Instance；多个 Mode 直接复用同一个通用 Program 即可。此时 Template 与 Program 在生产上几乎“塌缩”为同一份共享资产，这是允许的，不应为了概念完整强行造两层。
+如果所有差异都能通过外部参数输入，那么根本不需要三个程序实例（Program Instance）；多个模式（Mode）直接复用同一个通用程序（Program）即可。此时逻辑模板（Template）与程序（Program）在生产上几乎“塌缩”为同一份共享资产，这是允许的，不应为了概念完整强行造两层。
 
 因此：
 
-- **P哥图上的“习性响应判断机制” → `Response Program`｜响应逻辑程序；**
-- `LogicTemplate / Program Family` 留在 Census / Authoring 层，由 Program 反推，而不是正向下发；
-- Engagement Mode **绑定 `ProgramRef`**，不要求 Runtime 去绑定一个抽象 Template；
-- Program 的实现方式保持中立：工程手写、DSL 编译、Hybrid 都可以。
+- **P哥图上的“习性响应判断机制” → 响应逻辑程序（Response Program）；**
+- 逻辑模板 / 程序族（`LogicTemplate / Program Family`）留在普查 / 编辑层（Census / Authoring），由程序（Program）反推，而不是正向下发；
+- 中鱼习性模式（Engagement Mode）**绑定程序引用（`ProgramRef`）**，不要求运行时（Runtime）去绑定一个抽象逻辑模板（Template）；
+- 程序（Program）的实现方式保持中立：工程手写、DSL 编译、混合（Hybrid）都可以。
 
 ---
 
@@ -151,7 +151,7 @@ EnvironmentWeight
 ≡ LocalOpportunityIntensity
 ```
 
-都指 **Bake 已经算出的局部环境机会强度**。
+都指 **烘焙（Bake）已经算出的局地机会强度（LocalOpportunityIntensity）**。
 
 一个简化的 Bake Artifact 心智模型可以写成：
 
@@ -169,9 +169,9 @@ EngagementMode[]
        └─ ...其它鱼侧动态参数
 ```
 
-`ConditionGroup / Spatial Index` 是共享索引；其下可以查询很多 Species。每个 Species 在当前条件下可以有多个 Engagement Mode share，每个 Mode 有自己的 EnvironmentWeight，并带当前需要的鱼侧动态参数。
+`ConditionGroup / Spatial Index` 是共享索引；其下可以查询很多鱼种（Species）。每个鱼种在当前条件下可以有多个中鱼习性模式份额（Engagement Mode share），每个模式（Mode）有自己的环境权重（EnvironmentWeight），并带当前需要的鱼侧动态参数（Fish Condition）。
 
-如果未来仍保留 Presentation-dependent `ExposureAccess`，它应作为 Runtime Response / Access 语义的一部分或独立乘项处理；**不要把它乘完以后再把结果命名成另一个 EnvironmentWeight**，否则会重新制造同名两阶段量。
+如果未来仍保留呈现相关的 `ExposureAccess`，它应作为运行时响应 / 可达（Runtime Response / Access）语义的一部分或独立乘项处理；**不要把它乘完以后再把结果命名成另一个环境权重（EnvironmentWeight）**，否则会重新制造同名两阶段量。
 
 ---
 
@@ -181,15 +181,15 @@ EngagementMode[]
 
 | P图元素/关系 | Stable ID | 当前 FCF 对应 | 分类 | 第一轮动作 |
 | --- | --- | --- | --- | --- |
-| 基础品质配置 | `P_BASE_039` | FishQuality Definition + Quality Selection inputs | B | Terminology Bridge。 |
-| 基础环境亲和配置 | `P_BASE_001` | SpatialOpportunityProfile | B | Terminology Bridge；Base / Supply 关系由 D01 专项处理。 |
-| 鱼习性配置 | `P_BASE_087` | **Engagement Mode**：吸收旧 FishGroup identity + 有效 FishMode binding 职责 | B | C01 关闭为 Terminology / Contract consolidation，不做 Delta Overlay。 |
-| 习性响应判断机制 | `P_BASE_042` | Response Program；LogicTemplate 位于其上方的复用 / Census 层 | B | C02 关闭为抽象层澄清，不做 Delta Overlay。 |
-| 诱鱼呈现库 | `P_BASE_026` | Presentation Definition / Presentation Signals | B/C | 只桥接；Canonical Presentation Facts 仍 Open。 |
-| 鱼位置权重 | `P_BASE_034` | EnvironmentWeight ≡ LocalOpportunityIntensity | A/B | C03 关闭；记录 Bake Artifact 结构即可。 |
-| 鱼诱鱼响应权重 | `P_BASE_030` | ResponseWeight | B | Terminology Bridge。 |
-| 中鱼总权重 | `P_BASE_021` | SelectionWeight | A | Terminology Bridge；不要解释成 Total Supply。 |
-| 场景归一化 / 总量再分配 | 主要见 `P_BASE_009` 长文本；与初始权重 `P_BASE_051`、最终权重 `P_BASE_021` 相关 | Base Opportunity / Total Supply / Spatial Distribution 专项 | **D01** | **专项处理中，本任务不闭合。** |
+| 基础品质配置 | `P_BASE_039` | 鱼品质基础定义（Fish Quality Base Definition）+ 品质选择输入 | B | Terminology Bridge。 |
+| 基础环境亲和配置 | `P_BASE_001` | 空间机会分布画像（`SpatialOpportunityProfile`） | B | Terminology Bridge；Base / Supply 关系由 D01 专项处理。 |
+| 鱼习性配置 | `P_BASE_087` | **中鱼习性模式（Engagement Mode）**：吸收旧鱼组（FishGroup）身份 + 有效鱼模式（FishMode）绑定职责 | B | C01 关闭为 Terminology / Contract consolidation，不做 Delta Overlay。 |
+| 习性响应判断机制 | `P_BASE_042` | 响应逻辑程序（Response Program）；逻辑模板（LogicTemplate）位于其上方的复用 / 普查（Census）层 | B | C02 关闭为抽象层澄清，不做 Delta Overlay。 |
+| 诱鱼呈现库 | `P_BASE_026` | 呈现定义 / 呈现信号（Presentation Definition / Presentation Signals） | B/C | 只桥接；Canonical Presentation Facts 仍 Open。 |
+| 鱼位置权重 | `P_BASE_034` | 环境权重（EnvironmentWeight）≡ 局地机会强度（LocalOpportunityIntensity） | A/B | C03 关闭；记录 Bake Artifact 结构即可。 |
+| 鱼诱鱼响应权重 | `P_BASE_030` | 响应权重（`ResponseWeight`） | B | Terminology Bridge。 |
+| 中鱼总权重 | `P_BASE_021` | 选择权重（`SelectionWeight`） | A | Terminology Bridge；不要解释成 Total Supply。 |
+| 场景归一化 / 总量再分配 | 主要见 `P_BASE_009` 长文本；与初始权重 `P_BASE_051`、最终权重 `P_BASE_021` 相关 | 基础机会 / 总量供给 / 空间分布（Base Opportunity / Total Supply / Spatial Distribution）专项 | **D01** | **专项处理中，本任务不闭合。** |
 
 这一轮的结果反而更符合 Alignment 的目标：**大部分差异被证明是 Terminology / Abstraction 差异；当前第一张图里仍明确保留的主要机制 Delta 只有 D01。**
 
@@ -222,7 +222,7 @@ EngagementMode[]
 
 | 标记 | 类型 | 说明 |
 | --- | --- | --- |
-| P01–P08 | `semanticTag` | 小型蓝色编号标签 + 紧邻轻量语义卡片（EN Contract 名 + 中文一行）。其中 P01/P02 的卡片移到大虚线框 `o1:41` **外侧**，各带一条蓝色短 leader 指回原节点。 |
+| P01–P08 | `semanticTag` | 小型蓝色编号标签 + 紧邻轻量语义卡片（中文主标签 + 英文 / 稳定标识符）。其中 P01/P02 的卡片移到大虚线框 `o1:41` **外侧**，各带一条蓝色短 leader 指回原节点。 |
 | D01 | `deltaSpan` | amber 下沿 bracket **横跨整条底部权重链**，不是单节点备注。 |
 
 - **Base 不改**：`pframe-base.excalidraw` 的 239 个元素保持锁定；Overlay 只在其上叠加 `OVR_*`。

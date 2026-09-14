@@ -9,7 +9,7 @@ Primitive kinds:
   scaffold-check  badge + label + leader line + callout (mechanism check, TEST01)
   badge           small rect + bound text
   numberTag       badge with P/C/D-style number text
-  semanticTag     number tag + adjacent card (EN contract name + CN line);
+  semanticTag     number tag + adjacent card (CN main label + EN / stable identifier);
                   optional `leader` = anchor-relative polyline pointing at the node
   deltaSpan       optional `bracket` polyline spanning several nodes + tag + card
   highlightBox    translucent box around the anchored element
@@ -121,7 +121,7 @@ def polyline_element(item, color, pts, suffix, arrow_end=False):
 
 
 def semantic_tag_elements(item, color, fill):
-    """小型编号标签 + 紧邻轻量语义卡片（EN Contract 名 + 中文一行）。"""
+    """小型编号标签 + 紧邻轻量语义卡片（中文主标签 + 英文 / 稳定标识符）。"""
     tag = f"OVR_{item['id']}"
     off = item.get("offset", {})
     tx, ty = item["_anchor"]["x"] + off.get("dx", 0), item["_anchor"]["y"] + off.get("dy", 0)
@@ -135,7 +135,7 @@ def semantic_tag_elements(item, color, fill):
          "textAlign": "center", "verticalAlign": "mid"}, [])
     num_text["locked"] = False
 
-    value = item["en"] + "\n" + item["cn"]
+    value = item["cn"] + "\n(" + (item["en"] or "") + ")"
     fs = item.get("fontSize", 12)
     lines = value.split("\n")
     cw = max(conv.text_width(l, fs) for l in lines) + 18

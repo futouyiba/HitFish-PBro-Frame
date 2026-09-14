@@ -1,6 +1,6 @@
 {
   "version": 0,
-  "status": "scaffold：标注要求本体待从 ChatGPT 对话结论迁入；当前仅含迁移任务书第十一节的 TEST01 机制验证项。",
+  "status": "scaffold：标注要求本体待从 ChatGPT 对话结论迁入；当前仅含迁移任务书第十一节的 TEST01 机制验证项，以及 ChatGPT GitHub 编辑烟雾测试 TEST02。",
   "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。base 永不被修改。",
   "target": {
     "base": "pframe-base.excalidraw",
@@ -37,6 +37,15 @@
       "text": "TEST01",
       "callout": "Overlay scaffold check (not a real overlay)",
       "note": "迁移任务书第十一节的最小机制验证：Base locked + Overlay editable。非正式 P/C/D Overlay，正式标注要求迁入后可删。"
+    },
+    {
+      "id": "TEST02_CHATGPT",
+      "kind": "scaffold-check",
+      "anchor": { "stableId": "P_BASE_021" },
+      "offset": { "dx": 180, "dy": -40 },
+      "text": "CHATGPT-TEST",
+      "callout": "ChatGPT GitHub write-path smoke test; not a real semantic overlay.",
+      "note": "仅用于验证 ChatGPT 对话可读取 element-map 并在独立分支中精确编辑 overlay-spec；不要合并到 main。"
     }
   ]
 }

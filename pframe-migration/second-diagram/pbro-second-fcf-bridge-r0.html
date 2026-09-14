@@ -207,7 +207,7 @@
             </div>
           </div>
         </div>
-        <div class="fcf-warn"><b>不要这样一一对应：</b>空间模板 ≠ 烘焙程序；摄食模板 ≠ 响应逻辑程序；条件模板 ≠ 中鱼习性模式分配程序。三个模板是 PBro 的打包方式，不是 FCF 的三个 Program。</div>
+        <div class="fcf-warn"><b>不要这样一一对应：</b>空间模板 ≠ 烘焙程序；摄食模板 ≠ 响应逻辑程序；条件模板 ≠ 中鱼习性模式分配程序。三个模板是 PBro 的打包方式，不是 FCF 的三个执行面程序（Surface Program）。</div>
         <div class="fcf-links">对应原图锚点：W03-00 习性模式的内部结构 ｜ W03-01 空间模板 · 在哪里 ｜ W03-02 摄食模板 · 怎么吃 ｜ W03-03 条件模板 · 何时成立</div>
       </div>
       <div class="grid4"><div class="card"><strong>空间模板</strong><p>这条鱼在哪里，以及怎样使用空间。</p></div><div class="card"><strong>摄食模板</strong><p>这条鱼怎样发现、接近与获取食物。</p></div><div class="card"><strong>条件模板</strong><p>习性在什么环境下成立、增强或退出。</p></div><div class="card"><strong>状态响应</strong><p>习性成立后，以什么强度表现。</p></div></div>
@@ -257,7 +257,7 @@
         <div class="fcf-core">
           <span class="fcf-node">摄食激活度 A（Feeding Activation A）</span>
           <span class="fcf-eq">≈</span>
-          <span class="fcf-node">鱼侧动态参数的压缩投影<small>Fish Condition Projection</small></span>
+          <span class="fcf-node">鱼侧动态参数的压缩投影（Fish Condition Projection）</span>
           <span class="fcf-eq">≠</span>
           <span class="fcf-node">响应权重（Response Weight）</span>
         </div>
@@ -265,7 +265,7 @@
         <div class="fcf-flow">
           <span class="fcf-node">一个 A 标量</span>
           <span class="fcf-arrow">↓</span>
-          <span class="fcf-node">FCF 拆成多个 typed 鱼侧动态参数事实<small>Fish Condition facts</small></span>
+          <span class="fcf-node">FCF 拆成多个类型化鱼侧动态参数事实（typed Fish Condition facts）</span>
         </div>
         <div class="fcf-rows">
           <div class="fcf-row">
@@ -297,7 +297,7 @@
             </div>
           </div>
         </div>
-        <div class="fcf-warn"><b>不要写成：</b>「A = FeedingReadiness」或「A = ResponseWeight」。A 是 PBro 的合成标量；FCF 说的是它<b>可以拆成</b>哪些类型化事实，不是改名或等价替换。</div>
+        <div class="fcf-warn"><b>不要写成：</b>「A = 进食准备度（FeedingReadiness）」或「A = 响应权重（ResponseWeight）」。A 是 PBro 的合成标量；FCF 说的是它<b>可以拆成</b>哪些类型化事实，不是改名或等价替换。</div>
         <div class="fcf-links">对应原图锚点：W06-00 摄食激活度 A ｜ W06-01 基础活跃度 ｜ W06-02 正负响应 ｜ W06-03 合成并限制 0～1</div>
       </div>
       <div class="formula">Aₘ = Clamp(A_base + Σ(wⱼ × Rⱼ), 0, 1)</div>
@@ -366,10 +366,10 @@
           <span class="fcf-arrow">↓</span>
           <span class="fcf-node">选择权重（SelectionWeight）</span>
           <span class="fcf-arrow">↓</span>
-          <span class="fcf-node">既有选择／圆桌／生成链<small>Selection / RoundTable / Generation</small></span>
+          <span class="fcf-node">既有选择／圆桌／生成链（Selection / RoundTable / Generation）</span>
         </div>
         <div class="fcf-rows">
-          <div class="fcf-row"><span class="fcf-id">差异 1</span><div class="fcf-row-body"><p>PBro 的 <code>BaitMatch × PresentationMatch × DistanceMatch</code> 只是一种具体<b>因子分解（Factorization）</b>，不是 FCF 顶层契约；不要把这三个 Match 强制做成 FCF 通用字段。</p></div></div>
+          <div class="fcf-row"><span class="fcf-id">差异 1</span><div class="fcf-row-body"><p>PBro 的 <b>饵型匹配（BaitMatch） × 呈现匹配（PresentationMatch） × 距离匹配（DistanceMatch）</b> 只是一种具体<b>因子分解（Factorization）</b>，不是 FCF 顶层契约；不要把这三个匹配量（Match）强制做成 FCF 通用字段。</p></div></div>
           <div class="fcf-row"><span class="fcf-id">差异 2</span><div class="fcf-row-body"><p>PBro 的「摄食模板」在 FCF 更接近<b>中鱼习性模式绑定的响应逻辑程序（Response Program）</b>，而不是一个普通烘焙数值。</p></div></div>
           <div class="fcf-row"><span class="fcf-id">差异 3</span><div class="fcf-row-body"><p>PBro 的「真实中鱼结果」在 FCF 更接近<b>选择权重（Selection Weight）</b>，<b>尚未生成鱼实体</b>。</p></div></div>
           <div class="fcf-row"><span class="fcf-id">差异 4</span><div class="fcf-row-body"><p>「独立保底与节奏补偿」→ 外部控制／保底（External Control / Pity），<b>继续保持独立</b>，不并入鱼习性响应逻辑。</p></div></div>

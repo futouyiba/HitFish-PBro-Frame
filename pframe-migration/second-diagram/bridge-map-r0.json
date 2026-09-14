@@ -56,7 +56,7 @@
       "sectionSelector": "section#habit",
       "sourceText": "习性模式的内部结构",
       "fcfMeaning": "窗口入口：习性模式（Habit Mode）≈ 中鱼习性模式（Engagement Mode）",
-      "renderRole": "section 标题锚点 + badge"
+      "renderRole": "section 标题锚点 + 徽标（badge）"
     },
     {
       "anchorId": "W03-01",
@@ -64,7 +64,7 @@
       "sectionSelector": "section#habit",
       "sourceText": "空间模板 · 在哪里",
       "fcfMeaning": "空间编辑数据 ＋ 烘焙程序（Bake Program）；数据与计算逻辑是两种对象，可被多个中鱼习性模式复用",
-      "renderRole": "原节点描边 + badge，由下方 W03 桥接卡解释"
+      "renderRole": "原节点描边 + 徽标（badge），由下方 W03 桥接卡解释"
     },
     {
       "anchorId": "W03-02",
@@ -72,7 +72,7 @@
       "sectionSelector": "section#habit",
       "sourceText": "摄食模板 · 怎么吃",
       "fcfMeaning": "猎物／刺激／响应编辑数据 ＋ 响应逻辑程序（Response Program）；生成后的追击／攻击／放弃行为属鱼类 AI（Fish AI），不进本轮 FCF 生成前机制",
-      "renderRole": "原节点描边 + badge，由下方 W03 桥接卡解释"
+      "renderRole": "原节点描边 + 徽标（badge），由下方 W03 桥接卡解释"
     },
     {
       "anchorId": "W03-03",
@@ -80,7 +80,7 @@
       "sectionSelector": "section#habit",
       "sourceText": "条件模板 · 何时成立",
       "fcfMeaning": "按“条件造成什么后果”拆分归属：是否获得份额→中鱼习性模式分配（Engagement Mode Routing）；进入模式后改变空间使用／进食准备度／活性／功能能力→烘焙程序／鱼侧动态参数（Bake / Fish Condition）；拿到玩家呈现后才决定互动→实时响应（Response）",
-      "renderRole": "原节点描边 + badge，由下方 W03 桥接卡解释"
+      "renderRole": "原节点描边 + 徽标（badge），由下方 W03 桥接卡解释"
     },
     {
       "anchorId": "W06-00",
@@ -88,7 +88,7 @@
       "sectionSelector": "section#feeding",
       "sourceText": "摄食激活度 A",
       "fcfMeaning": "窗口入口：摄食激活度 A（Feeding Activation A）≈ 鱼侧动态参数的压缩投影（Fish Condition Projection），≠ 响应权重（Response Weight）",
-      "renderRole": "section 标题锚点 + badge",
+      "renderRole": "section 标题锚点 + 徽标（badge）",
       "disambiguation": {
         "ambiguousWithin": "section#feeding",
         "exactMatches": 2,
@@ -103,7 +103,7 @@
       "sectionSelector": "section#feeding",
       "sourceText": "基础活跃度",
       "fcfMeaning": "FCF 中拆为类型化事实，而非单一标量（如 活性（Activity））",
-      "renderRole": "原节点描边 + badge"
+      "renderRole": "原节点描边 + 徽标（badge）"
     },
     {
       "anchorId": "W06-02",
@@ -111,15 +111,15 @@
       "sectionSelector": "section#feeding",
       "sourceText": "正负响应",
       "fcfMeaning": "FCF 中拆为类型化事实（如 功能能力（Functional Capacity）、刺激偏好（Cue Disposition））",
-      "renderRole": "原节点描边 + badge"
+      "renderRole": "原节点描边 + 徽标（badge）"
     },
     {
       "anchorId": "W06-03",
       "sectionNumber": "06",
       "sectionSelector": "section#feeding",
       "sourceText": "合成并限制 0～1",
-      "fcfMeaning": "FCF 不保留单个万能 A 标量，而是拆成多个 typed 鱼侧动态参数事实（Fish Condition facts）",
-      "renderRole": "原节点描边 + badge"
+      "fcfMeaning": "FCF 不保留单个万能 A 标量，而是拆成多个类型化鱼侧动态参数事实（typed Fish Condition facts）",
+      "renderRole": "原节点描边 + 徽标（badge）"
     },
     {
       "anchorId": "W10-00",
@@ -127,7 +127,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "烘焙结果",
       "fcfMeaning": "烘焙产物（Bake Artifact）：环境权重（EnvironmentWeight）／局地机会强度（LocalOpportunityIntensity）＋ 鱼侧动态参数快照（FishConditionSnapshot）",
-      "renderRole": "原节点描边 + badge，由下方 W10 桥接卡展开"
+      "renderRole": "原节点描边 + 徽标（badge），由下方 W10 桥接卡展开"
     },
     {
       "anchorId": "W10-01",
@@ -135,7 +135,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "玩家输入",
       "fcfMeaning": "玩家／呈现运行时事实（Player / Presentation Runtime Facts）：呈现信号（Presentation Signals）＋ 可达性／距离／其它运行时事实",
-      "renderRole": "原节点描边 + badge，由下方 W10 桥接卡展开"
+      "renderRole": "原节点描边 + 徽标（badge），由下方 W10 桥接卡展开"
     },
     {
       "anchorId": "W10-02",
@@ -143,7 +143,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "实时咬口计算",
       "fcfMeaning": "响应逻辑程序（Response Program）→ 响应权重（ResponseWeight）",
-      "renderRole": "原节点描边 + badge"
+      "renderRole": "原节点描边 + 徽标（badge）"
     },
     {
       "anchorId": "W10-03",
@@ -151,7 +151,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "真实中鱼结果",
       "fcfMeaning": "更接近选择权重（Selection Weight），尚未生成鱼实体",
-      "renderRole": "原节点描边 + badge + 卡片内注记（不解释为已生成鱼实体）"
+      "renderRole": "原节点描边 + 徽标（badge） + 卡片内注记（不解释为已生成鱼实体）"
     },
     {
       "anchorId": "W10-04",
@@ -159,7 +159,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "独立保底与节奏补偿",
       "fcfMeaning": "外部控制／保底（External Control / Pity），继续保持独立，不并入鱼习性响应逻辑",
-      "renderRole": "原节点描边 + badge"
+      "renderRole": "原节点描边 + 徽标（badge）"
     },
     {
       "anchorId": "W10-05",
@@ -167,7 +167,7 @@
       "sectionSelector": "section#bite",
       "sourceText": "最终中鱼结果",
       "fcfMeaning": "不做强一一映射；提醒 FCF 在此仍保留「选择 → 实体化／生成鱼」的边界",
-      "renderRole": "原节点描边 + badge"
+      "renderRole": "原节点描边 + 徽标（badge）"
     }
   ]
 }

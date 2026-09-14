@@ -22,13 +22,38 @@
 <body>
 <header>
   <h1>迁移视觉回读｜《游戏中鱼整个系统的设计》主图（画板 DfFRwiueTh2QbdbzS1scoNomnkj）</h1>
-  <p>左：飞书画板导出参考（source/feishu-original-reference.jpg）。右：Excalidraw Base 渲染（metadata/visual-evidence-base-full.jpg，
-     交互原件 pframe-base.excalidraw）。点击图片放大。目标不是像素级一致，是布局、信息结构与阅读路径高度忠实。</p>
+  <p>左：飞书画板导出参考（source/feishu-original-reference.jpg）。右：Excalidraw Base 离线渲染
+     （metadata/visual-evidence-base-render.png，由 tools/render-svg.mjs 生成；矢量原件 .svg 同目录）。
+     布局占格相关系数 0.81（60×24 内容包围盒归一比对）。点击图片放大。目标不是像素级一致，是布局、信息结构与阅读路径高度忠实。</p>
 </header>
 <div class="row" id="row">
-  <div class="pane"><h2>Feishu 原图（参考）</h2><img src="../source/feishu-original-reference.jpg" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
-  <div class="pane"><h2>Excalidraw Base（迁移结果渲染）</h2><img src="../metadata/visual-evidence-base-full.jpg" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
+  <div class="pane"><h2>Feishu 原图（参考）</h2><img data-img="source/feishu-original-reference.jpg" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
+  <div class="pane"><h2>Excalidraw Base（迁移结果渲染）</h2><img data-img="metadata/visual-evidence-base-render.png" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
 </div>
+<script>
+// 相对路径只在经本地服务（http://localhost:8793/tools/compare.html）打开时有效；
+// 静态预览上下文里逐级回退，全部失败时给出正确打开方式。
+document.querySelectorAll('img[data-img]').forEach(img => {
+  const rel = img.dataset.img;
+  const candidates = ['../' + rel, '/' + rel, rel];
+  let i = 0;
+  const tryNext = () => {
+    if (i >= candidates.length) {
+      const div = document.createElement('div');
+      div.style.cssText = 'padding:18px;color:#b45309;font:13px/1.7 monospace';
+      div.innerHTML = '图片加载失败（当前上下文不是本地服务根）。<br>' +
+        '请通过本地服务打开本页：<br><a href="http://localhost:8793/tools/compare.html">' +
+        'http://localhost:8793/tools/compare.html</a><br>' +
+        '（服务启动：仓库根目录运行 <code>npx -y http-server pframe-migration -p 8793 -a 127.0.0.1</code>）';
+      img.replaceWith(div);
+      return;
+    }
+    img.src = candidates[i++];
+  };
+  img.addEventListener('error', tryNext);
+  tryNext();
+});
+</script>
 <div class="checklist-wrap" style="padding:0 16px 24px">
 <table class="checklist">
   <tr><th>检查项</th><th>结果</th><th>说明</th></tr>

@@ -27,17 +27,25 @@
   const scene = await res.json();
   const Excal = window.ExcalidrawLib || window.Excal;
   const root = ReactDOM.createRoot(document.getElementById('app'));
+  window.__pframe_root = root;
   const { Excalidraw } = Excal;
   let selected = [];
+  // ?fit=1&pad=24 — 挂载时按内容包围盒计算 zoom/scroll（scrollToContent(null)
+  // 在 0.17.6 UMD 有 bug 会抛 isDeleted 错误，且元素数组版本行为不稳，故手动计算）
+  let appState = { ...(scene.appState || {}), zoom: { value: 0.35 } };
+  if (params.get('fit')) {
+    const pad = Number(params.get('pad') || 24);
+    const els = scene.elements;
+    const minX = Math.min(...els.map(e => e.x)), minY = Math.min(...els.map(e => e.y));
+    const maxX = Math.max(...els.map(e => e.x + e.width)), maxY = Math.max(...els.map(e => e.y + e.height));
+    const cw = maxX - minX, ch = maxY - minY;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const z = Math.min((vw - pad) / cw, (vh - pad) / ch);
+    appState = { ...appState, zoom: { value: z }, scrollX: vw / 2 - (minX + cw / 2) * z, scrollY: vh / 2 - (minY + ch / 2) * z };
+  }
   root.render(React.createElement(Excalidraw, {
-    initialData: {
-      ...scene,
-      appState: { ...(scene.appState || {}), zoom: { value: 0.35 } },
-    },
-    excalidrawAPI: (api) => {
-      window.__pframe_api = api;
-      setTimeout(() => api.scrollToContent(null, { fitToViewport: true }), 100);
-    },
+    initialData: { ...scene, appState },
+    excalidrawAPI: (api) => { window.__pframe_api = api; },
     onChange: (elements, state) => {
       selected = state.selectedElementIds
         ? Object.keys(state.selectedElementIds) : [];

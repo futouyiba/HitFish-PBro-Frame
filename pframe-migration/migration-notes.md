@@ -57,7 +57,10 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
   `tools/viewer.html?file=/pframe-base.excalidraw`（或 `/pframe-working.excalidraw`）。
 - 本机环境下 `python3 -m http.server`（绑定 0.0.0.0）在应用沙箱内被 macOS 拒绝，改用 npx http-server 绑 127.0.0.1。
 - 该 UMD 页面上下文中 `exportToSvg` 返回空 20×20 画布（含官方 `convertToExcalidrawElements` 产出的最小元素同样为空），
-  属该上下文的已知问题；交互画布渲染正常。后续如需 SVG 产物，走 node 侧 `@excalidraw/utils` 或 excalidraw.com 打开后导出。
+  属该上下文的已知问题；交互画布渲染正常。SVG 产物已改走 node 侧：`tools/render-svg.mjs`（@excalidraw/utils@0.1.5 + jsdom，
+  依赖目录由 PF_EXCAL_NODE_MODULES 指定，缺省 /tmp/excal-render/node_modules）。
+- viewer 的 `scrollToContent(null)` 在 0.17.6 UMD 会抛 `isDeleted` TypeError，已移除；整幅适配改由 `?fit=1`
+  参数在挂载时按内容包围盒计算 zoom/scroll 注入 initialData。
 - 确定性：seed/versionNonce 由元素 ID 哈希派生，updated 固定为 2026-09-14T04:00:00Z；重跑转换器输出与落盘文件完全一致
   （`migration-report.json: determinismRegenerationEqualsFile = true`）。
 
@@ -86,3 +89,19 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
 溯源层不动：`source/`（飞书 raw + 视觉参考）、`normalized/`（Layer A 中间层）、`tools/`（确定性 converter）、
 `metadata/`（migration-report + 视觉证据截图）。`to_excalidraw.py` 的 `--overlay-test` 模式已移除（职责并入 build_working.py）。
 重组后复检：base 重生成字节一致、报告 0 警告、unmapped=0。
+
+## 2026-09-14 视觉回读补强（离线渲染链路）
+
+背景：compare.html 右栏原先放的是 viewer 交互页截图（含 HUD/工具栏 UI），与左栏纯画布导出不可比。本次建立
+**离线 SVG 渲染链路**并出具新证据：
+
+- `tools/render-svg.mjs`：node 侧 @excalidraw/utils 渲染（不走浏览器）。实测坑：① README 平铺签名已过时，
+  实际为 `{data, config}`；② 必须 `skipInliningFonts`（否则走 WASM 字体子集在 jsdom 下崩溃）；
+  ③ utils 0.1.5 经 jsdom 序列化会给 `<svg>` 写两个 xmlns，重复属性属非法 XML——`<img>` 严格解码直接失败，
+  宽松渲染器（chrome/qlmanage）画出统一粉色 (255,221,221) 错误占位。已后处理去重，产物通过 XML well-formed 校验。
+- 新证据：`metadata/visual-evidence-base-render.svg`（矢量原件）+ `.png`（1600 宽栅格，headless Chrome）。
+  颜色核对：#f0f4fc/#d4b45b/#d25d5a/#fee3e2 全部按源比例出现，无粉色残留。
+- 布局比对（60×24 内容包围盒归一占格）：飞书参考 vs 渲染 **pearson 0.81**；大文本区、主流程簇、右侧思维导图树、
+  左列长条逐区对位。旧的 `visual-evidence-base-full.jpg`（带 UI 截图）已删除。
+- compare.html 增加图片加载回退与"请走本地服务打开"提示；正确打开方式
+  `http://localhost:8793/tools/compare.html`（静态预览上下文解析不了 `../` 相对路径，这是"只见两个文字框"的原因）。

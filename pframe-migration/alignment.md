@@ -207,7 +207,7 @@ EngagementMode[]
 | 面 | 指向 | 说明 |
 | --- | --- | --- |
 | **Semantic Evidence** | `P_BASE_009` | D01 的语义证据来自左上长文本（场景归一 / 总量再分配 vs Base Opportunity / Total Supply）。 |
-| **Visual Scope** | `P_BASE_051` → `P_BASE_034` / `P_BASE_030` → `P_BASE_021` | Delta 在图上覆盖的整条底部权重链：投鱼初始权重 × 鱼位置权重 × 鱼诱鱼响应权重 → 中鱼总权重。（此处按 P-tag 语义身份书写；注意链上「鱼位置权重」节点的 stableId 实为 `P_BASE_010`，而 `P_BASE_034` 是 P06 所锚的同名重复对象、位于上方分组内、不在链上。） |
+| **Visual Scope** | `P_BASE_051` → `P_BASE_010` / `P_BASE_030` → `P_BASE_021` | Delta 在图上覆盖的整条底部权重链：投鱼初始权重 × 鱼位置权重 × 鱼诱鱼响应权重 → 中鱼总权重。 |
 | **Overlay implementation anchor** | `P_BASE_051` | 仅作为 bracket 的坐标起点；**不代表 semantic ownership 属于「投鱼初始权重」**。 |
 
 即：图上 anchor 落在链首只是实现便利；D01 的语义归属是**整条链之上的 Contract 差异**，不是某一个节点。

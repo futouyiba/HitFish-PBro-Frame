@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "status": "P哥 Frame × FCF Semantic Alignment R0：第一阶段 Terminology Overlay。仅 P01-P08；C/D 暂不渲染。",
+  "version": 2,
+  "status": "P哥 Frame × FCF Semantic Alignment R0：第一阶段 Terminology Overlay。仅 P01-P08；D01 暂不渲染。",
   "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。Base 永不被修改。图上只保存编号与语义引用，详细定义见 alignment.md。",
   "target": {
     "base": "pframe-base.excalidraw",
@@ -58,10 +58,10 @@
       "anchor": { "stableId": "P_BASE_087" },
       "offset": { "dx": 0, "dy": -42 },
       "text": "P03",
-      "semanticRef": "TERM_ENGAGEMENT_GROUP_CANDIDATE",
+      "semanticRef": "TERM_ENGAGEMENT_MODE",
       "color": "#2563eb",
       "fill": "#dbeafe",
-      "note": "P哥原词：鱼习性配置；Candidate：中鱼习性群 / Engagement Group；当前不确认 Engagement Mode"
+      "note": "P哥原词：鱼习性配置；Candidate：中鱼习性模式 / Engagement Mode；吸收旧 FishGroup identity + 有效 FishMode binding 职责"
     },
     {
       "id": "P04",
@@ -69,10 +69,10 @@
       "anchor": { "stableId": "P_BASE_042" },
       "offset": { "dx": 0, "dy": -42 },
       "text": "P04",
-      "semanticRef": "TERM_RESPONSE_LOGIC_TEMPLATE",
+      "semanticRef": "TERM_RESPONSE_PROGRAM",
       "color": "#2563eb",
       "fill": "#dbeafe",
-      "note": "P哥原词：习性响应判断机制；Candidate：Response Logic Template；bound executable identity 仍是 Response Program"
+      "note": "P哥原词：习性响应判断机制；Candidate：Response Program；Logic Template 位于 Program Family / Census 层"
     },
     {
       "id": "P05",
@@ -91,10 +91,10 @@
       "anchor": { "stableId": "P_BASE_034" },
       "offset": { "dx": 0, "dy": -42 },
       "text": "P06",
-      "semanticRef": "TERM_LOCAL_OPPORTUNITY_INTENSITY",
+      "semanticRef": "TERM_ENVIRONMENT_WEIGHT_LOCAL_OPPORTUNITY_INTENSITY",
       "color": "#2563eb",
       "fill": "#dbeafe",
-      "note": "P哥原词：鱼位置权重；Candidate：Local Opportunity Intensity；与 Runtime EnvironmentWeight 边界列为 C03"
+      "note": "P哥原词：鱼位置权重；Candidate：EnvironmentWeight / LocalOpportunityIntensity，同一个 Bake 结果语义"
     },
     {
       "id": "P07",

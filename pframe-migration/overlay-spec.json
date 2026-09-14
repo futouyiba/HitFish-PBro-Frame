@@ -1,7 +1,7 @@
 {
-  "version": 0,
-  "status": "scaffold：标注要求本体待从 ChatGPT 对话结论迁入；当前仅含迁移任务书第十一节的 TEST01 机制验证项。",
-  "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。base 永不被修改。",
+  "version": 1,
+  "status": "P哥 Frame × FCF Semantic Alignment R0：第一阶段 Terminology Overlay。仅 P01-P08；C/D 暂不渲染。",
+  "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。Base 永不被修改。图上只保存编号与语义引用，详细定义见 alignment.md。",
   "target": {
     "base": "pframe-base.excalidraw",
     "map": "element-map.json",
@@ -23,20 +23,100 @@
     },
     "offset": { "dx": 0, "dy": 0 },
     "text": "标注文字（numberTag 填编号，如 P01）",
+    "semanticRef": "alignment.md 中的稳定语义引用；build_working.py 当前忽略此字段，仅供语义追踪",
     "callout": "可选，scaffold-check 用的说明文字",
-    "color": "可选，默认 #b45309",
-    "fill": "可选，徽标底色，默认 #fef3c7",
+    "color": "可选",
+    "fill": "可选",
     "note": "备注（不渲染）"
   },
   "items": [
     {
-      "id": "TEST01",
-      "kind": "scaffold-check",
+      "id": "P01",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_039" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P01",
+      "semanticRef": "TERM_FISH_QUALITY_BASE",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：基础品质配置；Candidate：FishQuality 基础定义 / Base Quality Config"
+    },
+    {
+      "id": "P02",
+      "kind": "numberTag",
       "anchor": { "stableId": "P_BASE_001" },
-      "offset": { "dx": -96, "dy": -56 },
-      "text": "TEST01",
-      "callout": "Overlay scaffold check (not a real overlay)",
-      "note": "迁移任务书第十一节的最小机制验证：Base locked + Overlay editable。非正式 P/C/D Overlay，正式标注要求迁入后可删。"
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P02",
+      "semanticRef": "TERM_SPATIAL_OPPORTUNITY_PROFILE",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：基础环境亲和配置；Candidate：Spatial Opportunity Profile"
+    },
+    {
+      "id": "P03",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_087" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P03",
+      "semanticRef": "TERM_ENGAGEMENT_GROUP_CANDIDATE",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：鱼习性配置；Candidate：中鱼习性群 / Engagement Group；当前不确认 Engagement Mode"
+    },
+    {
+      "id": "P04",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_042" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P04",
+      "semanticRef": "TERM_RESPONSE_LOGIC_TEMPLATE",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：习性响应判断机制；Candidate：Response Logic Template；bound executable identity 仍是 Response Program"
+    },
+    {
+      "id": "P05",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_026" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P05",
+      "semanticRef": "TERM_PRESENTATION",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：诱鱼呈现库；Candidate：Presentation Definition -> Presentation Signals"
+    },
+    {
+      "id": "P06",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_034" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P06",
+      "semanticRef": "TERM_LOCAL_OPPORTUNITY_INTENSITY",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：鱼位置权重；Candidate：Local Opportunity Intensity；与 Runtime EnvironmentWeight 边界列为 C03"
+    },
+    {
+      "id": "P07",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_030" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P07",
+      "semanticRef": "TERM_RESPONSE_WEIGHT",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：鱼诱鱼响应权重；Candidate：Response Weight"
+    },
+    {
+      "id": "P08",
+      "kind": "numberTag",
+      "anchor": { "stableId": "P_BASE_021" },
+      "offset": { "dx": 0, "dy": -42 },
+      "text": "P08",
+      "semanticRef": "TERM_SELECTION_WEIGHT",
+      "color": "#2563eb",
+      "fill": "#dbeafe",
+      "note": "P哥原词：中鱼总权重；Candidate：SelectionWeight；不要与 Total Supply 混淆"
     }
   ]
 }

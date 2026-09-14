@@ -9,6 +9,9 @@ Primitive kinds:
   scaffold-check  badge + label + leader line + callout (mechanism check, TEST01)
   badge           small rect + bound text
   numberTag       badge with P/C/D-style number text
+  semanticTag     number tag + adjacent card (EN contract name + CN line);
+                  optional `leader` = anchor-relative polyline pointing at the node
+  deltaSpan       optional `bracket` polyline spanning several nodes + tag + card
   highlightBox    translucent box around the anchored element
   callout         standalone text
 """
@@ -100,6 +103,23 @@ def highlight_element(item, color):
     return el
 
 
+def polyline_element(item, color, pts, suffix, arrow_end=False):
+    """anchor 相对折线；pts 为相对锚点左上角的 [x,y] 序列。"""
+    ax, ay = item["_anchor"]["x"], item["_anchor"]["y"]
+    ab = [(ax + p[0], ay + p[1]) for p in pts]
+    ox, oy = ab[0]
+    rel = [[round(p[0] - ox, 2), round(p[1] - oy, 2)] for p in ab]
+    xs = [p[0] for p in rel]; ys = [p[1] for p in rel]
+    el = conv.common_fields(f"OVR_{item['id']}_{suffix}", "arrow", ox, oy,
+                            max(xs) - min(xs), max(ys) - min(ys), color, [], False)
+    el.update({"points": rel,
+               "startArrowhead": None,
+               "endArrowhead": "arrow" if arrow_end else None,
+               "startBinding": None, "endBinding": None,
+               "strokeWidth": "thin"})
+    return el
+
+
 def semantic_tag_elements(item, color, fill):
     """小型编号标签 + 紧邻轻量语义卡片（EN Contract 名 + 中文一行）。"""
     tag = f"OVR_{item['id']}"
@@ -149,6 +169,12 @@ def render_item(item, emap, base_by_id):
         out.extend([leader_element(item, color, badge), badge, label,
                     callout_element(item, color)])
     elif kind == "semanticTag":
+        out.extend(semantic_tag_elements(item, color, fill))
+        if item.get("leader"):
+            out.append(polyline_element(item, color, item["leader"], "LEAD", arrow_end=True))
+    elif kind == "deltaSpan":
+        if item.get("bracket"):
+            out.append(polyline_element(item, color, item["bracket"], "SPAN"))
         out.extend(semantic_tag_elements(item, color, fill))
     elif kind in ("badge", "numberTag"):
         b, l = badge_element(item, color, fill)

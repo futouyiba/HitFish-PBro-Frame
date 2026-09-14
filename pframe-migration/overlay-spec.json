@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "status": "P哥 Frame × FCF Semantic Alignment R1：P01–P08 Semantic Callout（编号 + FCF 术语）+ D01 Delta 标记；第二张长图不处理。",
+  "version": 4,
+  "status": "P哥 Frame × FCF Semantic Alignment R1（MINOR VISUAL TUNE）：P01/P02 卡片移至大框外侧 + 蓝色短 leader；D01 改为横跨整条权重链的 amber bracket；P04 保持不动。",
   "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。Base 永不被修改。图上只保存编号与语义引用，详细定义见 alignment.md。",
   "target": {
     "base": "pframe-base.excalidraw",
@@ -40,18 +40,28 @@
         "stableId": "P_BASE_039"
       },
       "offset": {
-        "dx": 0,
-        "dy": 76
+        "dx": -18,
+        "dy": 201
       },
       "text": "P01",
       "semanticRef": "TERM_FISH_QUALITY_BASE",
       "color": "#2563eb",
       "fill": "#dbeafe",
-      "note": "P哥原词：基础品质配置；Candidate：FishQuality 基础定义 / Base Quality Config",
+      "note": "P哥原词：基础品质配置；Candidate：FishQuality 基础定义 / Base Quality Config [R1 tune: card moved OUTSIDE the big frame (below o1:41) + short blue leader to the node]",
       "en": "Fish Quality\nBase Definition",
       "cn": "鱼品质基础定义",
       "cardSide": "right",
-      "cardFill": "#ffffff"
+      "cardFill": "#ffffff",
+      "leader": [
+        [
+          95,
+          183
+        ],
+        [
+          69,
+          58
+        ]
+      ]
     },
     {
       "id": "P02",
@@ -60,18 +70,32 @@
         "stableId": "P_BASE_001"
       },
       "offset": {
-        "dx": 150,
-        "dy": 76
+        "dx": 13,
+        "dy": 201
       },
       "text": "P02",
       "semanticRef": "TERM_SPATIAL_OPPORTUNITY_PROFILE",
       "color": "#2563eb",
       "fill": "#dbeafe",
-      "note": "P哥原词：基础环境亲和配置；Candidate：Spatial Opportunity Profile",
+      "note": "P哥原词：基础环境亲和配置；Candidate：Spatial Opportunity Profile [R1 tune: card moved OUTSIDE the big frame (below o1:41) + short blue leader to the node]",
       "en": "Spatial Opportunity\nProfile",
       "cn": "空间机会分布 Profile",
       "cardSide": "right",
-      "cardFill": "#ffffff"
+      "cardFill": "#ffffff",
+      "leader": [
+        [
+          163,
+          183
+        ],
+        [
+          163,
+          29
+        ],
+        [
+          138,
+          29
+        ]
+      ]
     },
     {
       "id": "P03",
@@ -195,24 +219,42 @@
     },
     {
       "id": "D01",
-      "kind": "semanticTag",
+      "kind": "deltaSpan",
       "anchor": {
         "stableId": "P_BASE_051"
       },
       "offset": {
         "dx": 0,
-        "dy": -20
+        "dy": 118
       },
       "text": "D01",
-      "en": "Normalization vs\nTotal Supply",
-      "cn": "总量再分配差异待专项",
+      "en": "Total Supply / Normalization",
+      "cn": "总量 / 归一化 Contract 待专项闭合",
       "fontSize": 11,
-      "cardSide": "left",
+      "cardSide": "right",
       "semanticRef": "DELTA_SCENARIO_NORMALIZATION_VS_TOTAL_SUPPLY",
       "color": "#b45309",
       "fill": "#fde68a",
       "cardFill": "#fffbeb",
-      "note": "Delta 标记（非常轻量）：场景归一 / 总量再分配 vs Base Opportunity / Total Supply 仍有专项语义差异；本标记不展开公式，专项见 D01。"
+      "note": "Delta 标记（轻量）：指向整条底部权重链（投鱼初始权重 × 鱼位置权重 × 鱼诱鱼响应权重 → 中鱼总权重），而非单节点。amber 下沿 bracket 横跨全链；链上方是箭头栅栏（c1:2 折线）+ o1:8 虚线框，横跨 bracket 会被压，故走链下方空白。不展开公式，专项见 D01。",
+      "bracket": [
+        [
+          0,
+          82
+        ],
+        [
+          0,
+          98
+        ],
+        [
+          644,
+          98
+        ],
+        [
+          644,
+          82
+        ]
+      ]
     }
   ]
 }

@@ -8866,8 +8866,8 @@
   {
    "id": "OVR_P01_TAG",
    "type": "rectangle",
-   "x": 957.7678833007812,
-   "y": -1818.8009033203125,
+   "x": 939.7678833007812,
+   "y": -1693.8009033203125,
    "width": 44,
    "height": 20,
    "angle": 0,
@@ -8900,8 +8900,8 @@
   {
    "id": "OVR_P01_TAGTEXT",
    "type": "text",
-   "x": 957.7678833007812,
-   "y": -1815.6759033203125,
+   "x": 939.7678833007812,
+   "y": -1690.6759033203125,
    "width": 19.799999999999997,
    "height": 13.75,
    "angle": 0,
@@ -8936,8 +8936,8 @@
   {
    "id": "OVR_P01_CARD",
    "type": "rectangle",
-   "x": 1007.7678833007812,
-   "y": -1837.2009033203126,
+   "x": 989.7678833007812,
+   "y": -1712.2009033203126,
    "width": 126.00000000000003,
    "height": 56.800000000000004,
    "angle": 0,
@@ -8970,8 +8970,8 @@
   {
    "id": "OVR_P01_CARDTEXT",
    "type": "text",
-   "x": 1007.7678833007812,
-   "y": -1831.3009033203125,
+   "x": 989.7678833007812,
+   "y": -1706.3009033203125,
    "width": 108.00000000000003,
    "height": 45.0,
    "angle": 0,
@@ -9004,10 +9004,51 @@
    "baseline": 11
   },
   {
+   "id": "OVR_P01_LEAD",
+   "type": "arrow",
+   "x": 1052.7678833007812,
+   "y": -1711.8009033203125,
+   "width": 26.0,
+   "height": 125.0,
+   "angle": 0,
+   "strokeColor": "#2563eb",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": "thin",
+   "strokeStyle": "solid",
+   "roughness": 0,
+   "opacity": 100,
+   "groupIds": [],
+   "frameId": null,
+   "roundness": null,
+   "seed": 239315134,
+   "version": 1,
+   "versionNonce": 651436389,
+   "isDeleted": false,
+   "boundElements": [],
+   "updated": 1789358400000,
+   "link": null,
+   "locked": false,
+   "points": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -26.0,
+     -125.0
+    ]
+   ],
+   "startArrowhead": null,
+   "endArrowhead": "arrow",
+   "startBinding": null,
+   "endBinding": null
+  },
+  {
    "id": "OVR_P02_TAG",
    "type": "rectangle",
-   "x": 1286.71533203125,
-   "y": -1818.8009033203125,
+   "x": 1149.71533203125,
+   "y": -1693.8009033203125,
    "width": 44,
    "height": 20,
    "angle": 0,
@@ -9040,8 +9081,8 @@
   {
    "id": "OVR_P02_TAGTEXT",
    "type": "text",
-   "x": 1286.71533203125,
-   "y": -1815.6759033203125,
+   "x": 1149.71533203125,
+   "y": -1690.6759033203125,
    "width": 19.799999999999997,
    "height": 13.75,
    "angle": 0,
@@ -9076,8 +9117,8 @@
   {
    "id": "OVR_P02_CARD",
    "type": "rectangle",
-   "x": 1336.71533203125,
-   "y": -1837.2009033203126,
+   "x": 1199.71533203125,
+   "y": -1712.2009033203126,
    "width": 154.8,
    "height": 56.800000000000004,
    "angle": 0,
@@ -9110,8 +9151,8 @@
   {
    "id": "OVR_P02_CARDTEXT",
    "type": "text",
-   "x": 1336.71533203125,
-   "y": -1831.3009033203125,
+   "x": 1199.71533203125,
+   "y": -1706.3009033203125,
    "width": 136.8,
    "height": 45.0,
    "angle": 0,
@@ -9142,6 +9183,51 @@
    "originalText": "Spatial Opportunity\nProfile\n空间机会分布 Profile",
    "lineHeight": 1.25,
    "baseline": 11
+  },
+  {
+   "id": "OVR_P02_LEAD",
+   "type": "arrow",
+   "x": 1299.71533203125,
+   "y": -1711.8009033203125,
+   "width": 25.0,
+   "height": 154.0,
+   "angle": 0,
+   "strokeColor": "#2563eb",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": "thin",
+   "strokeStyle": "solid",
+   "roughness": 0,
+   "opacity": 100,
+   "groupIds": [],
+   "frameId": null,
+   "roundness": null,
+   "seed": 148363792,
+   "version": 1,
+   "versionNonce": 541086667,
+   "isDeleted": false,
+   "boundElements": [],
+   "updated": 1789358400000,
+   "link": null,
+   "locked": false,
+   "points": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -154.0
+    ],
+    [
+     -25.0,
+     -154.0
+    ]
+   ],
+   "startArrowhead": null,
+   "endArrowhead": "arrow",
+   "startBinding": null,
+   "endBinding": null
   },
   {
    "id": "OVR_P03_TAG",
@@ -9984,10 +10070,59 @@
    "baseline": 11
   },
   {
+   "id": "OVR_D01_SPAN",
+   "type": "arrow",
+   "x": 2004.314697265625,
+   "y": -451.31793212890625,
+   "width": 644.0,
+   "height": 16.0,
+   "angle": 0,
+   "strokeColor": "#b45309",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": "thin",
+   "strokeStyle": "solid",
+   "roughness": 0,
+   "opacity": 100,
+   "groupIds": [],
+   "frameId": null,
+   "roundness": null,
+   "seed": 82860067,
+   "version": 1,
+   "versionNonce": 745001464,
+   "isDeleted": false,
+   "boundElements": [],
+   "updated": 1789358400000,
+   "link": null,
+   "locked": false,
+   "points": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     16.0
+    ],
+    [
+     644.0,
+     16.0
+    ],
+    [
+     644.0,
+     0.0
+    ]
+   ],
+   "startArrowhead": null,
+   "endArrowhead": null,
+   "startBinding": null,
+   "endBinding": null
+  },
+  {
    "id": "OVR_D01_TAG",
    "type": "rectangle",
    "x": 2004.314697265625,
-   "y": -553.3179321289062,
+   "y": -415.31793212890625,
    "width": 44,
    "height": 20,
    "angle": 0,
@@ -10021,7 +10156,7 @@
    "id": "OVR_D01_TAGTEXT",
    "type": "text",
    "x": 2004.314697265625,
-   "y": -550.1929321289062,
+   "y": -412.19293212890625,
    "width": 19.799999999999997,
    "height": 13.75,
    "angle": 0,
@@ -10056,10 +10191,10 @@
   {
    "id": "OVR_D01_CARD",
    "type": "rectangle",
-   "x": 1870.314697265625,
-   "y": -569.7679321289063,
-   "width": 128,
-   "height": 52.9,
+   "x": 2054.314697265625,
+   "y": -424.61793212890626,
+   "width": 213.79999999999995,
+   "height": 38.6,
    "angle": 0,
    "strokeColor": "#b45309",
    "backgroundColor": "#fffbeb",
@@ -10090,10 +10225,10 @@
   {
    "id": "OVR_D01_CARDTEXT",
    "type": "text",
-   "x": 1870.314697265625,
-   "y": -563.9429321289062,
-   "width": 110,
-   "height": 41.25,
+   "x": 2054.314697265625,
+   "y": -419.06793212890625,
+   "width": 195.79999999999995,
+   "height": 27.5,
    "angle": 0,
    "strokeColor": "#1f2329",
    "backgroundColor": "transparent",
@@ -10115,11 +10250,11 @@
    "locked": false,
    "fontSize": 11,
    "fontFamily": 2,
-   "text": "Normalization vs\nTotal Supply\n总量再分配差异待专项",
+   "text": "Total Supply / Normalization\n总量 / 归一化 Contract 待专项闭合",
    "textAlign": "left",
    "verticalAlign": "middle",
    "containerId": "OVR_D01_CARD",
-   "originalText": "Normalization vs\nTotal Supply\n总量再分配差异待专项",
+   "originalText": "Total Supply / Normalization\n总量 / 归一化 Contract 待专项闭合",
    "lineHeight": 1.25,
    "baseline": 10
   }

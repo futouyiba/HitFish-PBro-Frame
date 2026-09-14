@@ -115,3 +115,27 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
   长英文名折行收窄卡片。P03/P04/P06 优先求解。
 - 校验（对构建产物独立复检）：9 个标记 P01–P08+D01 全部存在；9/9 锚点文本匹配 alignment.md；18 个 tag/card 盒 **0 碰撞**；Base 239 全锁定。
 - 说明：P01/P02 卡片落在虚线框内部（仅边线可见，不构成遮挡），P03/P05/P06 的 tag 与锚点间距 4–38px 不等，未追求机械对齐。
+
+## 2026-09-14 Semantic Overlay R1 · MINOR VISUAL TUNE（外部评审：MINOR VISUAL TUNE）
+
+只改三处，语义/术语/anchor identity/Base/第二张图均未动：
+
+1. **P01/P02 移出大框 + 蓝色短 leader**。原卡片位于大虚线框 `o1:41`（BASE_RECT_011）内部，易被误读成 PBro 原生字段。
+   大框上方被琥珀标题框「一条鱼的配置」(924,-2135)-(1341,-2053) 占死、左侧到 `a1:1` 文本块只剩 104px 缝隙，
+   **唯一可用的框外近邻空白在下方**。两张 tag+card 成对下移到框下缘外 6.2px（P01 tag@(940,-1694)、P02 tag@(1150,-1694)），
+   各加一条**蓝色 leader 折线**指回原节点：P01 直线 (1053,-1712)→(1027,-1837)；P02 两段 (1300,-1712)→(1300,-1866)→(1275,-1866)
+   （P02 必须走 `o1:28` 与 `o1:29` 之间的空隙，竖直下穿会压到 `o1:32` 的说明文字）。
+   两条 leader 只穿虚线边线、不穿实心框/箭头/独立文本。
+2. **D01 改为横跨整条权重链的 amber bracket**。原贴在「投鱼初始权重」左侧、像单节点备注。现改为链下方的下沿 bracket
+   （x 2004..2648，与链同宽；中线 y=-435，两端上指至 y=-451，距链底 2px），标记与卡片置于 bracket 下方。
+   文案收敛为 `D01 / Total Supply / Normalization / 总量 / 归一化 Contract 待专项闭合`，不展开公式。
+   **为何走下方**：链上方是箭头栅栏（c1:2 折线在 x=2361 与 x=2588 竖直贯穿 y −533…−622，另有 o1:8 虚线框），
+   任何横跨全链的 bracket 放上方都会被压；链下方为空白。
+3. **P04 未动**（保持 0,-56）。P03/P05–P08 offset 全部不变。
+
+实现：`tools/build_working.py` 新增 `polyline_element`（anchor 相对折线，用于 leader 与 bracket）与 `deltaSpan` 类型。
+`overlay-spec.json` v4：P01/P02 增 `leader`，D01 改 `kind=deltaSpan` + `bracket`。
+
+独立 reviewer 子代理复核：8/8 PASS，未发现反例。其记录的两点存疑：alignment.md §2 将 D01 主要引向 `P_BASE_009`（长文本）
+而 spec 锚 `P_BASE_051`（本轮按指示未改 anchor identity）；bracket 与链节点留 2px 不重叠。
+视觉回读：渲染 PNG/SVG 中 9 个标记与卡片文案齐全，Base 四色比例不变。

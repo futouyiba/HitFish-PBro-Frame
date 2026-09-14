@@ -126,11 +126,12 @@ def semantic_tag_elements(item, color, fill):
     off = item.get("offset", {})
     tx, ty = item["_anchor"]["x"] + off.get("dx", 0), item["_anchor"]["y"] + off.get("dy", 0)
     num_tag = conv.common_fields(f"{tag}_TAG", "rectangle", tx, ty, 44, 20, color, [], False)
-    num_tag.update({"backgroundColor": fill, "roundness": {"type": 3}, "opacity": 95,
+    num_tag.update({"backgroundColor": fill, "roundness": {"type": 3}, "opacity": 100,
+                    "strokeWidth": 2,
                     "boundElements": [{"id": f"{tag}_TAGTEXT", "type": "text"}]})
     num_text = conv.make_bound_text(
         f"{tag}_TAGTEXT", num_tag,
-        {"value": item.get("text", item["id"]), "fontSize": 11, "color": color,
+        {"value": item.get("text", item["id"]), "fontSize": 12, "color": color,
          "textAlign": "center", "verticalAlign": "mid"}, [])
     num_text["locked"] = False
 
@@ -148,7 +149,7 @@ def semantic_tag_elements(item, color, fill):
     card = conv.common_fields(f"{tag}_CARD", "rectangle", cx, cy, cw, ch,
                               item.get("cardColor", color), [], False)
     card.update({"backgroundColor": item.get("cardFill", "#ffffff"),
-                 "roundness": {"type": 3}, "opacity": 97, "strokeWidth": "thin",
+                 "roundness": {"type": 3}, "opacity": 100, "strokeWidth": 2,
                  "boundElements": [{"id": f"{tag}_CARDTEXT", "type": "text"}]})
     card_text = conv.make_bound_text(
         f"{tag}_CARDTEXT", card,

@@ -8864,7 +8864,7 @@
    "baseline": 13
   },
   {
-   "id": "OVR_TEST_ARROW_001",
+   "id": "OVR_TEST01_LEAD",
    "type": "arrow",
    "x": 1112.71533203125,
    "y": -1935.8009033203125,
@@ -8881,9 +8881,9 @@
    "groupIds": [],
    "frameId": null,
    "roundness": null,
-   "seed": 565869411,
+   "seed": 2035410053,
    "version": 1,
-   "versionNonce": 1937541929,
+   "versionNonce": 2091326361,
    "isDeleted": false,
    "boundElements": [],
    "updated": 1789358400000,
@@ -8905,7 +8905,7 @@
    "endBinding": null
   },
   {
-   "id": "OVR_TEST_RECT_001",
+   "id": "OVR_TEST01_BADGE",
    "type": "rectangle",
    "x": 1040.71533203125,
    "y": -1950.8009033203125,
@@ -8924,13 +8924,13 @@
    "roundness": {
     "type": 3
    },
-   "seed": 2133512546,
+   "seed": 1420543175,
    "version": 1,
-   "versionNonce": 878667332,
+   "versionNonce": 1085238903,
    "isDeleted": false,
    "boundElements": [
     {
-     "id": "OVR_TEST_TEXT_001",
+     "id": "OVR_TEST01_LABEL",
      "type": "text"
     }
    ],
@@ -8939,7 +8939,7 @@
    "locked": false
   },
   {
-   "id": "OVR_TEST_TEXT_001",
+   "id": "OVR_TEST01_LABEL",
    "type": "text",
    "x": 1040.71533203125,
    "y": -1944.5509033203125,
@@ -8956,9 +8956,9 @@
    "groupIds": [],
    "frameId": null,
    "roundness": null,
-   "seed": 1347693245,
+   "seed": 620551218,
    "version": 1,
-   "versionNonce": 455187867,
+   "versionNonce": 821589634,
    "isDeleted": false,
    "boundElements": [],
    "updated": 1789358400000,
@@ -8969,18 +8969,18 @@
    "text": "TEST01",
    "textAlign": "center",
    "verticalAlign": "middle",
-   "containerId": "OVR_TEST_RECT_001",
+   "containerId": "OVR_TEST01_BADGE",
    "originalText": "TEST01",
    "lineHeight": 1.25,
    "baseline": 13
   },
   {
-   "id": "OVR_TEST_TEXT_002",
+   "id": "OVR_TEST01_CALLOUT",
    "type": "text",
    "x": 1026.71533203125,
    "y": -1994.8009033203125,
-   "width": 200,
-   "height": 22,
+   "width": 309.59999999999974,
+   "height": 15.0,
    "angle": 0,
    "strokeColor": "#b45309",
    "backgroundColor": "transparent",
@@ -8992,9 +8992,9 @@
    "groupIds": [],
    "frameId": null,
    "roundness": null,
-   "seed": 1230863111,
+   "seed": 1043365674,
    "version": 1,
-   "versionNonce": 36228129,
+   "versionNonce": 1828097888,
    "isDeleted": false,
    "boundElements": [],
    "updated": 1789358400000,

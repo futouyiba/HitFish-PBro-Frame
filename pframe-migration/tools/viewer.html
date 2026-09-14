@@ -21,7 +21,7 @@
 (async () => {
   const hud = document.getElementById('hud');
   const params = new URLSearchParams(location.search);
-  const file = params.get('file') || '/excalidraw/pframe-base.excalidraw';
+  const file = params.get('file') || '/pframe-base.excalidraw';
   const res = await fetch(file);
   if (!res.ok) { hud.textContent = 'fetch failed: ' + file + ' → ' + res.status; return; }
   const scene = await res.json();

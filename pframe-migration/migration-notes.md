@@ -54,7 +54,7 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
 
 - `tools/viewer.html`：本地渲染查看器（React 18 + @excalidraw/excalidraw@0.17.6 UMD，unpkg CDN）。
   启动：仓库根 `npx -y http-server pframe-migration -p 8793 -a 127.0.0.1`，然后访问
-  `tools/viewer.html?file=/excalidraw/pframe-base.excalidraw`（或 `pframe-overlay-test.excalidraw`）。
+  `tools/viewer.html?file=/pframe-base.excalidraw`（或 `/pframe-working.excalidraw`）。
 - 本机环境下 `python3 -m http.server`（绑定 0.0.0.0）在应用沙箱内被 macOS 拒绝，改用 npx http-server 绑 127.0.0.1。
 - 该 UMD 页面上下文中 `exportToSvg` 返回空 20×20 画布（含官方 `convertToExcalidrawElements` 产出的最小元素同样为空），
   属该上下文的已知问题；交互画布渲染正常。后续如需 SVG 产物，走 node 侧 `@excalidraw/utils` 或 excalidraw.com 打开后导出。
@@ -63,8 +63,26 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
 
 ## Overlay Scaffold 验证（非正式 Overlay）
 
-- `excalidraw/pframe-overlay-test.excalidraw` = Base 239 元素（全部 locked）+ `OVR_TEST_*` 4 元素（未锁定）：
-  半透明徽标「TEST01」+ 引线箭头 + callout，指向 o1:28「基础环境亲和配置」。
-- 合成指针事件实测（2026-09-14）：拖拽 OVR_TEST_RECT_001 位移 (+45,+27) 成功；对 BASE_RECT_001 施加同样拖拽，
-  坐标零位移且不可选中。Base locked + Overlay editable 工作方式成立。
+- 初版验证文件 `pframe-overlay-test.excalidraw` 已在 2026-09-14 重组中移除，由 **`pframe-working.excalidraw`** 接替：
+  `tools/build_working.py` 读取 `overlay-spec.json`（当前仅含 TEST01 scaffold 项）+ base 生成，机制不变。
+- working = Base 239 元素（原样前缀、全部 locked）+ `OVR_TEST01_*` 4 元素（未锁定）：
+  半透明徽标「TEST01」+ 引线箭头 + callout，指向 o1:28「基础环境亲和配置」（P_BASE_001）。
+- 合成指针事件实测（2026-09-14，初版文件）：拖拽 OVR 徽标位移 (+45,+27) 成功；对 BASE_RECT_001 施加同样拖拽，
+  坐标零位移且不可选中。重组后以渲染像素级复检（徽标琥珀色像素 25998，4 个 OVR 元素未锁定）。
 - 未制作任何 P01/C01/D01 或术语类正式 Overlay。
+
+## 2026-09-14 结构重组（收敛工作面）
+
+依据上游建议，工作集拍平到 `pframe-migration/` 根，五个文件：
+
+| 文件 | 角色 |
+|---|---|
+| `pframe-base.excalidraw` | P哥第一张图，锁定，只读（自 `excalidraw/` 移入，内容字节不变） |
+| `element-map.json` | 稳定ID ↔ 原图 element ID（自 `metadata/pframe-element-map.json` 改名移入） |
+| `overlay-spec.json` | Overlay 标注要求（scaffold，待迁入对话结论） |
+| `pframe-working.excalidraw` | base + overlay-spec 生成（`tools/build_working.py`） |
+| `alignment.md` | Terminology Bridge / Semantic Bridge Matrix / Delta Cards（第一阶段 Markdown 承载，空底座） |
+
+溯源层不动：`source/`（飞书 raw + 视觉参考）、`normalized/`（Layer A 中间层）、`tools/`（确定性 converter）、
+`metadata/`（migration-report + 视觉证据截图）。`to_excalidraw.py` 的 `--overlay-test` 模式已移除（职责并入 build_working.py）。
+重组后复检：base 重生成字节一致、报告 0 警告、unmapped=0。

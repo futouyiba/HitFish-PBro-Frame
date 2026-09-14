@@ -1,0 +1,42 @@
+{
+  "version": 0,
+  "status": "scaffold：标注要求本体待从 ChatGPT 对话结论迁入；当前仅含迁移任务书第十一节的 TEST01 机制验证项。",
+  "purpose": "Overlay 标注要求。tools/build_working.py 读取 pframe-base.excalidraw + 本文件，生成 pframe-working.excalidraw。base 永不被修改。",
+  "target": {
+    "base": "pframe-base.excalidraw",
+    "map": "element-map.json",
+    "working": "pframe-working.excalidraw"
+  },
+  "primitives": {
+    "highlightBox": "半透明框：围住锚点元素",
+    "badge": "小徽标：小矩形 + 绑定文字",
+    "numberTag": "编号标签：P01/C01/D01 式编号徽标",
+    "leaderLine": "引线：从标注元素指向锚点元素",
+    "callout": "独立文字说明"
+  },
+  "itemSchema": {
+    "id": "裸 ID（生成元素时自动加 OVR_ 前缀）",
+    "kind": "scaffold-check | badge | numberTag | highlightBox | callout",
+    "anchor": {
+      "stableId": "element-map.json 中的 P_BASE_xxx / P_DERIVED_xxx",
+      "elementHint": "rectangle | arrow，默认 rectangle"
+    },
+    "offset": { "dx": 0, "dy": 0 },
+    "text": "标注文字（numberTag 填编号，如 P01）",
+    "callout": "可选，scaffold-check 用的说明文字",
+    "color": "可选，默认 #b45309",
+    "fill": "可选，徽标底色，默认 #fef3c7",
+    "note": "备注（不渲染）"
+  },
+  "items": [
+    {
+      "id": "TEST01",
+      "kind": "scaffold-check",
+      "anchor": { "stableId": "P_BASE_001" },
+      "offset": { "dx": -96, "dy": -56 },
+      "text": "TEST01",
+      "callout": "Overlay scaffold check (not a real overlay)",
+      "note": "迁移任务书第十一节的最小机制验证：Base locked + Overlay editable。非正式 P/C/D Overlay，正式标注要求迁入后可删。"
+    }
+  ]
+}

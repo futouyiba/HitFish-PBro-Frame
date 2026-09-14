@@ -33,8 +33,8 @@ def load(p):
 def main():
     raw = load(os.path.join(ROOT, "source", "feishu-original.json"))
     norm = load(os.path.join(ROOT, "normalized", "pframe-source-normalized.json"))
-    scene = load(os.path.join(ROOT, "excalidraw", "pframe-base.excalidraw"))
-    emap = load(os.path.join(ROOT, "metadata", "pframe-element-map.json"))
+    scene = load(os.path.join(ROOT, "pframe-base.excalidraw"))
+    emap = load(os.path.join(ROOT, "element-map.json"))
 
     problems = []
     warn = []

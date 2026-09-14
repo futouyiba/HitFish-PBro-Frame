@@ -5,10 +5,11 @@ Graphic migration only. Deterministic: seeds/nonces derived from element ids,
 `updated` pinned to a fixed migration timestamp, so reruns are byte-stable.
 
 Modes:
-  default          full migration -> pframe-base.excalidraw + element map
+  default          full migration -> pframe-base.excalidraw + element-map.json
   --only id,id,... pilot subset (plus connectors whose both ends are included)
-  --overlay-test   additionally emit base+OVR_TEST_* scene proving
-                   "Base locked + Overlay editable"
+
+Overlay scenes (base + OVR_* elements) are NOT built here; see
+tools/build_working.py which applies overlay-spec.json onto the base.
 """
 import argparse
 import json
@@ -391,12 +392,9 @@ def build_scene(builder, elements_out):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--normalized", default=os.path.join(ROOT, "normalized", "pframe-source-normalized.json"))
-    ap.add_argument("--out", default=os.path.join(ROOT, "excalidraw", "pframe-base.excalidraw"))
-    ap.add_argument("--map", default=os.path.join(ROOT, "metadata", "pframe-element-map.json"))
+    ap.add_argument("--out", default=os.path.join(ROOT, "pframe-base.excalidraw"))
+    ap.add_argument("--map", default=os.path.join(ROOT, "element-map.json"))
     ap.add_argument("--only", help="comma-separated source ids (pilot)")
-    ap.add_argument("--overlay-test", action="store_true",
-                    help="emit base+OVR_TEST_* scene at --overlay-out")
-    ap.add_argument("--overlay-out", default=os.path.join(ROOT, "excalidraw", "pframe-overlay-test.excalidraw"))
     args = ap.parse_args()
 
     with open(args.normalized, encoding="utf-8") as f:
@@ -435,43 +433,6 @@ def main():
         os.makedirs(os.path.dirname(args.map), exist_ok=True)
         with open(args.map, "w", encoding="utf-8") as f:
             json.dump(doc, f, ensure_ascii=False, indent=1)
-
-    if args.overlay_test and only is None:
-        ov = [dict(e) for e in elements]
-        # TEST01 badge + leader line + callout near o1:28 (基础环境亲和配置)
-        tgt = next(e for e in ov if e["id"] == builder._rect_ids.get("o1:28"))
-        badge = common_fields("OVR_TEST_RECT_001", "rectangle",
-                              tgt["x"] - 96, tgt["y"] - 56, 72, 30,
-                              "#b45309", [], False)
-        badge.update({"backgroundColor": "#fef3c7", "roundness": {"type": 3},
-                      "opacity": 90, "boundElements": [{"id": "OVR_TEST_TEXT_001", "type": "text"}]})
-        label = make_bound_text("OVR_TEST_TEXT_001", badge,
-                                {"value": "TEST01", "fontSize": 14, "color": "#b45309",
-                                 "textAlign": "center", "verticalAlign": "mid"}, [])
-        label["locked"] = False
-        callout = common_fields("OVR_TEST_TEXT_002", "text",
-                                tgt["x"] - 110, tgt["y"] - 100, 200, 22,
-                                "#b45309", [], False)
-        callout.update({"fontSize": 12, "fontFamily": FONT_FAMILY_NORMAL,
-                        "text": "Overlay scaffold check (not a real overlay)",
-                        "textAlign": "left", "verticalAlign": "top",
-                        "containerId": None,
-                        "originalText": "Overlay scaffold check (not a real overlay)",
-                        "lineHeight": LINE_HEIGHT, "baseline": 11})
-        lead = common_fields("OVR_TEST_ARROW_001", "arrow",
-                             badge["x"] + badge["width"], badge["y"] + badge["height"] / 2,
-                             abs(tgt["x"] - (badge["x"] + badge["width"])),
-                             abs((tgt["y"] + tgt["height"] / 2) - (badge["y"] + badge["height"] / 2)),
-                             "#b45309", [], False)
-        lead.update({"points": [[0.0, 0.0],
-                                [tgt["x"] - lead["x"],
-                                 (tgt["y"] + tgt["height"] / 2) - lead["y"]]],
-                     "startArrowhead": None, "endArrowhead": "arrow",
-                     "startBinding": None, "endBinding": None})
-        ov.extend([lead, badge, label, callout])
-        ov_scene = build_scene(builder, ov)
-        with open(args.overlay_out, "w", encoding="utf-8") as f:
-            json.dump(ov_scene, f, ensure_ascii=False, indent=1)
 
     print(f"scene elements: {len(elements)} -> {args.out}")
     if skipped:

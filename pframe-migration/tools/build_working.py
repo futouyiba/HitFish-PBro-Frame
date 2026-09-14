@@ -100,6 +100,44 @@ def highlight_element(item, color):
     return el
 
 
+def semantic_tag_elements(item, color, fill):
+    """小型编号标签 + 紧邻轻量语义卡片（EN Contract 名 + 中文一行）。"""
+    tag = f"OVR_{item['id']}"
+    off = item.get("offset", {})
+    tx, ty = item["_anchor"]["x"] + off.get("dx", 0), item["_anchor"]["y"] + off.get("dy", 0)
+    num_tag = conv.common_fields(f"{tag}_TAG", "rectangle", tx, ty, 44, 20, color, [], False)
+    num_tag.update({"backgroundColor": fill, "roundness": {"type": 3}, "opacity": 95,
+                    "boundElements": [{"id": f"{tag}_TAGTEXT", "type": "text"}]})
+    num_text = conv.make_bound_text(
+        f"{tag}_TAGTEXT", num_tag,
+        {"value": item.get("text", item["id"]), "fontSize": 11, "color": color,
+         "textAlign": "center", "verticalAlign": "mid"}, [])
+    num_text["locked"] = False
+
+    value = item["en"] + "\n" + item["cn"]
+    fs = item.get("fontSize", 12)
+    lines = value.split("\n")
+    cw = max(conv.text_width(l, fs) for l in lines) + 18
+    ch = len(lines) * fs * 1.3 + 10
+    side = item.get("cardSide", "right")
+    if side == "left":
+        cx = tx - 6 - cw
+    else:
+        cx = tx + 44 + 6
+    cy = ty - (ch - 20) / 2
+    card = conv.common_fields(f"{tag}_CARD", "rectangle", cx, cy, cw, ch,
+                              item.get("cardColor", color), [], False)
+    card.update({"backgroundColor": item.get("cardFill", "#ffffff"),
+                 "roundness": {"type": 3}, "opacity": 97, "strokeWidth": "thin",
+                 "boundElements": [{"id": f"{tag}_CARDTEXT", "type": "text"}]})
+    card_text = conv.make_bound_text(
+        f"{tag}_CARDTEXT", card,
+        {"value": value, "fontSize": fs, "color": "#1f2329",
+         "textAlign": "left", "verticalAlign": "mid"}, [])
+    card_text["locked"] = False
+    return [num_tag, num_text, card, card_text]
+
+
 def render_item(item, emap, base_by_id):
     color = item.get("color", DEFAULT_COLOR)
     fill = item.get("fill", DEFAULT_FILL)
@@ -110,6 +148,8 @@ def render_item(item, emap, base_by_id):
         badge, label = badge_element(item, color, fill)
         out.extend([leader_element(item, color, badge), badge, label,
                     callout_element(item, color)])
+    elif kind == "semanticTag":
+        out.extend(semantic_tag_elements(item, color, fill))
     elif kind in ("badge", "numberTag"):
         b, l = badge_element(item, color, fill)
         out.extend([b, l])

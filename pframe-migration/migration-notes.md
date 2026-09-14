@@ -105,3 +105,13 @@ docx `ES2Sd89jeoCsiVxqY3WcHbV4n4c`）迁移为 Excalidraw 图形资产。
   左列长条逐区对位。旧的 `visual-evidence-base-full.jpg`（带 UI 截图）已删除。
 - compare.html 增加图片加载回退与"请走本地服务打开"提示；正确打开方式
   `http://localhost:8793/tools/compare.html`（静态预览上下文解析不了 `../` 相对路径，这是"只见两个文字框"的原因）。
+
+## 2026-09-14 Semantic Overlay R1｜P01–P08 Semantic Callout + D01 Delta 标记
+
+- 规格：`overlay-spec.json` v3。P01–P08 由 `numberTag` 升级为 `semanticTag`（小型蓝色标签 `P0x` + 紧邻白底轻量卡片：英文 Contract 名 + 中文一行）。
+  内容取自 `alignment.md`，未自行裁决术语。新增 `D01`（amber 小标记，锚 `P_BASE_051`「投鱼初始权重」，卡片「Normalization vs Total Supply / 总量再分配差异待专项」）。
+- 渲染：`tools/build_working.py` 增 `semanticTag` 类型（tag 44×20 + 绑定文字 + 卡片 + 卡片文字）。working = 239 Base（锁定未动）+ 36 Overlay。
+- 摆放：用一次性避让求解器（网格搜索 + 硬约束：不与实心框/虚线框**边线**/箭头/独立文本/锚点自身节点/其它 Overlay 碰撞）求得各 tag offset；
+  长英文名折行收窄卡片。P03/P04/P06 优先求解。
+- 校验（对构建产物独立复检）：9 个标记 P01–P08+D01 全部存在；9/9 锚点文本匹配 alignment.md；18 个 tag/card 盒 **0 碰撞**；Base 239 全锁定。
+- 说明：P01/P02 卡片落在虚线框内部（仅边线可见，不构成遮挡），P03/P05/P06 的 tag 与锚点间距 4–38px 不等，未追求机械对齐。

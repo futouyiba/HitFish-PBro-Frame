@@ -1,0 +1,1693 @@
+{
+ "meta": {
+  "purpose": "Identity / element mapping only. NOT a semantic map.",
+  "generatedBy": "tools/to_excalidraw.py",
+  "sourceDocumentId": "ES2Sd89jeoCsiVxqY3WcHbV4n4c",
+  "sourceDiagramId": "DfFRwiueTh2QbdbzS1scoNomnkj",
+  "sourceElementCount": 132,
+  "derivedElementCount": 16,
+  "excalidrawElementCount": 239,
+  "idRules": {
+   "excalidraw": "BASE_{RECT|TEXT|ARROW|ARROW_MM}_{nnn}; overlay prefix OVR_*",
+   "stable": "P_BASE_{nnn} in Layer A order; P_DERIVED_{nnn} for mindmap edges"
+  }
+ },
+ "elements": [
+  {
+   "stableId": "P_BASE_001",
+   "sourceObjectId": "o1:28",
+   "normalizedElementId": "src_001",
+   "excalidrawElementIds": [
+    "BASE_RECT_001",
+    "BASE_TEXT_001"
+   ],
+   "sourceText": "基础环境亲和配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_002",
+   "sourceObjectId": "o1:34",
+   "normalizedElementId": "src_002",
+   "excalidrawElementIds": [
+    "BASE_RECT_002"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_003",
+   "sourceObjectId": "n1:1",
+   "normalizedElementId": "src_003",
+   "excalidrawElementIds": [
+    "BASE_RECT_044",
+    "BASE_RECT_021",
+    "BASE_RECT_051"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_004",
+   "sourceObjectId": "o1:8",
+   "normalizedElementId": "src_004",
+   "excalidrawElementIds": [
+    "BASE_RECT_003"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_005",
+   "sourceObjectId": "o1:69",
+   "normalizedElementId": "src_005",
+   "excalidrawElementIds": [
+    "BASE_RECT_004",
+    "BASE_TEXT_002"
+   ],
+   "sourceText": "饵类型",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_006",
+   "sourceObjectId": "c1:3",
+   "normalizedElementId": "src_006",
+   "excalidrawElementIds": [
+    "BASE_ARROW_001",
+    "BASE_TEXT_003"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_007",
+   "sourceObjectId": "o1:29",
+   "normalizedElementId": "src_007",
+   "excalidrawElementIds": [
+    "BASE_RECT_005",
+    "BASE_TEXT_004"
+   ],
+   "sourceText": "诱鱼响应配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_008",
+   "sourceObjectId": "o1:93",
+   "normalizedElementId": "src_008",
+   "excalidrawElementIds": [
+    "BASE_RECT_006"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_009",
+   "sourceObjectId": "a1:1",
+   "normalizedElementId": "src_009",
+   "excalidrawElementIds": [
+    "BASE_TEXT_005"
+   ],
+   "sourceText": "按照这个逻辑，那么整个中鱼系统也可以更简单。\n\n核心内容：\n\n1，鱼配置\n\n基础品质配置，决定鱼的基础信息，包括：品质等级、重量区间、产出方式\n\n鱼的环境亲和度，决定鱼对环境的偏好，包括：不存在条件、环境因子适应区间（温度、养分、光照）、偏好位置（xyz轴的偏好，喜好结构特征、喜好结构体类型）\n\n鱼的诱鱼响应（鱼捕食响应），决定鱼对什么诱鱼呈现吸引而产出的诱鱼权重，包括：常规偏好。高、中、低、避险4种状态的诱鱼呈现的偏好\n\n2，鱼习性\n\n决定鱼在不同点位的环境状态下的触发的活性，或状态修正\n\n决定鱼在不同点位的环境状态下诱鱼响应的偏好和修正\n\n配置触发结构体或结构体特征，配置触发环境亲和条件（如不配置则复用鱼配置，如配置则放宽或收窄亲和区间）\n\n3，结构体配置\n\n结构体内对环境因子的修正\n\n结构体内对诱鱼呈现的修正\n\n结构体影响的范围\n\n4，诱鱼呈现配置\n\n饵类型和饵对应的呈现配置\n\n5，点位匹配算法模块\n\n读取鱼习性配置，与当前点位的参数，进行对比。\n\n输出：\n\n鱼在当前位置存在强度，决定鱼的位置权重\n\n鱼在当前位置捕食状态（活性），决定鱼的诱鱼响应通道\n\n以上烘焙成数值\n\n6，中鱼点位匹配算法\n\n取玩家饵的xyz点位，以及点位的诱鱼响应通道\n\n取玩家饵的操控下的诱鱼呈现，对诱鱼响应通道进行逻辑判定\n\n产生诱鱼响应权重\n\n7，权重加权\n\n位置权重*诱鱼响应权重=最终中鱼权重\n\n辅助修正：\n\n1，场景归一化位置权重再分配\n\n将整个场景内，一中鱼的所有点位的位置权重核算后在分配，控制总权重在可控范围内\n\n2，保底控制\n\n鱼状态带来的鱼呈现的保底逻辑，保证鱼一定有一个诱鱼响应\n\n3，中鱼控制\n\n在中鱼系统中进行控制，引入玩家一定时段内的产出、玩家阶段、玩家等级等中鱼模拟之外的控制，平衡玩家中鱼结果，调整优化玩家体验\n\n4，中鱼后产出分配\n\n鱼习性产生的位置、活性、呈现因子，控制中鱼后产生不同体型的鱼的概率",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_010",
+   "sourceObjectId": "o1:2",
+   "normalizedElementId": "src_010",
+   "excalidrawElementIds": [
+    "BASE_RECT_007",
+    "BASE_TEXT_006"
+   ],
+   "sourceText": "鱼位置权重",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_011",
+   "sourceObjectId": "a1:18",
+   "normalizedElementId": "src_011",
+   "excalidrawElementIds": [
+    "BASE_TEXT_007"
+   ],
+   "sourceText": "...",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_012",
+   "sourceObjectId": "o1:97",
+   "normalizedElementId": "src_012",
+   "excalidrawElementIds": [
+    "BASE_RECT_008",
+    "BASE_TEXT_008"
+   ],
+   "sourceText": "鱼存在条件",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_013",
+   "sourceObjectId": "o1:14",
+   "normalizedElementId": "src_013",
+   "excalidrawElementIds": [
+    "BASE_RECT_009",
+    "BASE_TEXT_009"
+   ],
+   "sourceText": "鱼习性结构亲和",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_014",
+   "sourceObjectId": "c1:14",
+   "normalizedElementId": "src_014",
+   "excalidrawElementIds": [
+    "BASE_ARROW_002"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_015",
+   "sourceObjectId": "c1:5",
+   "normalizedElementId": "src_015",
+   "excalidrawElementIds": [
+    "BASE_ARROW_003",
+    "BASE_TEXT_010"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_016",
+   "sourceObjectId": "c1:25",
+   "normalizedElementId": "src_016",
+   "excalidrawElementIds": [
+    "BASE_ARROW_004",
+    "BASE_TEXT_011"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_017",
+   "sourceObjectId": "o1:102",
+   "normalizedElementId": "src_017",
+   "excalidrawElementIds": [
+    "BASE_RECT_010",
+    "BASE_TEXT_012"
+   ],
+   "sourceText": "主习性判断",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_018",
+   "sourceObjectId": "a1:8",
+   "normalizedElementId": "src_018",
+   "excalidrawElementIds": [
+    "BASE_TEXT_013"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_019",
+   "sourceObjectId": "o1:41",
+   "normalizedElementId": "src_019",
+   "excalidrawElementIds": [
+    "BASE_RECT_011"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_020",
+   "sourceObjectId": "c1:15",
+   "normalizedElementId": "src_020",
+   "excalidrawElementIds": [
+    "BASE_ARROW_005"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_021",
+   "sourceObjectId": "o1:4",
+   "normalizedElementId": "src_021",
+   "excalidrawElementIds": [
+    "BASE_RECT_012",
+    "BASE_TEXT_014"
+   ],
+   "sourceText": "中鱼总权重",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_022",
+   "sourceObjectId": "o1:78",
+   "normalizedElementId": "src_022",
+   "excalidrawElementIds": [
+    "BASE_RECT_013",
+    "BASE_TEXT_015"
+   ],
+   "sourceText": "饵类型配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_023",
+   "sourceObjectId": "c1:16",
+   "normalizedElementId": "src_023",
+   "excalidrawElementIds": [
+    "BASE_ARROW_006"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_024",
+   "sourceObjectId": "c1:2",
+   "normalizedElementId": "src_024",
+   "excalidrawElementIds": [
+    "BASE_ARROW_007",
+    "BASE_TEXT_016"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_025",
+   "sourceObjectId": "a1:13",
+   "normalizedElementId": "src_025",
+   "excalidrawElementIds": [
+    "BASE_TEXT_017"
+   ],
+   "sourceText": "x",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_026",
+   "sourceObjectId": "o1:94",
+   "normalizedElementId": "src_026",
+   "excalidrawElementIds": [
+    "BASE_RECT_014",
+    "BASE_TEXT_018"
+   ],
+   "sourceText": "诱鱼呈现库",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_027",
+   "sourceObjectId": "o1:76",
+   "normalizedElementId": "src_027",
+   "excalidrawElementIds": [
+    "BASE_RECT_015",
+    "BASE_TEXT_019"
+   ],
+   "sourceText": "呈现2",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_028",
+   "sourceObjectId": "o1:82",
+   "normalizedElementId": "src_028",
+   "excalidrawElementIds": [
+    "BASE_RECT_016"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_029",
+   "sourceObjectId": "c1:20",
+   "normalizedElementId": "src_029",
+   "excalidrawElementIds": [
+    "BASE_ARROW_008"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_030",
+   "sourceObjectId": "o1:3",
+   "normalizedElementId": "src_030",
+   "excalidrawElementIds": [
+    "BASE_RECT_017",
+    "BASE_TEXT_020"
+   ],
+   "sourceText": "鱼诱鱼响应权重 ",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_031",
+   "sourceObjectId": "o1:80",
+   "normalizedElementId": "src_031",
+   "excalidrawElementIds": [
+    "BASE_RECT_018",
+    "BASE_TEXT_021"
+   ],
+   "sourceText": "触发操作",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_032",
+   "sourceObjectId": "o1:62",
+   "normalizedElementId": "src_032",
+   "excalidrawElementIds": [
+    "BASE_RECT_019",
+    "BASE_TEXT_022"
+   ],
+   "sourceText": "结构体类型",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_033",
+   "sourceObjectId": "o1:106",
+   "normalizedElementId": "src_033",
+   "excalidrawElementIds": [
+    "BASE_RECT_020",
+    "BASE_TEXT_023"
+   ],
+   "sourceText": "鱼副习性判断",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_034",
+   "sourceObjectId": "o1:103",
+   "normalizedElementId": "src_034",
+   "excalidrawElementIds": [
+    "BASE_RECT_021",
+    "BASE_TEXT_024"
+   ],
+   "sourceText": "鱼位置权重",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_035",
+   "sourceObjectId": "o1:24",
+   "normalizedElementId": "src_035",
+   "excalidrawElementIds": [
+    "BASE_RECT_022",
+    "BASE_TEXT_025"
+   ],
+   "sourceText": "饵强度配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_036",
+   "sourceObjectId": "o1:35",
+   "normalizedElementId": "src_036",
+   "excalidrawElementIds": [
+    "BASE_RECT_023",
+    "BASE_TEXT_026"
+   ],
+   "sourceText": "环境亲配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_037",
+   "sourceObjectId": "o1:64",
+   "normalizedElementId": "src_037",
+   "excalidrawElementIds": [
+    "BASE_RECT_024",
+    "BASE_TEXT_027"
+   ],
+   "sourceText": "结构体范围",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_038",
+   "sourceObjectId": "o1:83",
+   "normalizedElementId": "src_038",
+   "excalidrawElementIds": [
+    "BASE_RECT_025",
+    "BASE_TEXT_028"
+   ],
+   "sourceText": "呈现配置1",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_039",
+   "sourceObjectId": "o1:27",
+   "normalizedElementId": "src_039",
+   "excalidrawElementIds": [
+    "BASE_RECT_026",
+    "BASE_TEXT_029"
+   ],
+   "sourceText": "基础品质配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_040",
+   "sourceObjectId": "o1:43",
+   "normalizedElementId": "src_040",
+   "excalidrawElementIds": [
+    "BASE_RECT_027",
+    "BASE_TEXT_030"
+   ],
+   "sourceText": "...",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_041",
+   "sourceObjectId": "o1:18",
+   "normalizedElementId": "src_041",
+   "excalidrawElementIds": [
+    "BASE_RECT_028",
+    "BASE_TEXT_031"
+   ],
+   "sourceText": "常规状态",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_042",
+   "sourceObjectId": "o1:37",
+   "normalizedElementId": "src_042",
+   "excalidrawElementIds": [
+    "BASE_RECT_029",
+    "BASE_TEXT_032"
+   ],
+   "sourceText": "习性响应判断机制",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_043",
+   "sourceObjectId": "o1:63",
+   "normalizedElementId": "src_043",
+   "excalidrawElementIds": [
+    "BASE_RECT_030",
+    "BASE_TEXT_033"
+   ],
+   "sourceText": "结构体特征",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_044",
+   "sourceObjectId": "o1:70",
+   "normalizedElementId": "src_044",
+   "excalidrawElementIds": [
+    "BASE_RECT_031",
+    "BASE_TEXT_034"
+   ],
+   "sourceText": "呈现强度",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_045",
+   "sourceObjectId": "o1:20",
+   "normalizedElementId": "src_045",
+   "excalidrawElementIds": [
+    "BASE_RECT_032",
+    "BASE_TEXT_035"
+   ],
+   "sourceText": "避险",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_046",
+   "sourceObjectId": "o1:30",
+   "normalizedElementId": "src_046",
+   "excalidrawElementIds": [
+    "BASE_RECT_033",
+    "BASE_TEXT_036"
+   ],
+   "sourceText": "消极、常规、积极、避险4种状态的配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_047",
+   "sourceObjectId": "o1:39",
+   "normalizedElementId": "src_047",
+   "excalidrawElementIds": [
+    "BASE_RECT_034",
+    "BASE_TEXT_037"
+   ],
+   "sourceText": "鱼参数配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_048",
+   "sourceObjectId": "o1:45",
+   "normalizedElementId": "src_048",
+   "excalidrawElementIds": [
+    "BASE_RECT_035"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_049",
+   "sourceObjectId": "o1:67",
+   "normalizedElementId": "src_049",
+   "excalidrawElementIds": [
+    "BASE_RECT_036"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_050",
+   "sourceObjectId": "o1:99",
+   "normalizedElementId": "src_050",
+   "excalidrawElementIds": [
+    "BASE_RECT_037",
+    "BASE_TEXT_038"
+   ],
+   "sourceText": "存在判断",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_051",
+   "sourceObjectId": "o1:5",
+   "normalizedElementId": "src_051",
+   "excalidrawElementIds": [
+    "BASE_RECT_038",
+    "BASE_TEXT_039"
+   ],
+   "sourceText": "投鱼初始权重 ",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_052",
+   "sourceObjectId": "c1:4",
+   "normalizedElementId": "src_052",
+   "excalidrawElementIds": [
+    "BASE_ARROW_009",
+    "BASE_TEXT_040"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_053",
+   "sourceObjectId": "o1:7",
+   "normalizedElementId": "src_053",
+   "excalidrawElementIds": [
+    "BASE_RECT_039",
+    "BASE_TEXT_041"
+   ],
+   "sourceText": "诱鱼响应通道",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_054",
+   "sourceObjectId": "o1:9",
+   "normalizedElementId": "src_054",
+   "excalidrawElementIds": [
+    "BASE_RECT_040",
+    "BASE_TEXT_042"
+   ],
+   "sourceText": "诱鱼响应判断机制",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_055",
+   "sourceObjectId": "o1:44",
+   "normalizedElementId": "src_055",
+   "excalidrawElementIds": [
+    "BASE_RECT_041",
+    "BASE_TEXT_043"
+   ],
+   "sourceText": "一条鱼的配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_056",
+   "sourceObjectId": "o1:68",
+   "normalizedElementId": "src_056",
+   "excalidrawElementIds": [
+    "BASE_RECT_042",
+    "BASE_TEXT_044"
+   ],
+   "sourceText": "饵的配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_057",
+   "sourceObjectId": "o1:77",
+   "normalizedElementId": "src_057",
+   "excalidrawElementIds": [
+    "BASE_RECT_043"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_058",
+   "sourceObjectId": "c1:22",
+   "normalizedElementId": "src_058",
+   "excalidrawElementIds": [
+    "BASE_ARROW_010",
+    "BASE_TEXT_045"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_059",
+   "sourceObjectId": "o1:105",
+   "normalizedElementId": "src_059",
+   "excalidrawElementIds": [
+    "BASE_RECT_044"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_060",
+   "sourceObjectId": "a1:4",
+   "normalizedElementId": "src_060",
+   "excalidrawElementIds": [
+    "BASE_TEXT_046"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_061",
+   "sourceObjectId": "c1:6",
+   "normalizedElementId": "src_061",
+   "excalidrawElementIds": [
+    "BASE_ARROW_011",
+    "BASE_TEXT_047"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_062",
+   "sourceObjectId": "o1:13",
+   "normalizedElementId": "src_062",
+   "excalidrawElementIds": [
+    "BASE_RECT_045",
+    "BASE_TEXT_048"
+   ],
+   "sourceText": "习性响应判断机制",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_063",
+   "sourceObjectId": "c1:19",
+   "normalizedElementId": "src_063",
+   "excalidrawElementIds": [
+    "BASE_ARROW_012",
+    "BASE_TEXT_049"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_064",
+   "sourceObjectId": "a1:3",
+   "normalizedElementId": "src_064",
+   "excalidrawElementIds": [
+    "BASE_TEXT_050"
+   ],
+   "sourceText": "=",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_065",
+   "sourceObjectId": "o1:11",
+   "normalizedElementId": "src_065",
+   "excalidrawElementIds": [
+    "BASE_RECT_046",
+    "BASE_TEXT_051"
+   ],
+   "sourceText": "点位环境因素",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_066",
+   "sourceObjectId": "o1:107",
+   "normalizedElementId": "src_066",
+   "excalidrawElementIds": [
+    "BASE_RECT_047",
+    "BASE_TEXT_052"
+   ],
+   "sourceText": "鱼保底习性",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_067",
+   "sourceObjectId": "o1:21",
+   "normalizedElementId": "src_067",
+   "excalidrawElementIds": [
+    "BASE_RECT_048",
+    "BASE_TEXT_053"
+   ],
+   "sourceText": "点位结构类型",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_068",
+   "sourceObjectId": "o1:96",
+   "normalizedElementId": "src_068",
+   "excalidrawElementIds": [
+    "BASE_RECT_049",
+    "BASE_TEXT_054"
+   ],
+   "sourceText": "点位结构体",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_069",
+   "sourceObjectId": "o1:42",
+   "normalizedElementId": "src_069",
+   "excalidrawElementIds": [
+    "BASE_RECT_050",
+    "BASE_TEXT_055"
+   ],
+   "sourceText": "鱼副习性配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_070",
+   "sourceObjectId": "c1:18",
+   "normalizedElementId": "src_070",
+   "excalidrawElementIds": [
+    "BASE_ARROW_013"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_071",
+   "sourceObjectId": "o1:104",
+   "normalizedElementId": "src_071",
+   "excalidrawElementIds": [
+    "BASE_RECT_051",
+    "BASE_TEXT_056"
+   ],
+   "sourceText": "诱鱼响应通道",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_072",
+   "sourceObjectId": "a1:6",
+   "normalizedElementId": "src_072",
+   "excalidrawElementIds": [
+    "BASE_TEXT_057"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_073",
+   "sourceObjectId": "a1:9",
+   "normalizedElementId": "src_073",
+   "excalidrawElementIds": [
+    "BASE_TEXT_058"
+   ],
+   "sourceText": "习性内配置时覆盖鱼参数配置，习性内不配置时用鱼参数配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_074",
+   "sourceObjectId": "o1:36",
+   "normalizedElementId": "src_074",
+   "excalidrawElementIds": [
+    "BASE_RECT_052",
+    "BASE_TEXT_059"
+   ],
+   "sourceText": "诱鱼响应修正",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_075",
+   "sourceObjectId": "c1:11",
+   "normalizedElementId": "src_075",
+   "excalidrawElementIds": [
+    "BASE_ARROW_014"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_076",
+   "sourceObjectId": "o1:61",
+   "normalizedElementId": "src_076",
+   "excalidrawElementIds": [
+    "BASE_RECT_053",
+    "BASE_TEXT_060"
+   ],
+   "sourceText": "结构体的配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_077",
+   "sourceObjectId": "o1:84",
+   "normalizedElementId": "src_077",
+   "excalidrawElementIds": [
+    "BASE_RECT_054",
+    "BASE_TEXT_061"
+   ],
+   "sourceText": "呈现类型",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_078",
+   "sourceObjectId": "a1:14",
+   "normalizedElementId": "src_078",
+   "excalidrawElementIds": [
+    "BASE_TEXT_062"
+   ],
+   "sourceText": "+",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_079",
+   "sourceObjectId": "o1:85",
+   "normalizedElementId": "src_079",
+   "excalidrawElementIds": [
+    "BASE_RECT_055",
+    "BASE_TEXT_063"
+   ],
+   "sourceText": "呈现强度",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_080",
+   "sourceObjectId": "o1:15",
+   "normalizedElementId": "src_080",
+   "excalidrawElementIds": [
+    "BASE_RECT_056"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_081",
+   "sourceObjectId": "o1:26",
+   "normalizedElementId": "src_081",
+   "excalidrawElementIds": [
+    "BASE_RECT_057",
+    "BASE_TEXT_064"
+   ],
+   "sourceText": "诱鱼响应判断机制",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_082",
+   "sourceObjectId": "o1:22",
+   "normalizedElementId": "src_082",
+   "excalidrawElementIds": [
+    "BASE_RECT_058",
+    "BASE_TEXT_065"
+   ],
+   "sourceText": "玩家操作",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_083",
+   "sourceObjectId": "c1:10",
+   "normalizedElementId": "src_083",
+   "excalidrawElementIds": [
+    "BASE_ARROW_015"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_084",
+   "sourceObjectId": "o1:100",
+   "normalizedElementId": "src_084",
+   "excalidrawElementIds": [
+    "BASE_RECT_059"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_085",
+   "sourceObjectId": "c1:24",
+   "normalizedElementId": "src_085",
+   "excalidrawElementIds": [
+    "BASE_ARROW_016",
+    "BASE_TEXT_066"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_086",
+   "sourceObjectId": "a1:7",
+   "normalizedElementId": "src_086",
+   "excalidrawElementIds": [
+    "BASE_TEXT_067"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_087",
+   "sourceObjectId": "o1:38",
+   "normalizedElementId": "src_087",
+   "excalidrawElementIds": [
+    "BASE_RECT_060",
+    "BASE_TEXT_068"
+   ],
+   "sourceText": "鱼习性配置",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_088",
+   "sourceObjectId": "o1:12",
+   "normalizedElementId": "src_088",
+   "excalidrawElementIds": [
+    "BASE_RECT_061",
+    "BASE_TEXT_069"
+   ],
+   "sourceText": "鱼习性环境亲和范围",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_089",
+   "sourceObjectId": "a1:11",
+   "normalizedElementId": "src_089",
+   "excalidrawElementIds": [
+    "BASE_TEXT_070"
+   ],
+   "sourceText": "...",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_090",
+   "sourceObjectId": "o1:19",
+   "normalizedElementId": "src_090",
+   "excalidrawElementIds": [
+    "BASE_RECT_062",
+    "BASE_TEXT_071"
+   ],
+   "sourceText": "积极状态",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_091",
+   "sourceObjectId": "o1:32",
+   "normalizedElementId": "src_091",
+   "excalidrawElementIds": [
+    "BASE_RECT_063",
+    "BASE_TEXT_072"
+   ],
+   "sourceText": "环境亲和+结构亲和",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_092",
+   "sourceObjectId": "o1:65",
+   "normalizedElementId": "src_092",
+   "excalidrawElementIds": [
+    "BASE_RECT_064",
+    "BASE_TEXT_073"
+   ],
+   "sourceText": "结构体环境影响",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_093",
+   "sourceObjectId": "a1:2",
+   "normalizedElementId": "src_093",
+   "excalidrawElementIds": [
+    "BASE_TEXT_074"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_094",
+   "sourceObjectId": "o1:16",
+   "normalizedElementId": "src_094",
+   "excalidrawElementIds": [
+    "BASE_RECT_065",
+    "BASE_TEXT_075"
+   ],
+   "sourceText": "鱼习性状态",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_095",
+   "sourceObjectId": "c1:23",
+   "normalizedElementId": "src_095",
+   "excalidrawElementIds": [
+    "BASE_ARROW_017",
+    "BASE_TEXT_076"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_096",
+   "sourceObjectId": "o1:31",
+   "normalizedElementId": "src_096",
+   "excalidrawElementIds": [
+    "BASE_RECT_066"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_097",
+   "sourceObjectId": "o1:95",
+   "normalizedElementId": "src_097",
+   "excalidrawElementIds": [
+    "BASE_RECT_067",
+    "BASE_TEXT_077"
+   ],
+   "sourceText": "点位环境参数",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_098",
+   "sourceObjectId": "o1:81",
+   "normalizedElementId": "src_098",
+   "excalidrawElementIds": [
+    "BASE_RECT_068",
+    "BASE_TEXT_078"
+   ],
+   "sourceText": "数值判定条件",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_099",
+   "sourceObjectId": "o1:101",
+   "normalizedElementId": "src_099",
+   "excalidrawElementIds": [
+    "BASE_RECT_069",
+    "BASE_TEXT_079"
+   ],
+   "sourceText": "鱼位置权重=0",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_100",
+   "sourceObjectId": "c1:21",
+   "normalizedElementId": "src_100",
+   "excalidrawElementIds": [
+    "BASE_ARROW_018",
+    "BASE_TEXT_080"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_101",
+   "sourceObjectId": "o1:10",
+   "normalizedElementId": "src_101",
+   "excalidrawElementIds": [
+    "BASE_RECT_070"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_102",
+   "sourceObjectId": "o1:17",
+   "normalizedElementId": "src_102",
+   "excalidrawElementIds": [
+    "BASE_RECT_071",
+    "BASE_TEXT_081"
+   ],
+   "sourceText": "消极状态",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_103",
+   "sourceObjectId": "a1:19",
+   "normalizedElementId": "src_103",
+   "excalidrawElementIds": [
+    "BASE_TEXT_082"
+   ],
+   "sourceText": "点位环境",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_104",
+   "sourceObjectId": "o1:23",
+   "normalizedElementId": "src_104",
+   "excalidrawElementIds": [
+    "BASE_RECT_072",
+    "BASE_TEXT_083"
+   ],
+   "sourceText": "饵类型",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_105",
+   "sourceObjectId": "o1:89",
+   "normalizedElementId": "src_105",
+   "excalidrawElementIds": [
+    "BASE_RECT_073",
+    "BASE_TEXT_084"
+   ],
+   "sourceText": "呈现配置2",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_106",
+   "sourceObjectId": "a1:12",
+   "normalizedElementId": "src_106",
+   "excalidrawElementIds": [
+    "BASE_TEXT_085"
+   ],
+   "sourceText": "=",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_107",
+   "sourceObjectId": "o1:33",
+   "normalizedElementId": "src_107",
+   "excalidrawElementIds": [
+    "BASE_RECT_074",
+    "BASE_TEXT_086"
+   ],
+   "sourceText": "触发结构体",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_108",
+   "sourceObjectId": "o1:74",
+   "normalizedElementId": "src_108",
+   "excalidrawElementIds": [
+    "BASE_RECT_075",
+    "BASE_TEXT_087"
+   ],
+   "sourceText": "常规参数",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_109",
+   "sourceObjectId": "c1:7",
+   "normalizedElementId": "src_109",
+   "excalidrawElementIds": [
+    "BASE_ARROW_019"
+   ],
+   "sourceText": null,
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_110",
+   "sourceObjectId": "o1:66",
+   "normalizedElementId": "src_110",
+   "excalidrawElementIds": [
+    "BASE_RECT_076",
+    "BASE_TEXT_088"
+   ],
+   "sourceText": "结构体饵食性\n食性丰度",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_111",
+   "sourceObjectId": "o1:25",
+   "normalizedElementId": "src_111",
+   "excalidrawElementIds": [
+    "BASE_RECT_077"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_112",
+   "sourceObjectId": "o1:75",
+   "normalizedElementId": "src_112",
+   "excalidrawElementIds": [
+    "BASE_RECT_078",
+    "BASE_TEXT_089"
+   ],
+   "sourceText": "呈现1",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_113",
+   "sourceObjectId": "o1:6",
+   "normalizedElementId": "src_113",
+   "excalidrawElementIds": [
+    "BASE_RECT_079",
+    "BASE_TEXT_090"
+   ],
+   "sourceText": "诱鱼呈现",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_114",
+   "sourceObjectId": "a1:5",
+   "normalizedElementId": "src_114",
+   "excalidrawElementIds": [
+    "BASE_TEXT_091"
+   ],
+   "sourceText": "X",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_115",
+   "sourceObjectId": "o1:92",
+   "normalizedElementId": "src_115",
+   "excalidrawElementIds": [
+    "BASE_RECT_080"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_116",
+   "sourceObjectId": "z1:16",
+   "normalizedElementId": "src_116",
+   "excalidrawElementIds": [
+    "BASE_RECT_081",
+    "BASE_TEXT_092"
+   ],
+   "sourceText": "连续性传导",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_117",
+   "sourceObjectId": "z1:19",
+   "normalizedElementId": "src_117",
+   "excalidrawElementIds": [
+    "BASE_RECT_082"
+   ],
+   "sourceText": "",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_118",
+   "sourceObjectId": "z1:1",
+   "normalizedElementId": "src_118",
+   "excalidrawElementIds": [
+    "BASE_RECT_083",
+    "BASE_TEXT_093"
+   ],
+   "sourceText": "需求拆解 ",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_119",
+   "sourceObjectId": "z1:2",
+   "normalizedElementId": "src_119",
+   "excalidrawElementIds": [
+    "BASE_RECT_084",
+    "BASE_TEXT_094"
+   ],
+   "sourceText": "环境因子和结构体",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_120",
+   "sourceObjectId": "z1:23",
+   "normalizedElementId": "src_120",
+   "excalidrawElementIds": [
+    "BASE_RECT_085",
+    "BASE_TEXT_095"
+   ],
+   "sourceText": "流速",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_121",
+   "sourceObjectId": "z1:15",
+   "normalizedElementId": "src_121",
+   "excalidrawElementIds": [
+    "BASE_RECT_086",
+    "BASE_TEXT_096"
+   ],
+   "sourceText": "环境计算",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_122",
+   "sourceObjectId": "z1:21",
+   "normalizedElementId": "src_122",
+   "excalidrawElementIds": [
+    "BASE_RECT_087",
+    "BASE_TEXT_097"
+   ],
+   "sourceText": "环境运算运算因子",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_123",
+   "sourceObjectId": "z1:22",
+   "normalizedElementId": "src_123",
+   "excalidrawElementIds": [
+    "BASE_RECT_088",
+    "BASE_TEXT_098"
+   ],
+   "sourceText": "用于进行鱼情运算的最小因子",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_124",
+   "sourceObjectId": "z1:18",
+   "normalizedElementId": "src_124",
+   "excalidrawElementIds": [
+    "BASE_RECT_089",
+    "BASE_TEXT_099"
+   ],
+   "sourceText": "目标",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_125",
+   "sourceObjectId": "z1:13",
+   "normalizedElementId": "src_125",
+   "excalidrawElementIds": [
+    "BASE_RECT_090",
+    "BASE_TEXT_100"
+   ],
+   "sourceText": "光照、浑浊",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_126",
+   "sourceObjectId": "z1:4",
+   "normalizedElementId": "src_126",
+   "excalidrawElementIds": [
+    "BASE_RECT_091",
+    "BASE_TEXT_101"
+   ],
+   "sourceText": "一级环境因子",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_127",
+   "sourceObjectId": "z1:5",
+   "normalizedElementId": "src_127",
+   "excalidrawElementIds": [
+    "BASE_RECT_092",
+    "BASE_TEXT_102"
+   ],
+   "sourceText": "天气、温度、气压、风力、时段",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_128",
+   "sourceObjectId": "z1:10",
+   "normalizedElementId": "src_128",
+   "excalidrawElementIds": [
+    "BASE_RECT_093",
+    "BASE_TEXT_103"
+   ],
+   "sourceText": "二级环境因子",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_129",
+   "sourceObjectId": "z1:11",
+   "normalizedElementId": "src_129",
+   "excalidrawElementIds": [
+    "BASE_RECT_094",
+    "BASE_TEXT_104"
+   ],
+   "sourceText": "水温、含氧",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_130",
+   "sourceObjectId": "z1:3",
+   "normalizedElementId": "src_130",
+   "excalidrawElementIds": [
+    "BASE_RECT_095",
+    "BASE_TEXT_105"
+   ],
+   "sourceText": "环境因子的计算",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_131",
+   "sourceObjectId": "z1:17",
+   "normalizedElementId": "src_131",
+   "excalidrawElementIds": [
+    "BASE_RECT_096",
+    "BASE_TEXT_106"
+   ],
+   "sourceText": "总结",
+   "semanticId": null,
+   "mapping": "full"
+  },
+  {
+   "stableId": "P_BASE_132",
+   "sourceObjectId": "z1:20",
+   "normalizedElementId": "src_132",
+   "excalidrawElementIds": [
+    "BASE_RECT_097",
+    "BASE_TEXT_107"
+   ],
+   "sourceText": "得到每个点位的环境运算数值",
+   "semanticId": null,
+   "mapping": "full"
+  }
+ ],
+ "derivedElements": [
+  {
+   "stableId": "P_DERIVED_001",
+   "origin": "mindmap-edge:z1:1->z1:2",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_001"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_002",
+   "origin": "mindmap-edge:z1:2->z1:3",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_002"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_003",
+   "origin": "mindmap-edge:z1:3->z1:4",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_003"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_004",
+   "origin": "mindmap-edge:z1:4->z1:5",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_004"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_005",
+   "origin": "mindmap-edge:z1:3->z1:10",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_005"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_006",
+   "origin": "mindmap-edge:z1:10->z1:11",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_006"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_007",
+   "origin": "mindmap-edge:z1:10->z1:13",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_007"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_008",
+   "origin": "mindmap-edge:z1:3->z1:15",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_008"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_009",
+   "origin": "mindmap-edge:z1:15->z1:16",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_009"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_010",
+   "origin": "mindmap-edge:z1:3->z1:17",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_010"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_011",
+   "origin": "mindmap-edge:z1:17->z1:18",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_011"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_012",
+   "origin": "mindmap-edge:z1:17->z1:19",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_012"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_013",
+   "origin": "mindmap-edge:z1:18->z1:20",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_013"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_014",
+   "origin": "mindmap-edge:z1:3->z1:21",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_014"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_015",
+   "origin": "mindmap-edge:z1:21->z1:22",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_015"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  },
+  {
+   "stableId": "P_DERIVED_016",
+   "origin": "mindmap-edge:z1:10->z1:23",
+   "excalidrawElementIds": [
+    "BASE_ARROW_MM_016"
+   ],
+   "reason": "Edge auto-drawn by Feishu mindmap renderer; reconstructed from structural parent_id, not from pixel inspection."
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "source": {
+  "documentId": "ES2Sd89jeoCsiVxqY3WcHbV4n4c",
+  "diagramId": "DfFRwiueTh2QbdbzS1scoNomnkj",
+  "sourceElementCount": 132,
+  "normalizedElementCount": 132
+ },
+ "excalidrawElementCount": 239,
+ "elementCounts": {
+  "rectangle": 97,
+  "text": 107,
+  "arrow": 35
+ },
+ "mappedSourceElements": 132,
+ "unmappedSourceElements": 0,
+ "derivedElements": 16,
+ "captions": {
+  "ok": 11,
+  "bad": 0
+ },
+ "connectorArrows": 19,
+ "lockedBaseElements": 239,
+ "unlockedElements": [],
+ "determinismRegenerationEqualsFile": true,
+ "unmapped": [],
+ "partially_mapped": [],
+ "approximated": [
+  "caption-position:c1:3",
+  "caption-position:c1:5",
+  "caption-position:c1:25",
+  "caption-position:c1:2",
+  "caption-position:c1:4",
+  "caption-position:c1:22",
+  "caption-position:c1:6",
+  "caption-position:c1:19",
+  "caption-position:c1:24",
+  "caption-position:c1:23",
+  "caption-position:c1:21",
+  "round_rect2->round_rect:o1:15",
+  "bold-unsupported:z1:1",
+  "font-substitution:all-text (feishu default font -> excalidraw Normal/system)",
+  "border-none->transparent-stroke:62",
+  "mindmap-edge-derived:16 (reconstructed from parent_id)"
+ ],
+ "warnings": [],
+ "warningCount": 0
+}

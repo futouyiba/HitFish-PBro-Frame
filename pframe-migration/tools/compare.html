@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Migration visual readback｜飞书原图 vs Excalidraw Base</title>
+<style>
+  body { margin: 0; font: 13px/1.6 -apple-system, "PingFang SC", sans-serif; background: #f6f7f9; color: #222; }
+  header { padding: 10px 16px; background: #fff; border-bottom: 1px solid #e3e5e8; }
+  header h1 { font-size: 15px; margin: 0 0 2px; }
+  header p { margin: 0; color: #666; }
+  .row { display: flex; gap: 12px; padding: 12px 16px; }
+  .pane { flex: 1; min-width: 0; background: #fff; border: 1px solid #e3e5e8; border-radius: 8px; overflow: hidden; }
+  .pane h2 { font-size: 13px; margin: 0; padding: 8px 12px; background: #fafbfc; border-bottom: 1px solid #eee; }
+  .pane img { display: block; width: 100%; cursor: zoom-in; }
+  .zoomed .pane img { width: 260%; max-width: none; cursor: zoom-out; }
+  .pane.zoomed img { width: 260%; max-width: none; cursor: zoom-out; }
+  .checklist { padding: 4px 16px 16px; }
+  .checklist td, .checklist th { border: 1px solid #e3e5e8; padding: 6px 10px; text-align: left; }
+  .checklist { border-collapse: collapse; background: #fff; }
+</style>
+</head>
+<body>
+<header>
+  <h1>迁移视觉回读｜《游戏中鱼整个系统的设计》主图（画板 DfFRwiueTh2QbdbzS1scoNomnkj）</h1>
+  <p>左：飞书画板导出参考（source/feishu-original-reference.jpg）。右：Excalidraw Base 渲染（metadata/visual-evidence-base-full.jpg，
+     交互原件 excalidraw/pframe-base.excalidraw）。点击图片放大。目标不是像素级一致，是布局、信息结构与阅读路径高度忠实。</p>
+</header>
+<div class="row" id="row">
+  <div class="pane"><h2>Feishu 原图（参考）</h2><img src="../source/feishu-original-reference.jpg" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
+  <div class="pane"><h2>Excalidraw Base（迁移结果渲染）</h2><img src="../metadata/visual-evidence-base-full.jpg" onclick="this.closest('.pane').classList.toggle('zoomed')"></div>
+</div>
+<div class="checklist-wrap" style="padding:0 16px 24px">
+<table class="checklist">
+  <tr><th>检查项</th><th>结果</th><th>说明</th></tr>
+  <tr><td>节点数量</td><td>✓ 132/132</td><td>migration-report.json：mapped 132，unmapped 0</td></tr>
+  <tr><td>文字内容</td><td>✓ 逐字节一致</td><td>96 个含文字节点共 1332 字（build_report 断言）</td></tr>
+  <tr><td>箭头数量与方向</td><td>✓ 19/19</td><td>全部单向（start=none, end=arrow），拐点几何保留</td></tr>
+  <tr><td>主要空间关系</td><td>✓</td><td>坐标未平移；锚点/拐点由源数据重建</td></tr>
+  <tr><td>颜色</td><td>✓</td><td>6 种填充 + 边框色原值迁移</td></tr>
+  <tr><td>大分区</td><td>✓</td><td>主流程区 / 大文本区 / 思维导图区（右侧树）</td></tr>
+  <tr><td>Group</td><td>✓ 1 组</td><td>BASE_GRP_001（n1:1 三子元素）</td></tr>
+  <tr><td>层级 z-order</td><td>✓</td><td>elements 顺序按源 z_index 排列</td></tr>
+  <tr><td>思维导图边</td><td>△ 推导</td><td>飞书无几何数据；由 parent_id 结构推导（16 条，可删）</td></tr>
+</table>
+</div>
+</body>
+</html>

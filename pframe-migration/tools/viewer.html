@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>PFrame migration viewer</title>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@excalidraw/excalidraw@0.17.6/dist/excalidraw.production.min.js"></script>
+<style>
+  html, body { margin: 0; height: 100%; }
+  #app { height: 100vh; }
+  #hud { position: fixed; top: 8px; left: 8px; z-index: 999; background: #fffbe6;
+         border: 1px solid #d4a72c; border-radius: 6px; padding: 6px 10px;
+         font: 12px/1.5 ui-monospace, monospace; color: #444; }
+</style>
+</head>
+<body>
+<div id="hud">loading…</div>
+<div id="app"></div>
+<script>
+(async () => {
+  const hud = document.getElementById('hud');
+  const params = new URLSearchParams(location.search);
+  const file = params.get('file') || '/excalidraw/pframe-base.excalidraw';
+  const res = await fetch(file);
+  if (!res.ok) { hud.textContent = 'fetch failed: ' + file + ' → ' + res.status; return; }
+  const scene = await res.json();
+  const Excal = window.ExcalidrawLib || window.Excal;
+  const root = ReactDOM.createRoot(document.getElementById('app'));
+  const { Excalidraw } = Excal;
+  let selected = [];
+  root.render(React.createElement(Excalidraw, {
+    initialData: {
+      ...scene,
+      appState: { ...(scene.appState || {}), zoom: { value: 0.35 } },
+    },
+    excalidrawAPI: (api) => {
+      window.__pframe_api = api;
+      setTimeout(() => api.scrollToContent(null, { fitToViewport: true }), 100);
+    },
+    onChange: (elements, state) => {
+      selected = state.selectedElementIds
+        ? Object.keys(state.selectedElementIds) : [];
+    },
+  }));
+  hud.innerHTML =
+    'file: ' + file + '<br>elements: ' + scene.elements.length +
+    '<br>locked: ' + scene.elements.filter(e => e.locked).length +
+    '<br>unlocked: ' + scene.elements.filter(e => !e.locked).length;
+  window.__pframe = {
+    scene,
+    exportSvg: async () => {
+      const svg = await Excal.exportToSvg(scene.elements, {
+        exportBackground: true, viewBackgroundColor: '#ffffff',
+        appState: scene.appState,
+      });
+      return svg.outerHTML;
+    },
+    getSelected: () => selected,
+    canDragLocked: (id) => {
+      const el = scene.elements.find(e => e.id === id);
+      return el ? { locked: el.locked } : null;
+    },
+  };
+})();
+</script>
+</body>
+</html>

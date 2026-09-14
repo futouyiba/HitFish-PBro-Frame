@@ -1,0 +1,4313 @@
+{
+ "source": "feishu",
+ "sourceDocumentId": "ES2Sd89jeoCsiVxqY3WcHbV4n4c",
+ "sourceDiagramId": "DfFRwiueTh2QbdbzS1scoNomnkj",
+ "capturedAt": "2026-09-14T12:37:00+08:00",
+ "sourceNodeCount": 132,
+ "notes": "Graphic migration intermediate representation. No FCF semantics. Connector turningPoints are relative to the connector bbox origin (x,y).",
+ "elements": [
+  {
+   "normalizedElementId": "src_001",
+   "sourceId": "o1:28",
+   "x": 1136.71533203125,
+   "y": -1894.8009033203125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 45,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "基础环境亲和配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_002",
+   "sourceId": "o1:34",
+   "x": 1609.7225341796875,
+   "y": -1919.2021484375,
+   "width": 807.1295166015625,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 3,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_003",
+   "sourceId": "n1:1",
+   "x": 1161.0543212890625,
+   "y": -851.5767211914062,
+   "width": 324.94384765625,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 0,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "group",
+   "group": {
+    "children": [
+     "o1:105",
+     "o1:103",
+     "o1:104"
+    ]
+   }
+  },
+  {
+   "normalizedElementId": "src_004",
+   "sourceId": "o1:8",
+   "x": 2421.880859375,
+   "y": -823.3628540039062,
+   "width": 332.1717224121094,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 6,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_005",
+   "sourceId": "o1:69",
+   "x": 3741.34423828125,
+   "y": -1977.28759765625,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 70,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "饵类型",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_006",
+   "sourceId": "c1:3",
+   "x": 2212.5576171875,
+   "y": -1239.14111328125,
+   "width": 0,
+   "height": 705.8231201171875,
+   "angle": 0,
+   "zIndex": 26,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:10",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:2",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "输出",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.3182772994041443,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_007",
+   "sourceId": "o1:29",
+   "x": 1333.1773681640625,
+   "y": -1894.8009033203125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 46,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_008",
+   "sourceId": "o1:93",
+   "x": 4209.09716796875,
+   "y": -2400.10888671875,
+   "width": 803.032958984375,
+   "height": 259.9450378417969,
+   "angle": 0,
+   "zIndex": 90,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 9,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_009",
+   "sourceId": "a1:1",
+   "x": -1.0116310119628906,
+   "y": -2087.08837890625,
+   "width": 819.77001953125,
+   "height": 1540.6719970703125,
+   "angle": 0,
+   "zIndex": 7,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "按照这个逻辑，那么整个中鱼系统也可以更简单。\n\n核心内容：\n\n1，鱼配置\n\n基础品质配置，决定鱼的基础信息，包括：品质等级、重量区间、产出方式\n\n鱼的环境亲和度，决定鱼对环境的偏好，包括：不存在条件、环境因子适应区间（温度、养分、光照）、偏好位置（xyz轴的偏好，喜好结构特征、喜好结构体类型）\n\n鱼的诱鱼响应（鱼捕食响应），决定鱼对什么诱鱼呈现吸引而产出的诱鱼权重，包括：常规偏好。高、中、低、避险4种状态的诱鱼呈现的偏好\n\n2，鱼习性\n\n决定鱼在不同点位的环境状态下的触发的活性，或状态修正\n\n决定鱼在不同点位的环境状态下诱鱼响应的偏好和修正\n\n配置触发结构体或结构体特征，配置触发环境亲和条件（如不配置则复用鱼配置，如配置则放宽或收窄亲和区间）\n\n3，结构体配置\n\n结构体内对环境因子的修正\n\n结构体内对诱鱼呈现的修正\n\n结构体影响的范围\n\n4，诱鱼呈现配置\n\n饵类型和饵对应的呈现配置\n\n5，点位匹配算法模块\n\n读取鱼习性配置，与当前点位的参数，进行对比。\n\n输出：\n\n鱼在当前位置存在强度，决定鱼的位置权重\n\n鱼在当前位置捕食状态（活性），决定鱼的诱鱼响应通道\n\n以上烘焙成数值\n\n6，中鱼点位匹配算法\n\n取玩家饵的xyz点位，以及点位的诱鱼响应通道\n\n取玩家饵的操控下的诱鱼呈现，对诱鱼响应通道进行逻辑判定\n\n产生诱鱼响应权重\n\n7，权重加权\n\n位置权重*诱鱼响应权重=最终中鱼权重\n\n辅助修正：\n\n1，场景归一化位置权重再分配\n\n将整个场景内，一中鱼的所有点位的位置权重核算后在分配，控制总权重在可控范围内\n\n2，保底控制\n\n鱼状态带来的鱼呈现的保底逻辑，保证鱼一定有一个诱鱼响应\n\n3，中鱼控制\n\n在中鱼系统中进行控制，引入玩家一定时段内的产出、玩家阶段、玩家等级等中鱼模拟之外的控制，平衡玩家中鱼结果，调整优化玩家体验\n\n4，中鱼后产出分配\n\n鱼习性产生的位置、活性、呈现因子，控制中鱼后产生不同体型的鱼的概率",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false,
+    "paragraphCount": 73
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_010",
+   "sourceId": "o1:2",
+   "x": 2152.557861328125,
+   "y": -533.3179321289062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 8,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼位置权重",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_011",
+   "sourceId": "a1:18",
+   "x": 4248.884765625,
+   "y": -2198.833984375,
+   "width": 11.675994873046875,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 89,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "...",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_012",
+   "sourceId": "o1:97",
+   "x": 1055.429443359375,
+   "y": -1435.158447265625,
+   "width": 115.1814193725586,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 94,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼存在条件",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_013",
+   "sourceId": "o1:14",
+   "x": 2060.1923828125,
+   "y": -1292.773193359375,
+   "width": 138.13247680664062,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 25,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼习性结构亲和",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_014",
+   "sourceId": "c1:14",
+   "x": 3854.377685546875,
+   "y": -2140.1640625,
+   "width": 45.845516204833984,
+   "height": 162.87620544433594,
+   "angle": 0,
+   "zIndex": 77,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:77",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:69",
+     "fx": 0.8182953000068665,
+     "fy": -3.949880651504464e-15,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      45.845516204833984,
+      81.43810272216797
+     ],
+     [
+      0,
+      81.43810272216797
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_015",
+   "sourceId": "c1:5",
+   "x": 2495.6015625,
+   "y": -1073.9356689453125,
+   "width": 310.3816833496094,
+   "height": 268.77978515625,
+   "angle": 0,
+   "zIndex": 35,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:15",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:7",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      310.3816833496094,
+      134.389892578125
+     ],
+     [
+      0,
+      134.389892578125
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "产生一种状态",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.08921804279088974,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_016",
+   "sourceId": "c1:25",
+   "x": 1440.2462158203125,
+   "y": -917.1907958984375,
+   "width": 283.6622619628906,
+   "height": 65.61408233642578,
+   "angle": 0,
+   "zIndex": 111,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:107",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:105",
+     "fx": 0.8592005372047424,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      283.6622619628906,
+      32.80704116821289
+     ],
+     [
+      0,
+      32.80704116821289
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "通过",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.43304193019866943,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_017",
+   "sourceId": "o1:102",
+   "x": 1161.0543212890625,
+   "y": -1125.3236083984375,
+   "width": 138.13247680664062,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 103,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "主习性判断",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_018",
+   "sourceId": "a1:8",
+   "x": 3252.725341796875,
+   "y": -775.2918701171875,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 41,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_019",
+   "sourceId": "o1:41",
+   "x": 924.3833618164062,
+   "y": -2052.862060546875,
+   "width": 1899.0196533203125,
+   "height": 334.4210205078125,
+   "angle": 0,
+   "zIndex": 2,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_020",
+   "sourceId": "c1:15",
+   "x": 2079.6044921875,
+   "y": -1839.2021484375,
+   "width": 726.3787841796875,
+   "height": 653.1939697265625,
+   "angle": 0,
+   "zIndex": 95,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:36",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:15",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      326.59698486328125
+     ],
+     [
+      726.3787841796875,
+      326.59698486328125
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_021",
+   "sourceId": "o1:4",
+   "x": 2527.966796875,
+   "y": -533.3179321289062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 12,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "中鱼总权重",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#fee3e2",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_022",
+   "sourceId": "o1:78",
+   "x": 3706.5078125,
+   "y": -2285.38134765625,
+   "width": 105.37471771240234,
+   "height": 33.14480209350586,
+   "angle": 0,
+   "zIndex": 75,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "饵类型配置",
+    "fontSize": 16,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_023",
+   "sourceId": "c1:16",
+   "x": 1113.0201416015625,
+   "y": -1384.58056640625,
+   "width": 117.10045623779297,
+   "height": 88.67920684814453,
+   "angle": 0,
+   "zIndex": 97,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:97",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:99",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      44.339603424072266
+     ],
+     [
+      117.10045623779297,
+      44.339603424072266
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_024",
+   "sourceId": "c1:2",
+   "x": 2360.800537109375,
+   "y": -711.2904052734375,
+   "width": 227.1660919189453,
+   "height": 177.9724884033203,
+   "angle": 0,
+   "zIndex": 18,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:8",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:3",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      227.1660919189453,
+      88.98624420166016
+     ],
+     [
+      0,
+      88.98624420166016
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "输出",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.4934365451335907,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_025",
+   "sourceId": "a1:13",
+   "x": 4727.67529296875,
+   "y": -2314.42919921875,
+   "width": 6.9720001220703125,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 80,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "x",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_026",
+   "sourceId": "o1:94",
+   "x": 4212.5927734375,
+   "y": -2440.1474609375,
+   "width": 138.13247680664062,
+   "height": 40.03854751586914,
+   "angle": 0,
+   "zIndex": 91,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼呈现库",
+    "fontSize": 16,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_027",
+   "sourceId": "o1:76",
+   "x": 3882.88818359375,
+   "y": -2224.98291015625,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 74,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现2",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_028",
+   "sourceId": "o1:82",
+   "x": 4228.9716796875,
+   "y": -2349.92822265625,
+   "width": 693.4102783203125,
+   "height": 85.57028198242188,
+   "angle": 0,
+   "zIndex": 82,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 9,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_029",
+   "sourceId": "c1:20",
+   "x": 1230.1204833984375,
+   "y": -1245.3236083984375,
+   "width": 0,
+   "height": 120,
+   "angle": 0,
+   "zIndex": 104,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:99",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:102",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_030",
+   "sourceId": "o1:3",
+   "x": 2300.800537109375,
+   "y": -533.3179321289062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 9,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼诱鱼响应权重 ",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_031",
+   "sourceId": "o1:80",
+   "x": 4574.61474609375,
+   "y": -2333.075439453125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 79,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "触发操作",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_032",
+   "sourceId": "o1:62",
+   "x": 2953.255859375,
+   "y": -1941.350341796875,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 63,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体类型",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_033",
+   "sourceId": "o1:106",
+   "x": 1408.6588134765625,
+   "y": -1037.7801513671875,
+   "width": 138.13247680664062,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 106,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼副习性判断",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_034",
+   "sourceId": "o1:103",
+   "x": 1170.875732421875,
+   "y": -838.7879028320312,
+   "width": 138.13247680664062,
+   "height": 49.55105972290039,
+   "angle": 0,
+   "zIndex": 1,
+   "parentId": "n1:1",
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼位置权重",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_035",
+   "sourceId": "o1:24",
+   "x": 3272.029052734375,
+   "y": -805.1558837890625,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 40,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "饵强度配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_036",
+   "sourceId": "o1:35",
+   "x": 1809.4503173828125,
+   "y": -1896.766845703125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 50,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "环境亲配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_037",
+   "sourceId": "o1:64",
+   "x": 3372.449951171875,
+   "y": -1968.2762451171875,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 65,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体范围",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_038",
+   "sourceId": "o1:83",
+   "x": 4228.9716796875,
+   "y": -2383.072998046875,
+   "width": 105.37471771240234,
+   "height": 33.14480209350586,
+   "angle": 0,
+   "zIndex": 83,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现配置1",
+    "fontSize": 16,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_039",
+   "sourceId": "o1:27",
+   "x": 957.7678833007812,
+   "y": -1894.8009033203125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 44,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "基础品质配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_040",
+   "sourceId": "o1:43",
+   "x": 2449.77392578125,
+   "y": -1919.2020263671875,
+   "width": 345.5095520019531,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 59,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "...",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_041",
+   "sourceId": "o1:18",
+   "x": 2824.2236328125,
+   "y": -1156.0943603515625,
+   "width": 89.96768951416016,
+   "height": 52.24497985839844,
+   "angle": 0,
+   "zIndex": 30,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "常规状态",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_042",
+   "sourceId": "o1:37",
+   "x": 2202.373779296875,
+   "y": -1896.766845703125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 52,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "习性响应判断机制",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_043",
+   "sourceId": "o1:63",
+   "x": 3162.852783203125,
+   "y": -1968.2763671875,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 64,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体特征",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_044",
+   "sourceId": "o1:70",
+   "x": 4137.72802734375,
+   "y": -1977.2877197265625,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 71,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现强度",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_045",
+   "sourceId": "o1:20",
+   "x": 2581.73046875,
+   "y": -1156.0943603515625,
+   "width": 89.96768951416016,
+   "height": 52.24497985839844,
+   "angle": 0,
+   "zIndex": 32,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "避险",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_046",
+   "sourceId": "o1:30",
+   "x": 1333.1771240234375,
+   "y": -1837.2362060546875,
+   "width": 227.758056640625,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 47,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "消极、常规、积极、避险4种状态的配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_047",
+   "sourceId": "o1:39",
+   "x": 940.2481079101562,
+   "y": -1949.7442626953125,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 54,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼参数配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_048",
+   "sourceId": "o1:45",
+   "x": 2918.419677734375,
+   "y": -2006.046630859375,
+   "width": 658.2353515625,
+   "height": 198.91700744628906,
+   "angle": 0,
+   "zIndex": 61,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_049",
+   "sourceId": "o1:67",
+   "x": 3706.508056640625,
+   "y": -2008.8392333984375,
+   "width": 581.3782958984375,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 68,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 9,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_050",
+   "sourceId": "o1:99",
+   "x": 1161.0543212890625,
+   "y": -1295.9013671875,
+   "width": 138.13247680664062,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 96,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "存在判断",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_051",
+   "sourceId": "o1:5",
+   "x": 2004.314697265625,
+   "y": -533.3179321289062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 13,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "投鱼初始权重 ",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_052",
+   "sourceId": "c1:4",
+   "x": 2304.490966796875,
+   "y": -1260.26513671875,
+   "width": 131.11048889160156,
+   "height": 495.1092834472656,
+   "angle": 0,
+   "zIndex": 34,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:21",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:7",
+     "fx": 0,
+     "fy": 0.5,
+     "snap": "left",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      495.1092834472656
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "诱鱼响应修正",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.24422061443328857,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_053",
+   "sourceId": "o1:7",
+   "x": 2435.6015625,
+   "y": -805.1558227539062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 16,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应通道",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_054",
+   "sourceId": "o1:9",
+   "x": 2530.555908203125,
+   "y": -855.8709106445312,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 19,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应判断机制",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_055",
+   "sourceId": "o1:44",
+   "x": 924.3833618164062,
+   "y": -2134.51953125,
+   "width": 417.4027404785156,
+   "height": 81.6575927734375,
+   "angle": 0,
+   "zIndex": 60,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "一条鱼的配置",
+    "fontSize": 48,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_056",
+   "sourceId": "o1:68",
+   "x": 3706.508056640625,
+   "y": -2041.9840087890625,
+   "width": 105.37471771240234,
+   "height": 33.14480209350586,
+   "angle": 0,
+   "zIndex": 69,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "饵的配置",
+    "fontSize": 16,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_057",
+   "sourceId": "o1:77",
+   "x": 3706.5078125,
+   "y": -2252.236572265625,
+   "width": 387.430419921875,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 1,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 9,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_058",
+   "sourceId": "c1:22",
+   "x": 1299.186767578125,
+   "y": -1100.0347900390625,
+   "width": 178.5382080078125,
+   "height": 62.25459671020508,
+   "angle": 0,
+   "zIndex": 107,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:102",
+     "fx": 1,
+     "fy": 0.5,
+     "snap": "right",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:106",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      178.5382080078125,
+      0
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "不通过",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.5300298929214478,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_059",
+   "sourceId": "o1:105",
+   "x": 1161.0543212890625,
+   "y": -851.5767211914062,
+   "width": 324.94384765625,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 0,
+   "parentId": "n1:1",
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_060",
+   "sourceId": "a1:4",
+   "x": 2134.425048828125,
+   "y": -503.45391845703125,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 14,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_061",
+   "sourceId": "c1:6",
+   "x": 2365.6513671875,
+   "y": -1239.14111328125,
+   "width": 176.79505920410156,
+   "height": 109.16919708251953,
+   "angle": 0,
+   "zIndex": 36,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:10",
+     "fx": 0.9608873128890991,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:15",
+     "fx": 0,
+     "fy": 0.5,
+     "snap": "left",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      109.16919708251953
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "产生判定",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.6655186414718628,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_062",
+   "sourceId": "o1:13",
+   "x": 2046.4716796875,
+   "y": -1383.7216796875,
+   "width": 138.13247680664062,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 24,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "习性响应判断机制",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_063",
+   "sourceId": "c1:19",
+   "x": 997.8386840820312,
+   "y": -1270.612548828125,
+   "width": 163.21563720703125,
+   "height": 432.089599609375,
+   "angle": 0,
+   "zIndex": 102,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:99",
+     "fx": 0,
+     "fy": 0.5,
+     "snap": "left",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:101",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      0
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "不存在",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.16268453001976013,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_064",
+   "sourceId": "a1:3",
+   "x": 2475.570068359375,
+   "y": -503.45391845703125,
+   "width": 7.769989013671875,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 11,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "=",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_065",
+   "sourceId": "o1:11",
+   "x": 2244.490966796875,
+   "y": -1333.0064697265625,
+   "width": 120,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 21,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "点位环境因素",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_066",
+   "sourceId": "o1:107",
+   "x": 1654.84228515625,
+   "y": -967.7685546875,
+   "width": 138.13247680664062,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 109,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼保底习性",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d25d5a",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_067",
+   "sourceId": "o1:21",
+   "x": 2244.4912109375,
+   "y": -1292.7733154296875,
+   "width": 120,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 33,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "点位结构类型",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_068",
+   "sourceId": "o1:96",
+   "x": 1408.65869140625,
+   "y": -1449.5968017578125,
+   "width": 115.1814193725586,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 93,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "点位结构体",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_069",
+   "sourceId": "o1:42",
+   "x": 2449.77392578125,
+   "y": -1951.7100830078125,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 58,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼副习性配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_070",
+   "sourceId": "c1:18",
+   "x": 1230.1204833984375,
+   "y": -1384.58056640625,
+   "width": 162.5657958984375,
+   "height": 88.67920684814453,
+   "angle": 0,
+   "zIndex": 99,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:100",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:99",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      162.5657958984375,
+      44.339603424072266
+     ],
+     [
+      0,
+      44.339603424072266
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_071",
+   "sourceId": "o1:104",
+   "x": 1333.44140625,
+   "y": -838.7879028320312,
+   "width": 138.13247680664062,
+   "height": 49.55105972290039,
+   "angle": 0,
+   "zIndex": 2,
+   "parentId": "n1:1",
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应通道",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_072",
+   "sourceId": "a1:6",
+   "x": 2217.397216796875,
+   "y": -1300.4984130859375,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 23,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_073",
+   "sourceId": "a1:9",
+   "x": 1493.0267333984375,
+   "y": -2026.318603515625,
+   "width": 378,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 57,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "习性内配置时覆盖鱼参数配置，习性内不配置时用鱼参数配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_074",
+   "sourceId": "o1:36",
+   "x": 2010.538330078125,
+   "y": -1896.766845703125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 51,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应修正",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_075",
+   "sourceId": "c1:11",
+   "x": 1402.2432861328125,
+   "y": -2005.7540283203125,
+   "width": 677.3611450195312,
+   "height": 110.95308685302734,
+   "angle": 0,
+   "zIndex": 56,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:29",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:36",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      0
+     ],
+     [
+      677.3611450195312,
+      0
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_076",
+   "sourceId": "o1:61",
+   "x": 2918.419677734375,
+   "y": -2055.1787109375,
+   "width": 172.96902465820312,
+   "height": 49.132179260253906,
+   "angle": 0,
+   "zIndex": 62,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体的配置",
+    "fontSize": 24,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_077",
+   "sourceId": "o1:84",
+   "x": 4237.404296875,
+   "y": -2332.86328125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 84,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现类型",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_078",
+   "sourceId": "a1:14",
+   "x": 4384.115234375,
+   "y": -2314.42919921875,
+   "width": 7.769989013671875,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 85,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "+",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_079",
+   "sourceId": "o1:85",
+   "x": 4400.46337890625,
+   "y": -2332.86279296875,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 86,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现强度",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_080",
+   "sourceId": "o1:15",
+   "x": 2542.446533203125,
+   "y": -1186.008056640625,
+   "width": 527.0736083984375,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 27,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect2",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_081",
+   "sourceId": "o1:26",
+   "x": 2926.04150390625,
+   "y": -859.4164428710938,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 43,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼响应判断机制",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#509863",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_082",
+   "sourceId": "o1:22",
+   "x": 2974.611328125,
+   "y": -805.1558837890625,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 37,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "玩家操作",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_083",
+   "sourceId": "c1:10",
+   "x": 1205.7816162109375,
+   "y": -2005.7540283203125,
+   "width": 672.7351684570312,
+   "height": 110.95308685302734,
+   "angle": 0,
+   "zIndex": 55,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:28",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:35",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      0,
+      0
+     ],
+     [
+      672.7351684570312,
+      0
+     ]
+    ],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_084",
+   "sourceId": "o1:100",
+   "x": 1254.9095458984375,
+   "y": -1466.2381591796875,
+   "width": 275.55340576171875,
+   "height": 81.6575927734375,
+   "angle": 0,
+   "zIndex": 98,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_085",
+   "sourceId": "c1:24",
+   "x": 1546.7911376953125,
+   "y": -1012.4912719726562,
+   "width": 177.1172637939453,
+   "height": 44.72273254394531,
+   "angle": 0,
+   "zIndex": 110,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:106",
+     "fx": 1,
+     "fy": 0.5,
+     "snap": "right",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:107",
+     "fx": 0.5,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      177.1172637939453,
+      0
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "不通过",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.45568937063217163,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_086",
+   "sourceId": "a1:7",
+   "x": 3105.892333984375,
+   "y": -775.2918701171875,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 39,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_087",
+   "sourceId": "o1:38",
+   "x": 1609.7225341796875,
+   "y": -1951.710205078125,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 53,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼习性配置",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_088",
+   "sourceId": "o1:12",
+   "x": 2060.1923828125,
+   "y": -1333.0064697265625,
+   "width": 138.13247680664062,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 22,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼习性环境亲和范围",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_089",
+   "sourceId": "a1:11",
+   "x": 4058.75732421875,
+   "y": -2193.793701171875,
+   "width": 11.675994873046875,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 76,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "...",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_090",
+   "sourceId": "o1:19",
+   "x": 2936.515380859375,
+   "y": -1156.0943603515625,
+   "width": 89.96768951416016,
+   "height": 52.24497985839844,
+   "angle": 0,
+   "zIndex": 31,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "积极状态",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_091",
+   "sourceId": "o1:32",
+   "x": 1136.71533203125,
+   "y": -1837.2362060546875,
+   "width": 139.07205200195312,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 48,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "环境亲和+结构亲和",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_092",
+   "sourceId": "o1:65",
+   "x": 3372.450439453125,
+   "y": -1896.766845703125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 66,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体环境影响",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_093",
+   "sourceId": "a1:2",
+   "x": 2282.668212890625,
+   "y": -503.45391845703125,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 10,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_094",
+   "sourceId": "o1:16",
+   "x": 2581.648681640625,
+   "y": -1218.516357421875,
+   "width": 129.25167846679688,
+   "height": 32.50807571411133,
+   "angle": 0,
+   "zIndex": 28,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼习性状态",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#509863",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_095",
+   "sourceId": "c1:23",
+   "x": 1396.655517578125,
+   "y": -987.202392578125,
+   "width": 81.06941986083984,
+   "height": 135.6256866455078,
+   "angle": 0,
+   "zIndex": 108,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:106",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:105",
+     "fx": 0.7250522375106812,
+     "fy": 0,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [
+     [
+      81.06941986083984,
+      67.8128433227539
+     ],
+     [
+      0,
+      67.8128433227539
+     ]
+    ],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "通过",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.4054481089115143,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_096",
+   "sourceId": "o1:31",
+   "x": 940.2481079101562,
+   "y": -1917.2362060546875,
+   "width": 636.5517578125,
+   "height": 158.0609893798828,
+   "angle": 0,
+   "zIndex": 4,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_097",
+   "sourceId": "o1:95",
+   "x": 1258.3719482421875,
+   "y": -1449.5968017578125,
+   "width": 115.1814193725586,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 92,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "点位环境参数",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_098",
+   "sourceId": "o1:81",
+   "x": 4762.16015625,
+   "y": -2333.2880859375,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 81,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "数值判定条件",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_099",
+   "sourceId": "o1:101",
+   "x": 940.248046875,
+   "y": -838.5228271484375,
+   "width": 115.1814193725586,
+   "height": 50.57775115966797,
+   "angle": 0,
+   "zIndex": 101,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "鱼位置权重=0",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_100",
+   "sourceId": "c1:21",
+   "x": 1230.12060546875,
+   "y": -1074.745849609375,
+   "width": 0,
+   "height": 223.16915893554688,
+   "angle": 0,
+   "zIndex": 105,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:102",
+     "fx": 0.5,
+     "fy": 1,
+     "snap": "bottom",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:105",
+     "fx": 0.21254822611808777,
+     "fy": 1.421085492696024e-15,
+     "snap": "top",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [],
+    "specifiedCoordinate": true,
+    "caption": {
+     "text": {
+      "value": "通过",
+      "fontSize": 14,
+      "fontWeight": "regular",
+      "color": "#1f2329",
+      "textAlign": "center",
+      "verticalAlign": "mid",
+      "italic": false
+     },
+     "position": 0.39469262957572937,
+     "positionType": 0
+    }
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_101",
+   "sourceId": "o1:10",
+   "x": 2046.471923828125,
+   "y": -1351.2135009765625,
+   "width": 332.1717224121094,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 20,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_102",
+   "sourceId": "o1:17",
+   "x": 2698.426025390625,
+   "y": -1156.0943603515625,
+   "width": 89.96768951416016,
+   "height": 52.24497985839844,
+   "angle": 0,
+   "zIndex": 29,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "消极状态",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_103",
+   "sourceId": "a1:19",
+   "x": 1262.4715576171875,
+   "y": -1488.3670654296875,
+   "width": 56,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 100,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "点位环境",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_104",
+   "sourceId": "o1:23",
+   "x": 3125.19580078125,
+   "y": -805.1558837890625,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 38,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "饵类型",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_105",
+   "sourceId": "o1:89",
+   "x": 4237.404296875,
+   "y": -2247.747314453125,
+   "width": 105.37471771240234,
+   "height": 33.14480209350586,
+   "angle": 0,
+   "zIndex": 87,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现配置2",
+    "fontSize": 16,
+    "fontWeight": "regular",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#d4b45b",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_106",
+   "sourceId": "a1:12",
+   "x": 4551.9169921875,
+   "y": -2314.42919921875,
+   "width": 7.769989013671875,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 78,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "=",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_107",
+   "sourceId": "o1:33",
+   "x": 1630.5035400390625,
+   "y": -1896.766845703125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 49,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "触发结构体",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_108",
+   "sourceId": "o1:74",
+   "x": 3939.536376953125,
+   "y": -1977.2877197265625,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 72,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "常规参数",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_109",
+   "sourceId": "c1:7",
+   "x": 2739.900146484375,
+   "y": -765.1558227539062,
+   "width": 186.1414031982422,
+   "height": 1.1368683772161603e-13,
+   "angle": 0,
+   "zIndex": 42,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "connector",
+   "subtype": "polyline",
+   "connector": {
+    "start": {
+     "targetId": "o1:25",
+     "fx": 0,
+     "fy": 0.5,
+     "snap": "left",
+     "arrowStyle": "none"
+    },
+    "end": {
+     "targetId": "o1:6",
+     "fx": 1,
+     "fy": 0.5,
+     "snap": "right",
+     "arrowStyle": "line_arrow"
+    },
+    "turningPoints": [],
+    "specifiedCoordinate": true
+   },
+   "style": {
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_110",
+   "sourceId": "o1:66",
+   "x": 3162.85302734375,
+   "y": -1896.7667236328125,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 67,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "结构体饵食性\n食性丰度",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_111",
+   "sourceId": "o1:25",
+   "x": 2926.041748046875,
+   "y": -821.1920776367188,
+   "width": 527.0736083984375,
+   "height": 112.07246398925781,
+   "angle": 0,
+   "zIndex": 5,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_112",
+   "sourceId": "o1:75",
+   "x": 3722.057861328125,
+   "y": -2224.98291015625,
+   "width": 138.13247680664062,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 73,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "呈现1",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_113",
+   "sourceId": "o1:6",
+   "x": 2619.900146484375,
+   "y": -805.1558227539062,
+   "width": 120,
+   "height": 80,
+   "angle": 0,
+   "zIndex": 15,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "诱鱼呈现",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#f0f4fc",
+    "fillOpacity": 100,
+    "borderStyle": "none",
+    "borderColor": null,
+    "borderWidth": null
+   }
+  },
+  {
+   "normalizedElementId": "src_114",
+   "sourceId": "a1:5",
+   "x": 2583.739990234375,
+   "y": -775.2918090820312,
+   "width": 8.021987915039062,
+   "height": 20.27199935913086,
+   "angle": 0,
+   "zIndex": 17,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "text",
+   "subtype": "text_shape",
+   "text": {
+    "value": "X",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "top",
+    "italic": false
+   },
+   "style": {}
+  },
+  {
+   "normalizedElementId": "src_115",
+   "sourceId": "o1:92",
+   "x": 4228.9716796875,
+   "y": -2215.0576171875,
+   "width": 693.4102783203125,
+   "height": 57.564693450927734,
+   "angle": 0,
+   "zIndex": 88,
+   "parentId": null,
+   "lockedInSource": false,
+   "type": "shape",
+   "subtype": "round_rect",
+   "text": {
+    "value": "",
+    "fontSize": 9,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "fillOpacity": 100,
+    "borderStyle": "dot",
+    "borderColor": "#000000",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_116",
+   "sourceId": "z1:16",
+   "x": 4770.34521484375,
+   "y": -1136.836181640625,
+   "width": 86,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 121,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:15",
+    "collapsed": false
+   },
+   "text": {
+    "value": "连续性传导",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_117",
+   "sourceId": "z1:19",
+   "x": 4742.34521484375,
+   "y": -1028.0201416015625,
+   "width": 72,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 124,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:17",
+    "collapsed": false
+   },
+   "text": {
+    "value": "",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_118",
+   "sourceId": "z1:1",
+   "x": 4108.71337890625,
+   "y": -1173.9041748046875,
+   "width": 107.63198852539062,
+   "height": 48,
+   "angle": 0,
+   "zIndex": 112,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_root",
+   "subtype": null,
+   "mindMap": {
+    "parentId": "",
+    "collapsed": null
+   },
+   "text": {
+    "value": "需求拆解 ",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#ffffff",
+    "textAlign": "center",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": "#5178c6",
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_119",
+   "sourceId": "z1:2",
+   "x": 4276.34521484375,
+   "y": -1164.0401611328125,
+   "width": 128,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 113,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:1",
+    "collapsed": false
+   },
+   "text": {
+    "value": "环境因子和结构体",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_120",
+   "sourceId": "z1:23",
+   "x": 4798.34521484375,
+   "y": -1173.108154296875,
+   "width": 44,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 128,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:10",
+    "collapsed": false
+   },
+   "text": {
+    "value": "流速",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_121",
+   "sourceId": "z1:15",
+   "x": 4638.34521484375,
+   "y": -1136.836181640625,
+   "width": 72,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 120,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:3",
+    "collapsed": false
+   },
+   "text": {
+    "value": "环境计算",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_122",
+   "sourceId": "z1:21",
+   "x": 4638.34521484375,
+   "y": -1100.564208984375,
+   "width": 128,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 126,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:3",
+    "collapsed": false
+   },
+   "text": {
+    "value": "环境运算运算因子",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_123",
+   "sourceId": "z1:22",
+   "x": 4826.34521484375,
+   "y": -1100.564208984375,
+   "width": 198,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 127,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:21",
+    "collapsed": false
+   },
+   "text": {
+    "value": "用于进行鱼情运算的最小因子",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_124",
+   "sourceId": "z1:18",
+   "x": 4742.34521484375,
+   "y": -1064.2921142578125,
+   "width": 44,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 123,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:17",
+    "collapsed": false
+   },
+   "text": {
+    "value": "目标",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_125",
+   "sourceId": "z1:13",
+   "x": 4798.34521484375,
+   "y": -1209.380126953125,
+   "width": 86,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 119,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:10",
+    "collapsed": false
+   },
+   "text": {
+    "value": "光照、浑浊",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_126",
+   "sourceId": "z1:4",
+   "x": 4638.34521484375,
+   "y": -1281.9241943359375,
+   "width": 100,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 115,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:3",
+    "collapsed": false
+   },
+   "text": {
+    "value": "一级环境因子",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_127",
+   "sourceId": "z1:5",
+   "x": 4798.34521484375,
+   "y": -1281.9241943359375,
+   "width": 212,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 116,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:4",
+    "collapsed": false
+   },
+   "text": {
+    "value": "天气、温度、气压、风力、时段",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_128",
+   "sourceId": "z1:10",
+   "x": 4638.34521484375,
+   "y": -1209.380126953125,
+   "width": 100,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 117,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:3",
+    "collapsed": false
+   },
+   "text": {
+    "value": "二级环境因子",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_129",
+   "sourceId": "z1:11",
+   "x": 4798.34521484375,
+   "y": -1245.652099609375,
+   "width": 86,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 118,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:10",
+    "collapsed": false
+   },
+   "text": {
+    "value": "水温、含氧",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_130",
+   "sourceId": "z1:3",
+   "x": 4464.34521484375,
+   "y": -1164.0401611328125,
+   "width": 114,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 114,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:2",
+    "collapsed": false
+   },
+   "text": {
+    "value": "环境因子的计算",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_131",
+   "sourceId": "z1:17",
+   "x": 4638.34521484375,
+   "y": -1046.1561279296875,
+   "width": 44,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 122,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:3",
+    "collapsed": false
+   },
+   "text": {
+    "value": "总结",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  },
+  {
+   "normalizedElementId": "src_132",
+   "sourceId": "z1:20",
+   "x": 4846.34521484375,
+   "y": -1064.2921142578125,
+   "width": 198,
+   "height": 28.27199935913086,
+   "angle": 0,
+   "zIndex": 125,
+   "parentId": null,
+   "lockedInSource": null,
+   "type": "mindmap_node",
+   "subtype": "mind_map_text",
+   "mindMap": {
+    "parentId": "z1:18",
+    "collapsed": false
+   },
+   "text": {
+    "value": "得到每个点位的环境运算数值",
+    "fontSize": 14,
+    "fontWeight": "regular",
+    "color": "#1f2329",
+    "textAlign": "left",
+    "verticalAlign": "mid",
+    "italic": false
+   },
+   "style": {
+    "fill": null,
+    "borderStyle": "solid",
+    "borderColor": "#5178c6",
+    "borderWidth": "narrow"
+   }
+  }
+ ]
+}
